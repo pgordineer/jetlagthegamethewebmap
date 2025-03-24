@@ -1,14 +1,16 @@
 import json
 
 # Load the JSON data
-with open('./web/src/data/data_new.json') as f:
+with open('./web/src/data/data.json') as f:
     data = json.load(f)
+print(f"Loaded {len(data)} items from data.json")
 
 def validate_video_data(data):
     valid_data = []
     invalid_data = []
 
     for index, item in enumerate(data):
+        print(f"Validating item at index {index}")
         if (
             isinstance(item.get('publishedAt'), str) and
             isinstance(item.get('title'), str) and
@@ -33,6 +35,7 @@ def validate_video_data(data):
     return valid_data, invalid_data
 
 valid_data, invalid_data = validate_video_data(data)
+print(f"Found {len(valid_data)} valid items and {len(invalid_data)} invalid items")
 
 # Print invalid data
 for index, item in invalid_data:

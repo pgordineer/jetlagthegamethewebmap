@@ -81,7 +81,7 @@ df["geocode"] = df["geocode"].apply(get_coords)
 #add a 'marked' field to show when the data has been hand checked
 df["marked"] = False
 
-df.to_json("./data/4_refined.json", orient="records")
+df.to_json("./web/src/data/data.json", orient="records")
 #the exported CSV does not automatically format csv correctly so convert it to string first
 df["geocode"] = df["geocode"].apply(json.dumps)
 df.to_csv("./data/4_refined.csv")

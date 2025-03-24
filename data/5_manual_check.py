@@ -15,6 +15,10 @@ new_video_id = ""
 map_click_event = Event()
 map_click_coords = []
 
+@app.route('/')
+def index():
+    return "Flask app is running!"
+
 @app.route('/api/', methods=["POST"])
 def home():
     global new_video_id
@@ -23,6 +27,7 @@ def home():
         return jsonify({"error": "No video_id provided"}), 400
     new_video_id = video_id
     new_video_event.set()
+    print(f"New video ID received: {new_video_id}")
     return jsonify({"message": "looks good"})
 
 @app.route('/api/coords')
@@ -32,6 +37,7 @@ def coords():
     lng = request.args.get('lng')
     map_click_coords = [lat, lng]
     map_click_event.set()
+    print(f"Coordinates received: {map_click_coords}")
     return jsonify({"message": "looks good"})
 
 def run_flask_app():
@@ -40,10 +46,14 @@ def run_flask_app():
 if __name__ == '__main__':
     Thread(target=run_flask_app).start()
     while True:
+        print("Waiting for new video event...")
         new_video_event.wait()
+        print("New video event received!")
         new_video_event.clear()
+        print("Loading data from JSON file...")
         with open("./web/src/data/data.json", 'r') as file:
             data = json.load(file)
+        print("Searching for video ID in data...")
         #first, search for this element in the list and find its index
         item_index = -1
         for i, video in enumerate(data):
@@ -53,13 +63,16 @@ if __name__ == '__main__':
         if item_index == -1:
             print('no video found with this id')
             continue
+        print("Prompting user for input...")
         user_input = input("looks good? (Y/N): ")
         if user_input.strip().upper() != 'Y':
             print(f'https://youtube.com/watch?v={new_video_id}')
             user_input = input("Find on map, enter coords, or plus code? (M/C/P)")
             if user_input.strip().upper() == 'M':
                 map_click_event.clear()
+                print("Waiting for map click event...")
                 map_click_event.wait()
+                print("Map click event received!")
                 map_click_event.clear()
             else:
                 user_input = input("Enter coords: ")
@@ -73,6 +86,3 @@ if __name__ == '__main__':
             data[item_index]["marked"] = True
             with open("./web/src/data/data.json", 'w') as file:
                 json.dump(data, file)
-
-
-            
