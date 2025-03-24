@@ -12,3 +12,5 @@ Notice anything off? Issues and PRs welcome!
 Youtube API: extract video names and descriptions -> GPT-4o-mini: extract place names from video -> Nominatim API: Geocoding -> Leaflet: Display places
 
 All locations were hand-checked after this process
+
+fork of project from sambaumann
