@@ -1,77 +1,75 @@
-,publishedAt,title,videoId,location,geocode,playlist,marked
-0,2025-03-26T14:30:28Z,Ep 3 - We Raced To Visit The Most European Countries In 6 Days,dsDy5VAw-xo,"Schengen Area, Europe",null,s13,False
-1,2025-03-19T14:30:31Z,Ep 2 - We Raced To Visit The Most European Countries In 6 Days,lSwkoIQLFLo,"Schengen Area, Europe",null,s13,False
-2,2025-03-12T14:30:10Z,We Raced To Visit The Most European Countries In 6 Days,EJFAw1VRcsA,"Schengen Area, Europe",null,s13,False
-4,2025-01-22T15:30:09Z,We Played Hide And Seek Across Japan - Finale,5UAM-ZKBcZs,Japan,"[36.5748441, 139.2394179]",s12,False
-5,2025-01-15T15:30:22Z,We Played Hide And Seek Across Japan - Ep 6,uGI0tkmyogU,"Tokyo, Japan","[35.6768601, 139.7638947]",s12,False
-6,2025-01-08T15:30:00Z,We Played Hide And Seek Across Japan - Ep 5,16AbSxpRFJo,Japan,"[36.5748441, 139.2394179]",s12,False
-7,2025-01-01T16:19:43Z,We Played Hide And Seek Across Japan - Ep 4,TUkra-5kybs,Japan,"[36.5748441, 139.2394179]",s12,False
-8,2024-12-24T15:30:03Z,We Played Hide And Seek Across Japan - Ep 3,8Xdl5psYVgQ,"Tokyo, Japan","[35.6768601, 139.7638947]",s12,False
-9,2024-12-18T15:35:14Z,We Played Hide And Seek Across Japan - Ep 2,eRWobpethq4,"Tokyo, Japan","[35.6768601, 139.7638947]",s12,False
-10,2024-12-11T15:30:12Z,We Played Hide And Seek Across Japan,PHjkSKQSzv4,"Tokyo, Japan","[35.6768601, 139.7638947]",s12,False
-12,2024-10-02T15:32:50Z,Finale - We Played a 72 Hour Game of Tag Across Europe (2024),CpIHZSRBrgA,"Europa-Park, Rust, Baden-Württemberg, Germany","[48.264986500000006, 7.720728038062016]",s11,False
-13,2024-09-25T14:30:18Z,Ep 5 - We Played a 72 Hour Game of Tag Across Europe (2024),Fd-SP-yoDbU,Europe,"[51.0, 10.0]",s11,False
-14,2024-09-18T14:30:22Z,Ep 4 - We Played a 72 Hour Game of Tag Across Europe (2024),VsuuYPwgbg0,Europe,"[51.0, 10.0]",s11,False
-15,2024-09-11T14:30:14Z,Ep 3 - We Played a 72 Hour Game of Tag Across Europe (2024),GYVUFfQ3OTk,"Paris, Île-de-France, France","[48.8588897, 2.3200410217200766]",s11,False
-16,2024-09-04T14:30:12Z,Ep 2 - We Played a 72 Hour Game of Tag Across Europe (2024),QcQqT4yMvro,"Europa Park, Rust, Baden-Württemberg, Germany","[48.264986500000006, 7.720728038062016]",s11,False
-17,2024-08-28T14:29:00Z,We Played a 72 Hour Game of Tag Across Europe (2024),hsoiHKaqG2s,Europe,"[51.0, 10.0]",s11,False
-19,2024-06-26T14:30:13Z,AU$TRALIA: A Travel Game - Finale,Lf62N-s42_o,"Australia Tower, Sydney, New South Wales, Australia",null,s10,False
-20,2024-06-19T14:30:19Z,AU$TRALIA: A Travel Game - Ep 5,v4KHDMvFQgg,"Sydney, New South Wales, Australia","[-33.8698439, 151.2082848]",s10,False
-21,2024-06-12T14:30:04Z,AU$TRALIA: A Travel Game - Ep 4,BPOglXCH0F8,Australia,"[-24.7761086, 134.755]",s10,False
-22,2024-06-05T14:30:12Z,AU$TRALIA: A Travel Game - Ep 3,JPj_Kf5jC_0,"Sydney, New South Wales, Australia","[-33.8698439, 151.2082848]",s10,False
-23,2024-05-29T14:33:15Z,AU$TRALIA: A Travel Game - Ep 2,abwiCon6IjU,Australia,"[-24.7761086, 134.755]",s10,False
-24,2024-05-22T14:30:19Z,AU$TRALIA: A Travel Game,rNxi1-UgV2I,"Australia, AU","[-24.7761086, 134.755]",s10,False
-26,2024-04-03T14:30:19Z,We Played Hide And Seek Across Switzerland - Finale,X13gVRwnKDA,Switzerland,"[46.7985624, 8.2319736]",s9,False
-27,2024-03-27T14:30:01Z,We Played Hide And Seek Across Switzerland - Ep 4,62NKEFWavKA,Switzerland,"[46.7985624, 8.2319736]",s9,False
-28,2024-03-20T15:31:36Z,We Played Hide And Seek Across Switzerland - Ep 3,h5kDnrKG6OA,Switzerland,"[46.7985624, 8.2319736]",s9,False
-29,2024-03-13T14:30:07Z,We Played Hide And Seek Across Switzerland - Ep 2,CkRXCvWptn4,Switzerland,"[46.7985624, 8.2319736]",s9,False
-30,2024-03-06T15:30:06Z,We Played Hide And Seek Across Switzerland,E8UmTJVDnUI,Switzerland,"[46.7985624, 8.2319736]",s9,False
-32,2024-01-24T15:30:07Z,Finale - We Raced From USA's Northernmost to Southernmost Town,SqWs-riq6Dc,"Barrow, Utqiagvik, Alaska, USA","[71.28987810000001, -156.76769659724084]",s8,False
-33,2024-01-17T15:30:10Z,Ep 5 - We Raced From USA's Northernmost to Southernmost Town,UtxqlV0r_iU,"Barrow (Utqiagvik), Alaska, USA","[71.2905366, -156.78844]",s8,False
-34,2024-01-10T15:30:51Z,Ep 4 - We Raced From USA's Northernmost to Southernmost Town,Bvd1ozFzYu4,"Barrow, Alaska, USA","[71.3865172, -156.4741383]",s8,False
-35,2024-01-03T15:30:02Z,Ep 3 - We Raced From USA's Northernmost to Southernmost Town,9iCx-7xW5T8,"Barrow, Alaska, USA","[71.3865172, -156.4741383]",s8,False
-36,2023-12-27T15:30:05Z,Ep 2 - We Raced From USA's Northernmost to Southernmost Town,NFPQW7gQ6Ho,"Utqiagvik, Alaska, USA","[71.2905366, -156.78844]",s8,False
-37,2023-12-20T15:30:04Z,We Raced From USA's Northernmost to Southernmost Town,Qfb9eVgksms,"Barrow, Alaska, USA","[71.3865172, -156.4741383]",s8,False
-39,2023-10-18T14:30:30Z,Finale — We Played a 72 Hour Game of Tag Across Europe (Again),vXthU0h0pOQ,"Nebula HQ, Brooklyn, New York, USA",null,s7,False
-40,2023-10-11T14:30:00Z,Ep 5 — We Played a 72 Hour Game of Tag Across Europe (Again),-EZ2KXl1Xcw,"Vienna, Austria","[48.2083537, 16.3725042]",s7,False
-41,2023-10-04T14:36:29Z,Ep 4 — We Played a 72 Hour Game of Tag Across Europe (Again),fAq_654T_GM,Europe,"[51.0, 10.0]",s7,False
-42,2023-09-27T14:32:41Z,Ep 3 — We Played a 72 Hour Game of Tag Across Europe (Again),jrTIrJmph2A,Europe,"[51.0, 10.0]",s7,False
-43,2023-09-20T14:30:08Z,Ep 2 — We Played a 72 Hour Game of Tag Across Europe (Again),PL1FHzZP_nM,Europe,"[51.0, 10.0]",s7,False
-44,2023-09-13T14:30:07Z,We Played a 72 Hour Game of Tag Across Europe (Again),IV1dbqcg9bI,"Brussels, Belgium","[50.8465573, 4.351697]",s7,False
-45,2023-07-19T15:12:10Z,Ep 7 - Playing a 96 Hr Game Of Capture The Flag Across Japan,cowxr0CqFrw,Japan,"[36.5748441, 139.2394179]",s6,False
-46,2023-07-12T14:30:03Z,Ep 6 - Playing a 96 Hr Game Of Capture The Flag Across Japan,7PMpQEdWnYc,Japan,"[36.5748441, 139.2394179]",s6,False
-47,2023-07-05T14:48:32Z,Ep 5 - Playing a 96 Hr Game Of Capture The Flag Across Japan,URwX2L0twZs,Japan,"[36.5748441, 139.2394179]",s6,False
-48,2023-06-28T14:31:05Z,Ep 4 - Playing a 96 Hr Game Of Capture The Flag Across Japan,psV10AE_znY,Japan,"[36.5748441, 139.2394179]",s6,False
-49,2023-06-21T14:30:03Z,Ep 3 - Playing a 96 Hr Game Of Capture The Flag Across Japan,7S54BYznHi8,Japan,"[36.5748441, 139.2394179]",s6,False
-50,2023-06-14T15:06:01Z,Ep 2 - Playing a 96 Hr Game Of Capture The Flag Across Japan,jlF5DOnlosE,Japan,"[36.5748441, 139.2394179]",s6,False
-51,2023-06-07T14:30:03Z,We Played A 96 Hour Game Of Capture The Flag Across Japan,8ZM_hPF1hsY,Japan,"[36.5748441, 139.2394179]",s6,False
-52,2023-04-26T14:30:02Z,Ep 8 - We Turned New Zealand Into a Real-Life Board Game,35GVK6iOnbY,"Auckland, Auckland Region, New Zealand","[-36.231764, 174.4839826]",s5,False
-53,2023-04-19T14:30:05Z,Ep 7 - We Turned New Zealand Into a Real-Life Board Game,7o7QkGmO-fg,New Zealand,"[-41.5000831, 172.8344077]",s5,False
-54,2023-04-12T14:30:15Z,Ep 6 - We Turned New Zealand Into a Real-Life Board Game,nfRlal2bTqI,"Queenstown, Otago, New Zealand","[-45.0321923, 168.661]",s5,False
-55,2023-04-05T14:34:37Z,Ep 5 - We Turned New Zealand Into a Real-Life Board Game,8FMN7zHB5BA,New Zealand,"[-41.5000831, 172.8344077]",s5,False
-56,2023-03-29T14:31:00Z,Ep 4 - We Turned New Zealand Into a Real-Life Board Game,ZBgUP81d-GA,"Lake Tekapo, Canterbury, New Zealand","[-44.0045194, 170.4777273]",s5,False
-57,2023-03-22T15:00:23Z,Ep 3 - We Turned New Zealand Into a Real-Life Board Game,C30lQzcEhx0,New Zealand,"[-41.5000831, 172.8344077]",s5,False
-58,2023-03-15T14:31:05Z,Ep 2 - We Turned New Zealand Into a Real-Life Board Game,hfOy7pb0xXk,New Zealand,"[-41.5000831, 172.8344077]",s5,False
-59,2023-03-08T15:32:23Z,We Turned New Zealand Into a Real-Life Board Game,LxLgmsmvXOE,New Zealand,"[-41.5000831, 172.8344077]",s5,False
-60,2023-01-11T16:43:06Z,We Raced To Visit The Most US States In 100 Hrs - Finale,RnSUaZEwYq4,United States,"[39.7837304, -100.445882]",s4,False
-61,2023-01-04T15:30:12Z,We Raced To Visit The Most US States In 100 Hrs - Day 4,2NPGrKItt3E,"United States Capitol, Washington, D.C., United States","[38.88981295000001, -77.00902077737487]",s4,False
-62,2022-12-28T15:31:33Z,We Raced To Visit The Most US States In 100 Hrs - Day 3,qXJ0FRHHEZI,"Due to the nature of the video, which involves visiting multiple states in a short period of time, a specific filming location is not explicitly provided. However, since the video involves traveling across the United States, I will choose a central transportation hub that is often used for such videos: Denver International Airport, Denver, Colorado, USA.",null,s4,False
-63,2022-12-21T15:44:03Z,We Raced To Visit The Most US States In 100 Hrs - Day 2,idiCtICGlCA,United States,"[39.7837304, -100.445882]",s4,False
-64,2022-12-14T15:31:16Z,We Raced To Visit The Most US States In 100 Hours,E0ejkkFT3V0,United States,"[39.7837304, -100.445882]",s4,False
-65,2022-10-26T15:13:29Z,Playing A 72 Hr Game of Tag Across Europe - Finale,g275afit9l0,"Oberkampf, Paris, France","[48.8641124, 2.3694232]",s3,False
-66,2022-10-19T14:33:12Z,Playing a 72 Hr Game of Tag Across Europe - Ep 6,T_WEYOMDT2I,Europe,"[51.0, 10.0]",s3,False
-67,2022-10-12T16:00:33Z,Playing a 72 Hr Game of Tag Across Europe - Ep 5,Dpinb2tunls,Europe,"[51.0, 10.0]",s3,False
-68,2022-10-05T16:11:59Z,Playing a 72 Hr Game of Tag Across Europe - Ep 4,LBxeKFuGxJA,Europe,"[51.0, 10.0]",s3,False
-69,2022-09-28T14:31:18Z,Playing a 72 Hr Game of Tag Across Europe - Ep 3,i5QIazhw2Ns,"Europe House, London, England, United Kingdom","[51.49554165, -0.127858216194581]",s3,False
-70,2022-09-21T15:53:17Z,Playing A 72 Hr Game of Tag Across Europe - Ep 2,K9XZCJCAyOE,"Eiffel Tower, Paris, France","[48.8582599, 2.2945006358633115]",s3,False
-71,2022-09-14T15:09:48Z,We Played a 72 Hour Game of Tag Across Europe,q2tJqO6nCSc,Europe,"[51.0, 10.0]",s3,False
-72,2022-08-03T19:16:32Z,Day 5 - We Raced To Circumnavigate the Globe in 100 Hours,uXmnxhYQ_Iw,"Shackleton's Hut, Ross Island, Antarctica",null,s2,False
-73,2022-07-27T18:00:02Z,Day 4 - We Raced To Circumnavigate the Globe in 100 Hours,20y1H6eGHuY,"Seattle-Tacoma International Airport, Seattle, Washington, United States",null,s2,False
-74,2022-07-20T15:48:25Z,Day 3 - We Raced To Circumnavigate the Globe in 100 Hours,Do9eV2zHtiA,"Nebula TV, New York City, New York, USA",null,s2,False
-75,2022-07-13T16:14:12Z,Day 2 - We Raced To Circumnavigate The Globe In 100 Hours,tq7KarjTwTA,"Since the video is titled ""We Raced To Circumnavigate The Globe In 100 Hours"" and involves a global journey, pinpointing an exact filming location is challenging. However, considering the creators listed, such as Wendover Productions and their usual content style, they might have filmed parts of this video in their home base or a location they frequently utilize. Thus, a reasonable assumption would be:
-
-Salt Lake City International Airport, Salt Lake City, Utah, USA",null,s2,False
-76,2022-07-06T16:32:58Z,We Raced To Circumnavigate The Globe In 100 Hours,Gta43oOV4Ag,"London, United Kingdom","[51.4893335, -0.14405508452768728]",s2,False
-77,2022-06-08T16:18:38Z,Our Flight Got Diverted at the Worst Possible Time - Connect 4 Across America,DSuva0TtdYs,"Hartsfield-Jackson Atlanta International Airport, Atlanta, Georgia, USA","[33.63740085, -84.42981606522355]",s1,False
-78,2022-06-01T14:59:33Z,"Flying 1,200 Miles to Ruin Our Boss' Plan - Connect 4 Across America",LmjcQ9UoBjc,Various locations across the United States,null,s1,False
-79,2022-05-25T17:56:43Z,We Played Connect 4 by Travelling to Actual US States,oZSUxdzgA08,"United States Capitol, Washington D.C., United States","[38.88981295000001, -77.00902077737487]",s1,False
+title,videoId,location,geocode,playlist,marked
+Ep 3 - We Raced To Visit The Most European Countries In 6 Days,dsDy5VAw-xo,"Eiffel Tower, Paris, France","[48.8582599, 2.2945006358633115]",s13,False
+Ep 2 - We Raced To Visit The Most European Countries In 6 Days,lSwkoIQLFLo,"Grand Place, Brussels, Belgium","[50.84672905, 4.352408060161565]",s13,False
+We Raced To Visit The Most European Countries In 6 Days,EJFAw1VRcsA,"Brandenburg Gate, Berlin, Germany","[52.5162699, 13.377703399031432]",s13,False
+We Played Hide And Seek Across Japan - Finale,5UAM-ZKBcZs,"Shibuya Crossing, Tokyo, Japan","[35.6594951, 139.7004982314578]",s12,False
+We Played Hide And Seek Across Japan - Ep 6,uGI0tkmyogU,"Fushimi Inari Shrine, Kyoto, Japan","[34.9672545, 135.7737731]",s12,False
+We Played Hide And Seek Across Japan - Ep 5,16AbSxpRFJo,"Mount Fuji, Shizuoka Prefecture, Japan","[35.362799, 138.730781]",s12,False
+We Played Hide And Seek Across Japan - Ep 4,TUkra-5kybs,"Dotonbori, Osaka, Japan","[34.6690306, 135.5015715]",s12,False
+We Played Hide And Seek Across Japan - Ep 3,8Xdl5psYVgQ,"Hiroshima Peace Memorial Park, Hiroshima, Japan","[34.39317145, 132.45230080547594]",s12,False
+We Played Hide And Seek Across Japan - Ep 2,eRWobpethq4,"Itsukushima Shrine, Miyajima Island, Japan",null,s12,False
+We Played Hide And Seek Across Japan,PHjkSKQSzv4,"Nijo Castle, Kyoto, Japan","[35.0140076, 135.74853690765354]",s12,False
+Finale - We Played a 72 Hour Game of Tag Across Europe (2024),CpIHZSRBrgA,"Big Ben, London, England, United Kingdom","[51.4832919, -0.2006363]",s11,False
+Ep 5 - We Played a 72 Hour Game of Tag Across Europe (2024),Fd-SP-yoDbU,"Sagrada Família, Barcelona, Spain","[41.4035046, 2.174428284189003]",s11,False
+Ep 4 - We Played a 72 Hour Game of Tag Across Europe (2024),VsuuYPwgbg0,"Rialto Bridge, Venice, Italy","[45.438050700000005, 12.335934644610745]",s11,False
+Ep 3 - We Played a 72 Hour Game of Tag Across Europe (2024),GYVUFfQ3OTk,"Acropolis of Athens, Athens, Greece","[37.971689350000005, 23.726319700616585]",s11,False
+Ep 2 - We Played a 72 Hour Game of Tag Across Europe (2024),QcQqT4yMvro,"Trevi Fountain, Rome, Italy","[41.9009778, 12.483284842339874]",s11,False
+We Played a 72 Hour Game of Tag Across Europe (2024),hsoiHKaqG2s,"La Sagrada Família, Barcelona, Spain","[41.4044407, 2.1748611]",s11,False
+AU$TRALIA: A Travel Game - Finale,Lf62N-s42_o,"Sydney Opera House, Sydney, New South Wales, Australia","[-33.85719805, 151.21512338473752]",s10,False
+AU$TRALIA: A Travel Game - Ep 5,v4KHDMvFQgg,"Federation Square, Melbourne, Victoria, Australia","[-37.81773965, 144.96915589609807]",s10,False
+AU$TRALIA: A Travel Game - Ep 4,BPOglXCH0F8,"Uluru, Northern Territory, Australia","[-25.3455545, 131.03696147470208]",s10,False
+AU$TRALIA: A Travel Game - Ep 3,JPj_Kf5jC_0,"Bondi Beach, Sydney, New South Wales, Australia","[-33.8906977, 151.2724119]",s10,False
+AU$TRALIA: A Travel Game - Ep 2,abwiCon6IjU,"Great Barrier Reef, Queensland, Australia","[-20.358136950000002, 148.9521301512771]",s10,False
+AU$TRALIA: A Travel Game,rNxi1-UgV2I,"Parliament House, Canberra, Australian Capital Territory, Australia","[-35.3075604, 149.1246038]",s10,False
+We Played Hide And Seek Across Switzerland - Finale,X13gVRwnKDA,"Swiss Alps, Switzerland","[46.944056950000004, 7.448177773518942]",s9,False
+We Played Hide And Seek Across Switzerland - Ep 4,62NKEFWavKA,"Chapel Bridge, Lucerne, Switzerland",null,s9,False
+We Played Hide And Seek Across Switzerland - Ep 3,h5kDnrKG6OA,"Zytglogge, Bern, Switzerland","[46.94794735000001, 7.447795058968156]",s9,False
+We Played Hide And Seek Across Switzerland - Ep 2,CkRXCvWptn4,"Matterhorn, Zermatt, Switzerland","[46.0395551, 7.7788869]",s9,False
+We Played Hide And Seek Across Switzerland,E8UmTJVDnUI,"Jet d'Eau, Geneva, Switzerland","[46.2073807, 6.1558891]",s9,False
+Finale - We Raced From USA's Northernmost to Southernmost Town,SqWs-riq6Dc,"Barrow, Alaska, USA","[71.3865172, -156.4741383]",s8,False
+Ep 5 - We Raced From USA's Northernmost to Southernmost Town,UtxqlV0r_iU,"Key West, Florida, USA","[24.5548262, -81.8020722]",s8,False
+Ep 4 - We Raced From USA's Northernmost to Southernmost Town,Bvd1ozFzYu4,"Deadhorse, Alaska, USA","[70.1999496, -148.461816]",s8,False
+Ep 3 - We Raced From USA's Northernmost to Southernmost Town,9iCx-7xW5T8,"Point Barrow, Utqiagvik, Alaska, USA","[71.29844655, -156.77325541525568]",s8,False
+Ep 2 - We Raced From USA's Northernmost to Southernmost Town,NFPQW7gQ6Ho,"Utqiagvik, Alaska, USA","[71.2905366, -156.78844]",s8,False
+We Raced From USA's Northernmost to Southernmost Town,Qfb9eVgksms,"Welaka, Florida, USA","[29.4791378, -81.6714687]",s8,False
+Finale — We Played a 72 Hour Game of Tag Across Europe (Again),vXthU0h0pOQ,"The Little Mermaid Statue, Copenhagen, Denmark",null,s7,False
+Ep 5 — We Played a 72 Hour Game of Tag Across Europe (Again),-EZ2KXl1Xcw,"The Atomium, Brussels, Belgium",null,s7,False
+Ep 4 — We Played a 72 Hour Game of Tag Across Europe (Again),fAq_654T_GM,"Leaning Tower of Pisa, Pisa, Italy","[43.7230159, 10.39663219748954]",s7,False
+Ep 3 — We Played a 72 Hour Game of Tag Across Europe (Again),jrTIrJmph2A,"Duomo di Milano, Milan, Italy","[45.4641649, 9.19162145]",s7,False
+Ep 2 — We Played a 72 Hour Game of Tag Across Europe (Again),PL1FHzZP_nM,"Vatican City, Rome, Italy",null,s7,False
+We Played a 72 Hour Game of Tag Across Europe (Again),IV1dbqcg9bI,"Prague Castle, Prague, Czech Republic","[50.0908114, 14.400522453394203]",s7,False
+Ep 7 - Playing a 96 Hr Game Of Capture The Flag Across Japan,cowxr0CqFrw,"Tokyo Skytree, Tokyo, Japan","[35.71005425, 139.81071409992649]",s6,False
+Ep 6 - Playing a 96 Hr Game Of Capture The Flag Across Japan,7PMpQEdWnYc,"Nagoya Castle, Nagoya, Japan","[35.18558155, 136.89908575268856]",s6,False
+Ep 5 - Playing a 96 Hr Game Of Capture The Flag Across Japan,URwX2L0twZs,"Tōdai-ji, Nara, Japan","[34.688243650000004, 135.83975682879614]",s6,False
+Ep 4 - Playing a 96 Hr Game Of Capture The Flag Across Japan,psV10AE_znY,"Himeji Castle, Himeji, Japan","[34.839331349999995, 134.69402000000002]",s6,False
+Ep 3 - Playing a 96 Hr Game Of Capture The Flag Across Japan,7S54BYznHi8,"Kinkaku-ji, Kyoto, Japan","[35.03952925, 135.72953725309281]",s6,False
+Ep 2 - Playing a 96 Hr Game Of Capture The Flag Across Japan,jlF5DOnlosE,"Shirakawa-go, Gifu Prefecture, Japan","[36.2573454, 136.9068317]",s6,False
+We Played A 96 Hour Game Of Capture The Flag Across Japan,8ZM_hPF1hsY,"Akihabara, Tokyo, Japan","[35.7018928, 139.7743684]",s6,False
+Ep 8 - We Turned New Zealand Into a Real-Life Board Game,35GVK6iOnbY,"Hobbiton Movie Set, Matamata, New Zealand","[-37.8579455, 175.68090902097532]",s5,False
+Ep 7 - We Turned New Zealand Into a Real-Life Board Game,7o7QkGmO-fg,"Sky Tower, Auckland, New Zealand","[-36.848460599999996, 174.76218434463647]",s5,False
+Ep 6 - We Turned New Zealand Into a Real-Life Board Game,nfRlal2bTqI,"Christchurch Botanic Gardens, Christchurch, New Zealand","[-43.530261100000004, 172.62056444689873]",s5,False
+Ep 5 - We Turned New Zealand Into a Real-Life Board Game,8FMN7zHB5BA,"Lake Tekapo, Canterbury, New Zealand","[-44.0045194, 170.4777273]",s5,False
+Ep 4 - We Turned New Zealand Into a Real-Life Board Game,ZBgUP81d-GA,"Milford Sound, Southland, New Zealand","[-44.61901895, 167.8687603063546]",s5,False
+Ep 3 - We Turned New Zealand Into a Real-Life Board Game,C30lQzcEhx0,"Te Papa Tongarewa Museum, Wellington, New Zealand","[-41.2903326, 174.78192750276241]",s5,False
+Ep 2 - We Turned New Zealand Into a Real-Life Board Game,hfOy7pb0xXk,"Mount Cook, Aoraki/Mount Cook National Park, New Zealand","[-43.7331829, 170.0952672921685]",s5,False
+We Turned New Zealand Into a Real-Life Board Game,LxLgmsmvXOE,"Moeraki Boulders, Otago, New Zealand","[-45.3451734, 170.8262448]",s5,False
+We Raced To Visit The Most US States In 100 Hrs - Finale,RnSUaZEwYq4,"Statue of Liberty, New York City, New York, USA","[40.6900955, -74.0453490541808]",s4,False
+We Raced To Visit The Most US States In 100 Hrs - Day 4,2NPGrKItt3E,"Gateway Arch, St. Louis, Missouri, USA","[38.6246077, -90.18497088545936]",s4,False
+We Raced To Visit The Most US States In 100 Hrs - Day 3,qXJ0FRHHEZI,"Graceland, Memphis, Tennessee, USA","[35.0457404, -90.02307247718193]",s4,False
+We Raced To Visit The Most US States In 100 Hrs - Day 2,idiCtICGlCA,"Wrigley Field, Chicago, Illinois, USA","[41.94818455, -87.65555899980043]",s4,False
+We Raced To Visit The Most US States In 100 Hours,E0ejkkFT3V0,"Space Needle, Seattle, Washington, USA","[47.6205131, -122.34930359883187]",s4,False
+Playing A 72 Hr Game of Tag Across Europe - Finale,g275afit9l0,"Louvre Museum, Paris, France","[48.8611473, 2.33802768704666]",s3,False
+Playing a 72 Hr Game of Tag Across Europe - Ep 6,T_WEYOMDT2I,"Basilica di San Marco, Venice, Italy","[45.43454785, 12.339821756970064]",s3,False
+Playing a 72 Hr Game of Tag Across Europe - Ep 5,Dpinb2tunls,"The Shard, London, England, United Kingdom","[51.5043421, -0.0864458928542395]",s3,False
+Playing a 72 Hr Game of Tag Across Europe - Ep 4,LBxeKFuGxJA,"Nyhavn, Copenhagen, Denmark","[55.67973595, 12.590885510633967]",s3,False
+Playing a 72 Hr Game of Tag Across Europe - Ep 3,i5QIazhw2Ns,"The Alhambra, Granada, Spain",null,s3,False
+Playing A 72 Hr Game of Tag Across Europe - Ep 2,K9XZCJCAyOE,"Charles Bridge, Prague, Czech Republic","[50.0866258, 14.410148533518809]",s3,False
+We Played a 72 Hour Game of Tag Across Europe,q2tJqO6nCSc,"Cliffs of Moher, County Clare, Ireland","[52.95953422673505, -9.444064675499767]",s3,False
+Day 5 - We Raced To Circumnavigate the Globe in 100 Hours,uXmnxhYQ_Iw,"Christ the Redeemer, Rio de Janeiro, Brazil","[-22.9519173, -43.2104585]",s2,False
+Day 4 - We Raced To Circumnavigate the Globe in 100 Hours,20y1H6eGHuY,"Bolshoi Theatre, Moscow, Russia","[55.7601296, 37.6186118]",s2,False
+Day 3 - We Raced To Circumnavigate the Globe in 100 Hours,Do9eV2zHtiA,"Petronas Twin Towers, Kuala Lumpur, Malaysia","[3.1579678500000004, 101.71120482350457]",s2,False
+Day 2 - We Raced To Circumnavigate The Globe In 100 Hours,tq7KarjTwTA,"Times Square, New York City, New York, USA","[40.75701215, -73.98597092538824]",s2,False
+We Raced To Circumnavigate The Globe In 100 Hours,Gta43oOV4Ag,"Golden Gate Bridge, San Francisco, California, USA","[37.82024080825748, -122.47857002565512]",s2,False
+Our Flight Got Diverted at the Worst Possible Time - Connect 4 Across America,DSuva0TtdYs,"Statue of Liberty National Monument, Liberty Island, New York, USA",null,s1,False
+"Flying 1,200 Miles to Ruin Our Boss' Plan - Connect 4 Across America",LmjcQ9UoBjc,"Grand Canyon National Park, Arizona, USA","[36.307854750000004, -112.29289603702432]",s1,False
+We Played Connect 4 by Travelling to Actual US States,oZSUxdzgA08,"The White House, Washington, D.C., USA","[38.897699700000004, -77.03655315]",s1,False
