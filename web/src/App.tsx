@@ -58,9 +58,19 @@ let App = () => {
                 }
                 }>
                     <option value="">Playlist</option>
-                    <option value="tymnk">Things You Might Not Know</option>
-                    <option value="ap">Amazing Places</option>
-                    <option value="bfs">Built for Science</option>
+                    <option value="s1">Connect 4</option>
+                    <option value="s2">Circumnavigation</option>
+                    <option value="s3">Tag EUR It</option>
+                    <option value="s4">Battle 4 America</option>
+                    <option value="s5">Race to the End of the World</option>
+                    <option value="s6">Capture the Flag</option>
+                    <option value="s7">Tag EUR It 2</option>
+                    <option value="s8">Arctic Escape</option>
+                    <option value="s9">Hide + Seek: Switzerland</option>
+                    <option value="s10">Au$tralia</option>
+                    <option value="s11">Tag EUR It 3</option>
+                    <option value="s12">Hide + Seek: Japan</option>
+                    <option value="s13">Schengen Showdown</option>
                 </select>
 
                 <input type="search" placeholder="filter" name="TextFilter" onChange={(changeEvent) => {
