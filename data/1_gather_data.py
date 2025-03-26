@@ -7,7 +7,7 @@ load_dotenv("./data/.env")
 
 API_KEY = getenv("API_KEY")
 
-handle = "TomScottGo"
+handle = "@jetlagthegame"
 
 API = "https://www.googleapis.com/youtube/v3"
 

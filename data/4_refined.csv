@@ -1,440 +1,75 @@
 ,publishedAt,title,videoId,location,geocode,playlist,marked
-1,2023-12-25T16:00:08Z,People are going to be angry about pylons.,F0JDK_71yDg,"National Grid Training Centre, United Kingdom","[53.14421585, -0.990836028272188]",tymnk,False
-2,2023-12-18T16:00:18Z,Why the government drops flies on California,Zl_5LT2fzak,"california, usa","[36.7014631, -118.755997]",tymnk,False
-3,2023-12-11T16:00:31Z,A robot just swapped my electric car's battery,hNZy603as5w,no location found,null,ap,False
-5,2023-11-27T16:00:13Z,Why use many streetlights when one will do?,LDiXNsWQzD0,"moonlight towers, Austin, Texas, United States",null,tymnk,False
-6,2023-11-20T16:00:29Z,These tiny ships have a serious purpose,jplrbxI5GN8,"Ship Handling Research and Training Centre, Iława, Poland","[53.6095141, 19.5088412]",ap,False
-9,2023-10-30T16:00:36Z,Boarding planes could have been very different,j3OqAN4ISOw,"YUL Montreal-Trudeau International Airport, Montreal, Quebec, Canada","[45.4687293, -73.74249704278634]",tymnk,False
-10,2023-10-23T15:00:24Z,0-100 in less than a second. And I'm driving.,XQIu5tZ0vbQ,no location found,null,tymnk,False
-12,2023-10-09T15:00:33Z,"I finally rode the weird, curved German elevator.",ZgDBIzClmPg,"New Town Hall, Hanover, Germany","[52.36722075, 9.73735119977813]",ap,False
-13,2023-10-02T15:00:29Z,The largest telescope that will ever be built*,QqRREz0iBes,"Paranal, Chile","[-24.6403471, -70.3868186]",bfs,False
-14,2023-09-25T15:00:06Z,Spherical houses weren't a great idea.,3kwDVw0u4Kw,"The Bolwoningen, Den Bosch, Netherlands",null,ap,False
-16,2023-09-11T15:00:22Z,This library has every book ever published.,ZNVuIU6UUiM,"The British Library, London, England, UK","[51.5299119, -0.1276918163545741]",tymnk,False
-17,2023-09-04T15:00:13Z,Why are adverts so loud?,Is_wu0VRIqQ,no location found,null,tymnk,False
-18,2023-08-28T15:00:02Z,This man built his office inside an elevator,1yfX84RMQ3M,"Baťa Skyscraper, Zlín, Czechia",null,ap,False
-20,2023-08-14T15:00:38Z,This town throws pennies at people. They hurt.,nbafT2w0cCQ,"Honiton, Devon, England","[50.7981119, -3.1924599]",ap,False
-21,2023-08-07T15:00:14Z,This town banned cars (except tiny electric ones),R2oD1ZHNMFE,"Zermatt, Switzerland","[46.0212076, 7.749254]",ap,False
-22,2023-07-31T15:00:07Z,Storing dead people at -196°C,85BykUan6pw,no location found,null,ap,False
-25,2023-07-17T15:00:22Z,"If this survives for an hour, it passes the Bear Test.",Xn_O2li_jpk,"Grizzly & Wolf Discovery Center, West Yellowstone, Montana, USA","[44.6561371, -111.098613]",ap,False
-26,2023-07-10T15:00:38Z,I thought this rotating house was impossible.,gisdyTBMNyQ,"Mount Helix Drive, San Diego, California, USA","[32.773270543642056, -116.9796653699664]",ap,False
-27,2023-07-03T15:00:15Z,How can you legally fly a plane designed in 1910?,EN9JzxzDXU0,"Wright ""B"" Flyer Museum, Dayton, Ohio, USA",null,tymnk,False
-28,2023-06-26T15:00:44Z,The first jungle gym was meant to hack kids' brains,rn_8GXNN7_Q,"winnetka historical society, winnetka, illinois, usa","[42.102419049999995, -87.73325026324412]",tymnk,False
-29,2023-06-19T15:00:04Z,The cable car that you pedal by hand,72RxerDwzEo,"Sava, Slovenia","[46.088824, 14.8987141]",ap,False
-30,2023-06-12T15:00:44Z,I had to throw out my script about this submarine simulator,tMlHDnbEIDA,"Explorandia, Italy",null,ap,False
-31,2023-06-05T15:00:02Z,No-one knows how explosions work (yet),ar0klhiJfDI,"University of Sheffield, Sheffield, England","[53.381504199999995, -1.4833687805861575]",tymnk,False
-32,2023-05-29T15:00:45Z,This is an excuse to show you a really good tunnel,xWL40q3DMoQ,"Catesby Tunnel, United Kingdom","[52.2203953, -1.2272371]",tymnk,False
-33,2023-05-22T15:00:30Z,Shake tables are way more complex than I thought,Sj3iI9jZCX8,"Shake Table, University of California San Diego, San Diego, California, United States","[32.8931073, -117.10828970151582]",tymnk,False
-35,2023-05-08T15:00:21Z,The world's cleanest railway,b5Oy29TEVOE,"CEA-Leti, Grenoble, France","[45.1952541, 5.706154491720779]",ap,False
-36,2023-05-01T15:06:00Z,How they saved the holes in Swiss cheese,evV05QeSjAw,"Agroscope, Switzerland","[46.76935, 7.10632650555338]",tymnk,False
-37,2023-04-24T15:00:35Z,The military base where you drive over the runway,lPaQInkWV7g,"Meiringen Air Base, Switzerland","[46.74105015, 8.114464375101477]",ap,False
-38,2023-04-17T15:00:19Z,"It's the Matrix, but for locusts.",KRIBVykhpC4,"Department of Collective Behaviour, Max Planck Institute of Animal Behavior, Konstanz, Germany",null,bfs,False
-39,2023-04-10T15:00:23Z,This tiny hovercraft went viral.,bPTSSHRnnWw,"Micro Hovercraft Laboratory, Japan",null,tymnk,False
-40,2023-04-03T15:00:05Z,I rode the world's fastest train.,4ZX9T0kWb4Y,"Yamanashi Maglev Test Track, Yamanashi, Japan",null,ap,False
-42,2023-03-20T16:02:04Z,This bus transforms into a train,Kn56bMZ9OE8,"Asa Coast Railway, Shikoku, Japan",null,ap,False
-43,2023-03-13T16:00:29Z,Things are changing at the world's oldest hotel,_8W2LIfl5RE,"Nishiyama Onsen Keiunkan, Hayakawa, Yamanashi, Japan",null,ap,False
-44,2023-03-06T16:00:31Z,The city with a hundred private cable cars,cUkoqppoFr8,"Wellington, New Zealand","[-41.2887953, 174.7772114]",ap,False
-45,2023-02-27T16:00:36Z,"This is “impossible”, but New Zealand is trying anyway.",wcp1BfPUeOc,"Wellington, New Zealand","[-41.2887953, 174.7772114]",tymnk,False
-46,2023-02-20T16:00:24Z,This café sends food through pneumatic tubes,YTHZLKFblKo,"C1 Espresso, Christchurch, New Zealand",null,ap,False
-48,2023-02-06T16:00:08Z,"Google gave the Shweeb $1,000,000.",7qNOtgrIjO4,"Velocity Valley, Rotorua, New Zealand","[-38.08718075, 176.1898038637005]",ap,False
-49,2023-01-30T16:00:30Z,Why Australia bottles up its air,bu5-VERN3XY,"Kennaook / Cape Grim, Tasmania, Australia",null,bfs,False
-50,2023-01-23T16:00:02Z,I took a ride on a moving radio telescope,6o38C-ultvw,"Parkes Radio Telescope, Parkes, New South Wales, Australia",null,ap,False
-51,2023-01-16T16:00:12Z,These chickens save lives.,PSrO55KS6VY,"New South Wales, Australia","[-31.8759835, 147.2869493]",tymnk,False
-52,2023-01-09T16:00:01Z,This rollercoaster doesn't stop automatically,2nQ-rijlX3o,"Luna Park, Melbourne, Australia","[-37.8680243, 144.97690937106]",tymnk,False
-53,2023-01-02T16:00:07Z,"The ""architecture graveyard"" is alive and well",FhHM9MT41IE,"Poly Canyon, San Luis Obispo, California, USA","[35.30774495, -120.65864163560846]",ap,False
-56,2022-12-12T16:00:21Z,The US government is giving out free wasps,vIfC4Aj05Ps,"oregon department of agriculture, oregon, united states","[44.94375495, -123.02665748236467]",tymnk,False
-57,2022-12-05T16:00:16Z,Firing radioactive stuff at high speed under city streets,eMTZvA8iFgI,"TRIUMF, University of British Columbia campus, Vancouver, British Columbia, Canada",null,ap,False
-58,2022-11-28T16:00:24Z,"Cheap, renewable, clean energy. There's just one problem.",nCrTsWtPVIY,"Bay of Fundy, Canada","[44.8512466, -66.19778170407118]",ap,False
-59,2022-11-21T16:00:09Z,Why build a diving board twice the Olympic height?,I99Qgb4mE5I,"Montreal Olympic Sports Centre, Montreal, Quebec, Canada",null,ap,False
-60,2022-11-14T16:00:37Z,This river can be switched on and off,wbVIBmoUdUs,"University of Sherbrooke, Sherbrooke, Quebec, Canada","[45.50688675, -73.57908551043636]",ap,False
-61,2022-11-07T16:00:10Z,This electric ferry uses a very long extension cord,MYqCWxdM4ww,"Udbyhøj Cable Ferry, Randers Fjord, Denmark",null,ap,False
-62,2022-10-31T16:00:33Z,Is Poland's tap water really protected by clams?,i0RkEs3Xwf0,"MPWiK, Warsaw, Poland","[52.2887304, 21.003417108556818]",tymnk,False
-63,2022-10-24T15:00:40Z,The government approves of this shark now.,zCDIhq9nMBE,"The Shark House, Oxford, UK",null,tymnk,False
-64,2022-10-17T15:00:12Z,This 1970s tank simulator drives through a tiny world,AcQifPHcMLE,"Swiss Military Museum, Full-Reuenthal, Switzerland",null,ap,False
-65,2022-10-10T15:00:27Z,Keeping the world's longest railroad tunnel safe,mwx_rumXUAw,"Gotthard Base Tunnel, Switzerland","[46.68089686027896, 8.765326495894588]",tymnk,False
-66,2022-10-03T15:00:18Z,I finally found a useful monorail.,Ei6LKHNFpeE,"Grotto de Peo, Ronco sopra Ascona, Switzerland",null,ap,False
-67,2022-09-26T15:00:36Z,I thought the treadmill crane was fictional.,pk9v3m7Slv8,"Guédelon, France","[47.5832921, 3.1554507381516186]",ap,False
-68,2022-09-19T18:00:33Z,Why do YouTubers clap at the start of videos?,yWYkoZKHLfg,no location found,null,tymnk,False
-70,2022-09-05T15:00:28Z,This is the most interesting roof in London.,q3LuZeekVX4,"Royal Albert Hall, London, England, United Kingdom","[51.501006950000004, -0.17740582939224336]",ap,False
-71,2022-08-29T15:00:09Z,This massive truck makes artificial earthquakes,FJIzV0yYu0c,"University of Texas, Austin, Texas, USA","[30.2851494, -97.73393515146053]",tymnk,False
-73,2022-08-15T15:00:01Z,Delivering mail by jumping from a moving boat,2vd8Wfk9im0,"Lake Geneva, Wisconsin, USA","[42.5918039, -88.4345369]",ap,False
-74,2022-08-08T15:00:01Z,How the US Postal Service reads terrible handwriting,XxCha4Kez9c,"Remote Encoding Center, Salt Lake City, Utah, USA","[40.74313395, -112.0050384999004]",tymnk,False
-75,2022-08-01T15:00:18Z,A geyser that shoots sparkling mineral water,QazsDS8TQ0w,"Soda Springs, Idaho, USA","[42.6546059, -111.603809]",ap,False
-80,2022-06-27T15:00:01Z,"This clock was famous, but the internet ruined it.",uAdmzyKagvE,"Royal FloraHolland, Aalsmeer, Netherlands","[52.2586489, 4.788643]",tymnk,False
-82,2022-06-13T15:00:02Z,It's a pile of mining waste. Want to go skiing on it?,m0mwlSZ0bQQ,"Monte Kaolino, Bavaria, Germany","[49.5340483, 11.9663796]",ap,False
-83,2022-06-06T15:00:01Z,Maybe rich people should build weird fountains again,cz231Zi8Z7g,"Bergpark Wilhelmshöhe, Kassel, Hesse, Germany","[51.314384950000004, 9.414982348986086]",ap,False
-84,2022-05-30T15:00:02Z,I rode a giant mechanical elephant. You can too.,SSg3T0aK-ck,"Les machines de l'île, Nantes, France","[47.2050093, -1.5633466]",ap,False
-85,2022-05-23T15:00:22Z,The massive Fatigue Carousel helps keep roads safe,nGlhMk1hEZw,"accelerated pavement testing facility, Nantes, France",null,tymnk,False
-86,2022-05-16T15:00:02Z,I flew with birds. You can too.,3fJhTu-0zmo,southern France,"[14.484516188010153, 121.0315449864168]",tymnk,False
-87,2022-05-09T15:00:01Z,You're not allowed in this cave. But there's a copy.,_zJbi9YatcA,"Chauvet II, Ardèche, France","[44.733622, 4.4471948]",ap,False
-88,2022-05-02T15:00:00Z,Europe's toughest airport landing used to be a lot harder,6kolTgj7uQc,"Funchal Airport, Madeira, Portugal","[32.69870795, -16.773314486554057]",ap,False
-89,2022-04-25T15:00:01Z,"Downhill, on a couch, on public roads.",19o8yPaVp58,"Monte Toboggans, Funchal, Madeira, Portugal",null,ap,False
-90,2022-04-18T15:00:02Z,The bridge that must legally wobble,swLyst02ZK4,"Daly's Bridge, Cork, Ireland","[51.8965623, -8.49919233079751]",ap,False
-92,2022-04-04T15:00:27Z,How does Britain know what time it is?,yqciKS_N0K8,"Anthorn, Cumbria, England, United Kingdom",null,tymnk,False
-93,2022-03-28T15:00:17Z,The giant archive hidden under the British countryside,ce-QHeZnVu4,"Deepstore, British countryside, United Kingdom",null,ap,False
-94,2022-03-21T16:00:35Z,Reopening an airport terminal is harder than you might think,JA3RXeds0_g,"Gatwick Airport, London, England, United Kingdom","[51.1552293, -0.1609996]",tymnk,False
-96,2022-03-07T16:00:47Z,"After 140 years, this old technology still keeps trains safe",mzAfich6mow,"Pass of Brander, Falls of Cruachan, Scotland",null,ap,False
-97,2022-02-28T16:00:23Z,"The Elie Chainwalk is safe, as long as you follow the signs",ELGWbY4xBDs,"Elie Chain Walk, Fife, Scotland",null,ap,False
-98,2022-02-21T16:00:16Z,This town forgot to be a city,kBaLb1C4WAg,"rochester, kent, england","[51.3883811, 0.504925]",ap,False
-99,2022-02-14T16:00:10Z,The top secret plan to explode a nuclear bomb in Yorkshire,ceWZslOfEjs,"Wheeldale, North York Moors National Park, Yorkshire, England",null,tymnk,False
-100,2022-02-07T16:00:04Z,The giant chainmail box that stops a house dissolving,9XSzwbFCFtc,"The Hill House, Helensburgh, Scotland",null,ap,False
-101,2022-01-31T16:00:35Z,Literally just three minutes where I talk about some rocks,EfdwRRpiYGQ,"Siccar Point, Scotland","[55.9313162, -2.3016804]",ap,False
-102,2022-01-24T16:00:09Z,How one British laboratory protects the world's chocolate,LKSTmcvEdoU,"International Cocoa Quarantine Centre, University of Reading, Reading, England, United Kingdom",null,ap,False
-103,2022-01-17T16:00:19Z,"There's a £100,000 coin buried under this London building",rssBd3fX8fw,"Baldwin's, London, England, United Kingdom","[51.5269917, -0.0886485]",tymnk,False
-105,2022-01-03T16:00:32Z,The meters-high mountain of mannequins in the Midlands,rhJWD2TMiYE,"Mannakin, Lincolnshire, England, United Kingdom","[53.0454938, -0.633796]",ap,False
-107,2021-12-20T16:00:20Z,The hidden background noise that can catch criminals,e0elNU0iOMY,no location found,null,tymnk,False
-108,2021-12-13T16:00:18Z,The Thames Barrier must never fail. Here's why it doesn't.,eY-XHAoVEeU,"The Thames Barrier, London, England, United Kingdom","[51.4951627, 0.041014574509472296]",ap,False
-109,2021-12-06T16:00:19Z,The world's most expensive object by weight,k7fXbdRH9v4,no location found,null,tymnk,False
-110,2021-11-29T16:00:24Z,The town where holding fireworks over your head is a tradition,xym2R6_Qd7c,"Bridgwater Carnival, Bridgwater, Somerset, England",null,ap,False
-111,2021-11-22T16:00:25Z,The tunnel where people pay to inhale radioactive gas,zZkusjDFlS0,"Radonstollen, Bad Kreuznach, Germany",null,ap,False
-112,2021-11-15T16:00:16Z,This tiny railroad across the sea has an important job,NL5sRCRa7AE,"Lüttmoorsiel-Nordstrandischmoor, Schleswig-Holstein, Germany",null,ap,False
-113,2021-11-08T16:00:33Z,"Why this ""falling rocks"" sign is more important than most",o-oVXYkBwgw,"Brienz/Brinzauls, Switzerland","[46.6687918, 9.5957146]",ap,False
-114,2021-11-01T16:00:11Z,"An actual, real-world use for robot dogs",PkW9wx7Kbws,"Obervermuntwerk II hydroelectric power plant, Austria",null,tymnk,False
-115,2021-10-25T15:00:16Z,The highway where trucks work like electric trains,_3P_S7pL7Yg,"Lübeck, Germany","[53.866444, 10.684738]",bfs,False
-116,2021-10-18T15:00:04Z,The shooting range where you fire over a busy road,2h1s6S4kotE,"Schiessanlage Brünnlisau, Switzerland","[46.6697397, 7.607431517843723]",ap,False
-117,2021-10-11T15:00:03Z,The world's only float-through McDonalds,A6F96xSoLPg,no location found,null,ap,False
-118,2021-10-04T15:00:03Z,I thought the Schmid Peoplemover was impossible,A2g4u9F9i90,no location found,null,ap,False
-119,2021-09-27T15:00:04Z,The world's most useful model railway,6TLcaJdsRr0,"Eisenbahnbetriebsfeld, Darmstadt, Germany","[49.880039350000004, 8.62560653050995]",ap,False
-120,2021-09-20T15:00:00Z,The public toll road with no speed limit,10Y-gWNJ2Sw,"Nürburgring Nordschleife, Nürburg, Rhineland-Palatinate, Germany",null,ap,False
-121,2021-09-13T15:00:09Z,Three strange river crossings,KVXVNX4Crh4,"Manchester Ship Canal, Manchester, England, United Kingdom","[53.3674704, -2.612316]",ap,False
-122,2021-09-06T15:00:36Z,Why this observatory fires lasers at satellites,vdvIY0CJaXw,"NERC's Space Geodesy Facility, England, United Kingdom",null,bfs,False
-123,2021-08-30T15:00:17Z,I took the world's shortest flight. It was underwhelming.,dzYP01CPC6E,"Papa Westray and Westray, Orkney Islands, Scotland, United Kingdom",null,ap,False
-124,2021-08-23T15:00:04Z,The Islands With Too Much Power,8UmsfXWzvEA,"Orkney Islands, Scotland, United Kingdom","[58.94182309999999, -3.129694439563327]",tymnk,False
-125,2021-08-16T15:00:33Z,"I helped cover a 5,000-year-old monument with worn-out tires",hUyvk_hdMNs,"Ness of Brodgar, Orkney, Scotland, United Kingdom","[58.9972633, -3.2156713185586687]",ap,False
-127,2021-08-02T15:00:16Z,The diving gondola: a strange elevator to the ocean floor,kZ1CZh85Ugs,"Tauchgondel, Zinnowitz, Mecklenburg-Vorpommern, Germany","[54.08422405, 13.917056480183682]",ap,False
-128,2021-07-26T15:00:18Z,I tried to film a volcano and it was a complete disaster,fzfpExS_wic,"Fagradalsfjall, Iceland","[63.88941385, -22.288430492794298]",ap,False
-130,2021-07-12T15:00:02Z,"The UK's last aerial ropeway uses no power, moves 300 tonnes a day, and will be gone by 2036.",6RiYXI1Tfu4,"Forterra brickworks, Claughton, Lancashire, UK",null,ap,False
-131,2021-07-05T15:00:33Z,How many robots does it take to run a grocery store?,ssZ_8cqfBlE,no location found,null,ap,False
-132,2021-06-28T15:00:18Z,The Shocking New Use for Red Telephone Boxes,ecVHYg4_vZw,no location found,null,tymnk,False
-133,2021-06-21T15:00:07Z,History forgot these old fireworks. We recreated them.,J3F2odr2MsQ,"old mining areas, North Wales, UK",null,tymnk,False
-134,2021-06-14T15:00:31Z,Landing at the only airport that's also a public beach,g_2SlqF0kA0,"Barra Airport, Na h-Eileanan Siar, Scotland, United Kingdom","[57.0250086, -7.4475248]",ap,False
-135,2021-06-07T14:59:59Z,The world's last turntable ferry has a really clever design,H2ZBSFiuWIo,"Skye Ferry, Glenelg, Scotland, United Kingdom",null,tymnk,False
-136,2021-05-31T15:00:20Z,The Accidental Rush for Anthrax Island,suAC_PDP3Sk,"Gruinard Island, Scotland, UK","[57.888660200000004, -5.470884674735865]",ap,False
-137,2021-05-24T15:00:16Z,The long-forgotten history of the British moon spacesuit,jYgiV4Iz7I0,"National Space Centre, Leicester, England, United Kingdom","[52.6537732, -1.1322832427968548]",tymnk,False
-138,2021-05-17T15:00:02Z,I promise this story about microwaves is interesting.,2tdiKTSdE9Y,no location found,null,tymnk,False
-139,2021-05-10T15:00:02Z,The beach where Lego keeps washing up,3FxfXVuHRjM,"Perranporth Beach, Cornwall, England","[50.3471122, -5.1540792]",ap,False
-141,2021-04-26T15:00:04Z,England's oldest attraction turns teddy bears to stone,AJ38l6DX4f8,"Mother Shipton's Cave, Knaresborough, Yorkshire, England","[54.003637, -1.471214]",ap,False
-144,2021-04-05T15:00:06Z,This changed my mind about aquariums.,LyfnoEa-P58,"The Deep, Hull, England, United Kingdom","[53.73872005, -0.3304862659357391]",ap,False
-147,2021-03-15T16:00:07Z,No-one is going to save Covehithe,OW5MlvvqGjM,"Covehithe, Suffolk, England","[52.37635, 1.7055067]",ap,False
-148,2021-03-08T16:00:13Z,Why Hollywood explosions don't look like real explosions,nqJiWbD08Yw,no location found,null,tymnk,False
-152,2021-02-01T16:00:08Z,"Hill Hill Hill Hill, debunked, debunked",NUyXiiIGDTo,"Torpenhow Hill, Lake District, England",null,tymnk,False
-159,2020-12-14T16:00:28Z,The never-used road where the BBC crash cars,nQOroZNr_fw,"Yate, south-west England","[51.5403113, -2.4134281]",ap,False
-161,2020-11-30T16:00:32Z,We walked the most dangerous path in Britain,mM7C_Pw7OL8,"The Broomway, Foulness Island, Essex, England",null,ap,False
-164,2020-11-09T16:00:20Z,Five Things You Can't Do On British Television,m__OZ3ZsO4Y,no location found,null,tymnk,False
-165,2020-11-02T16:00:04Z,"If these pumps ever stop, part of Germany floods.",LseK5gp66u8,no location found,null,ap,False
-166,2020-10-26T16:00:09Z,My unlicensed hovercraft bar is technically legal,ZLF7yife8YE,"Axceler-8 Hovercraft Centre, England, United Kingdom",null,tymnk,False
-168,2020-10-12T15:00:02Z,The theme park inside an old nuclear power plant,5te73hfCpuU,"Wunderland Kalkar, Kalkar, North Rhine-Westphalia, Germany","[51.7635624, 6.326149673436269]",ap,False
-171,2020-09-21T15:00:03Z,The tiny monorails that once carried James Bond,Irv3KJR6B80,"Amberley Museum, South Downs, England, United Kingdom",null,tymnk,False
-172,2020-09-14T15:00:12Z,Would you swim in power plant wastewater?,OgMXjAQ5q14,"Blue Lagoon, Iceland","[63.8791684, -22.4443195863754]",tymnk,False
-175,2020-08-31T15:00:00Z,"Swimming between two continents, debunked",-khe6IY9bTM,"Silfra, Þingvellir National Park, Iceland",null,ap,False
-179,2020-08-17T15:00:12Z,Is the most northern part of Iceland still there?,hr03xF08qoU,"Kolbeinsey, Iceland","[67.15035335, -18.682893418286717]",ap,False
-181,2020-08-10T15:00:12Z,The Part Of Britain That Rises And Falls Twice A Day,lCA0II1sVZA,"Cornwall, England, United Kingdom","[50.416667, -4.75]",tymnk,False
-183,2020-07-27T15:00:14Z,Britain once forgot how long an inch is,mmh819Lfgfs,no location found,null,tymnk,False
-184,2020-07-20T15:00:00Z,The Village That The Luftwaffe Bombed By Mistake,3-naCd-DwvU,"Linby, Nottinghamshire, England","[53.0533699, -1.2049319]",tymnk,False
-186,2020-07-06T14:59:56Z,The Abandoned Hill With Two Members Of Parliament,-fXmaeDMsh0,"Old Sarum, Wiltshire, England","[51.093447999999995, -1.8047033606726455]",ap,False
-189,2020-06-15T15:00:15Z,"The ""first internet bench"" probably wasn't",nLCAvIr9rWo,"Abbey Gardens, Bury St Edmunds, England, United Kingdom","[52.2447298, 0.7184568517064369]",ap,False
-190,2020-06-08T15:00:01Z,How England's Oldest Road Was Nearly Lost Forever,3dYc0Ouxhx0,"Icknield Way, southeast England",null,tymnk,False
-193,2020-05-18T15:00:12Z,"Why some ""remastered"" music videos look awful",CkysCJBdGtw,no location found,null,tymnk,False
-196,2020-04-27T15:00:12Z,Why this British crossroads was so dangerous,SYeeTvitvFU,"Ipley Cross, New Forest, Hampshire, England","[50.862998149999996, -1.453237605270524]",tymnk,False
-200,2020-03-30T15:00:19Z,Why dark video is a terrible mess,h9j89L8eQQk,no location found,null,tymnk,False
-202,2020-03-16T16:00:16Z,This billion-euro nuclear reactor was never switched on,WUVZbBBHrI4,"Zwentendorf Nuclear Power Plant, Zwentendorf, Austria","[48.3549212, 15.884251202109033]",ap,False
-203,2020-03-09T16:00:17Z,Why you can't buy Dasani water in Britain,wD79NZroV88,no location found,null,tymnk,False
-205,2020-02-24T16:00:15Z,The country where all public transit is free,feCQPD9DSOA,"Casemates, Luxembourg City, Luxembourg, Luxembourg","[49.6117938, 6.1365748]",ap,False
-207,2020-02-10T16:00:06Z,The Dutch headwind cycling championships are amazing,VMinwf-kRlA,"Oosterscheldekering barrier, Netherlands","[51.65958990123187, 3.7226630199975284]",ap,False
-209,2020-01-27T16:00:04Z,The bridge that's in two countries at the same time,Mw44wHG4KOc,"Schengen, Luxembourg","[49.4716, 6.3659008]",ap,False
-211,2020-01-13T16:00:01Z,How Neurosurgeons Navigate Inside The Brain,8Gk7EvCQGoo,no location found,null,tymnk,False
-215,2019-12-16T16:00:16Z,The world's littlest skyscraper was a massive scam,xGQgmmrXONk,"Newby-McMahon Building, Wichita Falls, Texas, United States","[33.91449735, -98.48976475498466]",ap,False
-218,2019-11-25T16:00:07Z,I visited the US National Helium Reserve,mOy8Xjaa_o8,"National Helium Reserve, Amarillo, Texas, USA",null,tymnk,False
-219,2019-11-18T16:00:04Z,The elevator shaft was invented before the elevator,TL4xc5bsSUU,"Cooper Union Foundation Building, New York, New York, United States","[40.7293554, -73.99047229451344]",tymnk,False
-220,2019-11-11T16:04:00Z,The world's only wingsuit tunnel,DpfrGZJyKmo,"Indoor Wingsuit, Stockholm, Sweden","[59.3489058, 17.961842]",ap,False
-221,2019-11-04T16:00:07Z,How the Netherlands simulated the sea,SFkoLYrJGCM,"Waterloopbos, Flevoland, Netherlands","[52.6756782, 5.9156304]",bfs,False
-223,2019-10-21T15:00:00Z,The giant art that keeps planes quiet,7dlLmeage2U,"Buitenschot Land Art Park, Amsterdam, Netherlands",null,ap,False
-224,2019-10-14T15:00:06Z,Why Helsinki's library robots aren't important,dPb9o3uDF_Q,"Oodi, Helsinki, Finland","[60.173940349999995, 24.937981609237305]",tymnk,False
-226,2019-09-30T15:00:00Z,"These tunnels are designed for 100,000 years",aoy_WJ3mE50,"Onkalo, Olkiluoto, Finland",null,ap,False
-227,2019-09-23T15:00:11Z,What counts as the world's shortest river?,WEGzvZ85dgs,no location found,null,tymnk,False
-228,2019-09-16T15:00:16Z,The toxic pit with a $3 admission fee,n-Ej2EtE744,"Berkeley Pit, Butte, Montana, USA","[46.01715125, -112.51173201629729]",ap,False
-229,2019-09-09T15:00:12Z,The only bit of Louisiana's coast that isn't sinking,zFiNmEWXPPM,"Wax Lake Delta, Louisiana, USA","[29.500974749999997, -91.4463376170057]",ap,False
-235,2019-08-19T15:00:02Z,Flying a plane with fireworks on the wings,HuGHV0fbBiE,no location found,null,tymnk,False
-239,2019-07-22T15:00:04Z,How to stop a colossal bridge corroding,dLQQ1F7hplA,"Humber Bridge, Hull, East Yorkshire, England",null,tymnk,False
-241,2019-07-08T15:00:04Z,These tunnels stop part of Tokyo flooding,cfJOW2PtrGk,"Metropolitan Area Underground Discharge Channel, Tokyo, Japan",null,ap,False
-243,2019-06-24T15:00:00Z,The world's first solar powered train,6Y4QGFte3T8,"Byron Bay, New South Wales, Australia","[-28.6483333, 153.6177778]",ap,False
-244,2019-06-17T15:00:01Z,Mr Olds' remarkable elevator,-fu03F-Iah8,"Olds Engineering, Maryborough, Australia",null,tymnk,False
-245,2019-06-10T15:00:15Z,The one-lane bridge shared by cars and trains,sstRJcaFU9U,"Hindon, South Island, New Zealand",null,ap,False
-247,2019-05-27T15:00:05Z,Testing a zip line that goes round corners,ef1jPbezKDM,no location found,null,bfs,False
-248,2019-05-20T15:00:08Z,The circle visible from space,VRUmt_4F_58,"Mount Taranaki, North Island, New Zealand",null,ap,False
-249,2019-05-13T15:00:10Z,The first 3D color X-rays,cqUYYF6KmW0,"Mars Bioimaging, Christchurch, New Zealand",null,bfs,False
-250,2019-05-06T15:00:04Z,The brain-eating amoebas of Kerosene Creek,OQ7uq04fEjs,"Kerosene Creek, Rotorua, North Island, New Zealand",null,tymnk,False
-251,2019-04-29T15:00:14Z,The Hundred-Tonne Robots That Help Keep New Zealand Running,kQ8WI3nc1l0,"Ports of Auckland, Auckland, New Zealand","[-36.84369175, 174.7748558428105]",ap,False
-252,2019-04-22T15:00:10Z,The sculpture that looks like a real-life cartoon,j9JD9W0n7gE,"Gibbs Farm, New Zealand","[-36.52046555, 174.43921503802972]",ap,False
-253,2019-04-15T15:00:02Z,"Where two oceans meet, debunked",a4N4yQB_B4c,"Cape Reinga, New Zealand","[-34.4201843, 172.6793483]",tymnk,False
-255,2019-04-02T15:00:09Z,The artificial gravity lab,bJ_seXo-Enc,"Ashton Graybiel Spatial Orientation Laboratory, Brandeis University, Waltham, Massachusetts, USA",null,bfs,False
-256,2019-03-25T16:00:04Z,Blindfold balancing in the spinning space chair,jhQa9xLk5qk,"Ashton Graybiel Spatial Orientation Laboratory, Brandeis University, Waltham, Massachusetts, USA",null,bfs,False
-257,2019-03-18T16:00:08Z,The library of rare colors,rApTzWboLrA,"Harvard Art Museums, Cambridge, Massachusetts, USA","[42.37409875, -71.11411301175133]",bfs,False
-259,2019-03-11T16:00:04Z,The Last Play-For-Cash Fascination Parlor,bOWse-Xm6Ao,"Fascination Parlor, Nantasket Beach, Hull, Massachusetts, USA",null,ap,False
-261,2019-03-04T16:00:01Z,The broken building that must not be destroyed,AtkmDmMzZO8,"St Peter's Seminary, Cardross, Scotland, United Kingdom","[55.970310749999996, -4.6405331882438094]",ap,False
-265,2019-02-11T16:00:05Z,How Auto-Tune Works,i09V6SkVkz8,no location found,null,tymnk,False
-266,2019-02-04T16:00:05Z,How to slow down a stock exchange,d8BcCLLX4N4,"IEX, New York City, New York, United States",null,tymnk,False
-267,2019-01-28T16:00:03Z,I Got To See And Hold My Brain,Q7tX_B88MZk,no location found,null,bfs,False
-268,2019-01-21T16:00:01Z,This Is Your Brain On Stale Air,1Nh_vxpycEA,no location found,null,tymnk,False
-269,2019-01-14T16:00:00Z,How Knot To Hang A Painting,-eVd2Ugk9BU,no location found,null,tymnk,False
-270,2019-01-07T16:00:00Z,The Fishermen That Hold Their Breath For 10 Minutes,2F0V9MjrhXE,"Borneo, Malaysia/Indonesia",null,tymnk,False
-271,2018-12-31T16:00:01Z,"Why NASA Spun Astronauts Around, But Doesn't Any More",GFWsYJ0_KMI,"space camp, huntsville, alabama, usa","[34.710174249999994, -86.64656038320169]",tymnk,False
-272,2018-12-24T16:00:03Z,The canyon that humans made by accident,NQ5cf_WuJs0,"Providence Canyon, Georgia, United States","[32.063169, -84.91951392024022]",ap,False
-276,2018-12-10T16:00:04Z,The city of golf carts,pcVGqtmd2wM,"Peachtree City, Georgia, USA","[33.3975472, -84.5898256]",ap,False
-278,2018-12-03T16:13:45Z,The other tree that owns itself,lyvylw5Lwx0,"Eufaula, Alabama, USA","[31.8912717, -85.1454876]",tymnk,False
-280,2018-11-26T16:00:05Z,An American Stonehenge: The Mysterious Georgia Guidestones,YNPpB_BRZJ8,"Georgia Guidestones, Elberton, Georgia, USA",null,ap,False
-282,2018-11-19T16:00:03Z,Testing the world's longest echo,lLUcOFwZvyY,"Inchindown oil tanks, Invergordon, Scotland",null,ap,False
-286,2018-11-05T16:00:01Z,Britain's largest battery is actually a lake,6Jx_bJgIFhI,"Dinorwig Power Station, Llanberis, Wales, United Kingdom","[53.117105, -4.10364579812021]",tymnk,False
-288,2018-10-29T16:00:10Z,Why do London's manholes keep exploding?,u9FVoDiuq6Q,no location found,null,tymnk,False
-290,2018-10-22T15:00:00Z,᚛ᚈᚑᚋ ᚄᚉᚑᚈᚈ᚜ and ᚛ᚑᚌᚐᚋ᚜,2yWWFLI5kFU,"British Museum, London, England, United Kingdom","[51.51929365, -0.12801772178494725]",tymnk,False
-294,2018-09-24T15:00:02Z,Wingwalking used to be a lot more dangerous,Trqqn2xPaY0,no location found,null,tymnk,False
-296,2018-09-10T15:00:08Z,The collapsible crash-test robot car,cECsj2Bznig,"Thatcham Research, United Kingdom",null,bfs,False
-300,2018-08-20T15:00:09Z,Your private messages travel under this beach,nl2mQ2HiJZc,"Porthcurno Telegraph Museum, Porthcurno, Cornwall, England","[50.046744399999994, -5.654957376478356]",tymnk,False
-301,2018-08-13T15:00:10Z,"I hit 3,000-year-old art with a hammer",s6kNR8Mj0ZE,"The White Horse, Uffington, Oxfordshire, England","[51.5777407, -1.566556406333334]",ap,False
-302,2018-08-06T15:00:01Z,Testing the sound mirrors that protected Britain,04F5osXK4vw,"Romney Marsh, England, United Kingdom","[51.13002745031616, 0.8700749520052672]",ap,False
-303,2018-07-30T15:00:04Z,This nuclear reactor is run by students,pLBcp3nJlFQ,"Reed College, Portland, Oregon, USA","[45.48149925, -122.63101360753458]",bfs,False
-304,2018-07-23T15:00:06Z,How the 90s VHS look works,h6RRNNztN5o,no location found,null,tymnk,False
-306,2018-07-16T15:00:05Z,We Should Let Some Wildfires Burn,Y27lFsPEZ30,"Tree Ring Lab at UBC, Vancouver, British Columbia, Canada",null,tymnk,False
-307,2018-07-09T15:00:03Z,The sourtoe cocktail has a human toe in it,kHMNX3IXnvs,"Downtown Hotel, Dawson City, Yukon, Canada","[64.0622192, -139.4334124]",tymnk,False
-308,2018-07-02T15:00:01Z,Watching for nuclear attack in the Arctic,Et3YW_qS_1o,"DEW Line, Canada",null,ap,False
-309,2018-06-25T15:00:09Z,The new highway to the Arctic Ocean,frhMomcKT9o,"Inuvik-Tuktoyaktuk Highway, Northwest Territories, Canada","[68.3985218339965, -133.7656508787207]",ap,False
-310,2018-06-18T15:00:03Z,"Making 200,000 tons of arsenic dust safe",E4nZDSLdIiM,"Giant Mine, Yellowknife, Northwest Territories, Canada","[62.5131767, -114.35132509861299]",ap,False
-311,2018-06-11T15:00:04Z,The giant freezer that tests winter boots,q1oRaUTbk3k,"Toronto Rehabilitation Institute, Toronto, Ontario, Canada",null,bfs,False
-312,2018-06-04T15:00:03Z,The town that was burned for science,DWYthXD14pw,"Aultsville, Ontario, Canada","[44.9552675, -75.0289562]",ap,False
-313,2018-05-28T15:00:01Z,The US-Canada border splits this road down the middle,EocJm3Dry4E,"Rue Canusa, Stanstead, Quebec, Canada / Derby Line, Vermont, USA",null,ap,False
-314,2018-05-21T15:00:00Z,A Town Called Asbestos,CB3LJdMYzrQ,"Val-Des-Sources, Quebec, Canada","[45.776623, -71.932297]",ap,False
-315,2018-05-14T15:00:12Z,How planes stay safe over the Atlantic,vBgulDeV2RU,"Nav Canada's Gander Area Control Centre, Gander, Newfoundland, Canada",null,tymnk,False
-319,2018-04-16T15:00:02Z,"G-force, jerk, and a giant centrifuge",DMKcO-T5Y4o,"Royal Air Force training centrifuge, Farnborough, England, United Kingdom",null,bfs,False
-320,2018-04-09T15:00:08Z,Making an international standard cup of tea,nAsrsMPftOI,no location found,null,tymnk,False
-321,2018-04-02T15:00:01Z,The US president has a bulletproof railcar,C2NNujJKJL4,"Gold Coast Railroad Museum, Miami, Florida, United States","[25.61717555, -80.40075092450773]",ap,False
-322,2018-03-26T15:00:02Z,There's a mermaid show in Florida,ZrP0Mqj9U_c,"Weeki Wachee Springs State Park, Weeki Wachee, Florida, United States","[28.517125200000002, -82.57483211637238]",ap,False
-323,2018-03-14T16:00:02Z,How formation flying works,RYGFczNMAMk,no location found,null,tymnk,False
-324,2018-03-12T16:00:02Z,European clocks ran slow for a bit. British clocks didn't.,bij-JjzCa7o,no location found,null,tymnk,False
-325,2018-03-05T16:00:05Z,The moiré effect lights that guide ships home,d99_h30swtM,no location found,null,tymnk,False
-327,2018-02-19T16:00:04Z,This city centre has no street names,DSG-zxGRkJw,"Quadratestadt, Mannheim, Germany",null,ap,False
-328,2018-02-12T16:00:04Z,Making artificial earthquakes with a huge steel ball,vxfJbW6KDp4,"Wiechert'sche Erdbebenwarte, Göttingen, Germany",null,bfs,False
-330,2018-01-29T16:00:03Z,Remote controlling an entire airport,Ii_Gz1WbBGA,"NATS headquarters, Swanwick, England, United Kingdom",null,ap,False
-331,2018-01-22T16:00:05Z,Canada's Most Successful King,gTF8KYoJkMM,no location found,null,tymnk,False
-332,2018-01-15T16:00:06Z,A Language Made Of Music,oyC4lLTOyL8,no location found,null,tymnk,False
-333,2018-01-08T16:00:08Z,Sign Language Isn't Universal,viRVFxvXSss,no location found,null,tymnk,False
-334,2018-01-01T16:00:02Z,17 Tonnes of Spinning Glass: Making the World's Largest Telescope,BP9HNVuGb-g,"Richard F. Caris Mirror Lab, University of Arizona, Tucson, Arizona, USA",null,bfs,False
-338,2017-12-18T16:00:01Z,The null hypothesis,KOJnOCdBr4s,no location found,null,tymnk,False
-340,2017-12-11T16:00:01Z,This is how zero-g flights actually work,FO_Ox_dH0M8,no location found,null,bfs,False
-342,2017-12-04T16:00:02Z,Batman's village of fools,YF6xzqOfCD8,"Gotham, near Nottingham, England",null,tymnk,False
-344,2017-11-27T16:00:04Z,Hold music used to sound better. Here's why.,w2A8q3XIhu0,"Milton Keynes Museum, Milton Keynes, England, United Kingdom","[52.0556483, -0.804865014128714]",tymnk,False
-346,2017-11-20T16:00:04Z,The German town that's literally cracking apart,zOgle88sKro,"Staufen, Germany","[47.5544558, 10.0361796]",ap,False
-347,2017-11-13T16:00:03Z,Is it dangerous to talk to a camera while driving?,_-aDHxoblr4,"National Advanced Driving Simulator, University of Iowa, Iowa City, Iowa, USA",null,bfs,False
-348,2017-11-06T16:00:00Z,The Lava Lamps That Help Keep The Internet Secure,1cUUfMeOijg,"Cloudflare headquarters, San Francisco, California, United States",null,ap,False
-349,2017-10-30T16:00:00Z,The Story of Salvation Mountain,4JAjIjXbe3Y,"Salvation Mountain, Slab City, California, USA","[33.2540516, -115.47262274202754]",ap,False
-350,2017-10-23T15:00:03Z,"What Is Sea Level, Anyway?",YQ6vWW9BEKU,"Calipatria, California, United States","[33.1255773, -115.5140272]",tymnk,False
-351,2017-10-16T15:00:02Z,Why California's musical road sounds terrible,Ef93WmlEho0,"musical road, Lancaster, California, United States","[34.73319297342482, -118.19640425011963]",ap,False
-352,2017-10-02T15:00:06Z,Reaction ferries are really clever,b6utGZQ9Sks,"river Rhine, Switzerland","[47.67845472125931, 8.615905192409537]",ap,False
-353,2017-09-25T15:00:04Z,The centuries-old debt that's still paying interest,cfSIC8jwbQs,"Beinecke Rare Book and Manuscript Library, Yale University, New Haven, Connecticut, USA",null,tymnk,False
-354,2017-09-18T15:00:01Z,"The ""rotary jail"" had a slight problem",-DGXHMOhXAw,"Rotary Jail Museum, Crawfordsville, Indiana, United States","[40.0438983, -86.9017975]",ap,False
-356,2017-09-04T15:00:03Z,A nuclear waste dump you can walk on,PB7HT3BZLzM,"Weldon Spring Site, Weldon Spring, Missouri, USA",null,ap,False
-357,2017-08-28T15:00:06Z,The US government will sell you freeze-dried urine,jvJzi0BXcGI,"National Institute of Standards and Technology, United States","[39.131611649999996, -77.21654057806873]",tymnk,False
-358,2017-08-23T15:00:02Z,Colorado has a giant freezer filled with polar ice,DTRb6G9c9wU,"US National Ice Core Laboratory, Denver, Colorado, United States",null,bfs,False
-359,2017-08-14T15:00:06Z,What counts as a mountain?,i8P5a1uqIMw,"Mount Evans, Clear Creek County, Colorado, USA","[39.5883492, -105.643699]",tymnk,False
-361,2017-07-24T15:00:03Z,Connectome Scanning: Looking at the Brain's Wiring,diPiSHxfGyE,"CUBRIC, Cardiff University, Cardiff, Wales",null,bfs,False
-362,2017-07-18T15:00:06Z,I can't show you how pink this pink is.,_NzVmtbPOrM,no location found,null,tymnk,False
-363,2017-07-10T15:00:03Z,Why old screens make a ʰᶦᵍʰ ᵖᶦᵗᶜʰᵉᵈ noise,RA5UiLYWdbM,"Cambridge Centre for Computing History, Cambridge, England, UK",null,tymnk,False
-367,2017-06-26T15:00:05Z,An elevator that actually goes sideways,kdTsbFS4xmI,no location found,null,ap,False
-369,2017-06-19T15:00:04Z,The Runways of Fire That Let WW2 Planes Land In Fog: FIDO,i8MFK0w0hlg,no location found,null,tymnk,False
-370,2017-06-12T15:00:03Z,The Museum of Failure,PfdBTsyrqaI,"Museum of Failure, Helsingborg, Sweden",null,ap,False
-374,2017-05-29T15:00:08Z,The poison garden of Alnwick,jGo9gYypQc8,"Alnwick Garden, Alnwick, England, United Kingdom","[55.41282735, -1.6998596603346456]",ap,False
-376,2017-05-22T15:00:05Z,The world's most powerful tidal current,nUB7IflBBrc,"Saltstraumen Maelstrom, Bodø, Norway",null,ap,False
-378,2017-05-08T15:00:06Z,How The Arecibo Telescope Could Help Save The World,d3WiRunOsWY,"Arecibo Observatory, Arecibo, Puerto Rico","[18.3499732, -66.75327317253873]",bfs,False
-379,2017-05-01T15:00:05Z,Why sci-fi alien planets all look the same,yy16KFzM4XU,"Vasquez Rocks, California, USA","[34.4855488, -118.3173013]",tymnk,False
-380,2017-04-24T15:00:08Z,How To Not Break A Mars Rover,wEjy8iaUPmo,"Mars Yard, NASA's Jet Propulsion Laboratory, Pasadena, California, USA",null,bfs,False
-381,2017-04-17T15:00:01Z,Voyager 1's Getting Closer to Earth Right Now,YLlzx6v8CcA,"NASA's Jet Propulsion Laboratory, Pasadena, California, USA",null,tymnk,False
-382,2017-04-10T15:00:02Z,We hit a drone with lightning,L3iJjrQmEho,"High Voltage Laboratory, University of Manchester, Manchester, England, United Kingdom",null,bfs,False
-383,2017-04-03T15:00:01Z,Why This “Zero Calorie Sweetener” Isn’t Zero Calories,EN6COaYLS_A,no location found,null,tymnk,False
-384,2017-03-27T15:00:03Z,Why Song Translations Usually Suck,KGne-ZUZCg0,no location found,null,tymnk,False
-385,2017-03-20T16:00:02Z,The Foil That Went To The Moon And Back,NF_2Io7g9fE,no location found,null,tymnk,False
-386,2017-03-13T16:00:05Z,The Disaster That Changed Engineering: The Hyatt Regency Collapse,VnvGwFegbC8,"Hyatt Regency Hotel, Kansas City, Missouri, USA",null,tymnk,False
-387,2017-03-06T16:00:02Z,You Can Hear The Difference Between Hot and Cold Water,Ri_4dDvcZeM,no location found,null,tymnk,False
-388,2017-02-27T16:00:07Z,"One Town, Four Elements: Ytterby",l6lGe5jgZgI,"Ytterby, Stockholm archipelago, Sweden",null,tymnk,False
-389,2017-02-20T16:00:06Z,The Beer Pipeline of Bruges,oGUcAg4W2hw,"Half Moon Brewery, Bruges, Belgium",null,ap,False
-390,2017-02-16T15:00:00Z,Inside YouTube's Mixed Reality VR Lab,8T7ux3DXP_w,"YouTube Space, New York, New York, USA",null,ap,False
-391,2017-02-13T16:01:59Z,The World Is Slowly Running Out Of Sand,kMLYLcniXIc,"Cape May, New Jersey, USA","[39.1765386, -74.8012119]",tymnk,False
-393,2017-01-30T16:00:00Z,The world's most frustrating work of art,4gE9qxX5VjE,"Elia, Herning, Denmark","[56.127200099999996, 9.027092028175472]",ap,False
-394,2017-01-23T16:00:01Z,ᚼᛒ: Harald Bluetooth and Your Phone,VdmQp9M9jUo,"The Jelling Stones, Jelling, Denmark",null,tymnk,False
-395,2017-01-16T16:00:00Z,Zero-G Experiments on Earth: The Bremen Drop Tower,4aCMDQsx740,"Drop Tower, Bremen, Germany",null,bfs,False
-396,2017-01-09T16:00:03Z,The Little-Known Patterns on British Streets,cdPymLgfXSY,no location found,null,tymnk,False
-397,2017-01-02T16:27:45Z,The Confusing Borders of Lake Constance,KwHj4lj3F-k,Lake Constance,"[47.6477691, 9.347179603746703]",ap,False
-398,2016-12-26T16:29:14Z,Fallout Shelters and Zurich's Water: Swiss Resilience,TGyHJ-xmcuc,no location found,null,tymnk,False
-399,2016-12-23T16:00:01Z,Why YouTube Streams Don't Count For Christmas № 1,nIkLMmh9KGc,no location found,null,tymnk,False
-400,2016-12-19T16:00:05Z,Science vs the Weather: Salford's Energy House,uf6fghQYCVk,"Energy House, University of Salford, Salford, United Kingdom",null,bfs,False
-401,2016-12-12T16:00:03Z,"In Old Movies, Why The Dial Tone After Someone Hangs Up?",bUIiUXvnkUQ,"Museum of Communications, Seattle, Washington, United States","[47.5407112, -122.32325]",tymnk,False
-402,2016-12-08T14:08:35Z,"Wheels, Bombs, and Perpetual Motion Machines",EiZU3BvqvP4,"The Royal Institution, London, England, United Kingdom","[51.509749549999995, -0.1423309433732225]",tymnk,False
-403,2016-12-05T16:00:01Z,"The City of the Dead: Colma, California",-so4bLE5kPc,"Colma, California, United States","[37.6766821, -122.459603]",tymnk,False
-404,2016-12-01T16:00:04Z,This giant model stopped a terrible plan,i70wkxmumAw,"Bay Model Visitor Center, Sausalito, California, USA","[37.86355945, -122.49485554566485]",ap,False
-405,2016-11-28T20:27:17Z,Arson as a Christmas Tradition: The Gävle Goat,-zjJpFYtx9s,"Gävle, Sweden","[60.6750132, 17.1467019]",ap,False
-406,2016-11-21T16:00:00Z,The World's Most Famous Teapot: The Utah Teapot,TIxt9guMbXo,"Computer History Museum, Mountain View, California, United States","[37.414292950000004, -122.07744876152356]",tymnk,False
-407,2016-11-17T16:00:04Z,3D Printing Stainless Steel with Giant Robot Arms,y9pknU0zv9c,"Autodesk's Pier 9, San Francisco, California, United States",null,tymnk,False
-408,2016-11-14T16:00:02Z,The Spider Dress That Reacts To Personal Space Invaders,MA9Du5l7qV0,"Autodesk Gallery, San Francisco, California, USA","[37.794149, -122.394787]",tymnk,False
-409,2016-11-07T16:00:01Z,The Grave of the Man Who Never Was: Operation Mincemeat,8lQtdhtw5eI,"cemetery, Huelva, Spain",null,tymnk,False
-410,2016-11-01T16:00:01Z,The Bizarre Plan to Drain the Mediterranean: Atlantropa,TEdsQmjLMKs,no location found,null,tymnk,False
-411,2016-10-27T15:00:30Z,The Solar Power Towers of Southern Spain,gGXjWqVeVJE,"PS10 and PS20, Aljarafe, Andalucía, Spain",null,tymnk,False
-414,2016-10-17T15:00:00Z,The world's most dangerous path... isn't.,8cICu9HtGhQ,"El Caminito del Rey, Malaga, Spain","[36.9070732, -4.7591329]",ap,False
-416,2016-10-10T15:00:03Z,Pod Cars of the Past and Future: The Morgantown PRT,iaSaWfw07Sw,"West Virginia University, Morgantown, West Virginia, USA","[39.63483975, -79.95420954063442]",ap,False
-418,2016-10-03T15:26:46Z,The Town Where Wi-Fi Is Banned: The Green Bank Telescope and the Quiet Zone,eQEGPATQe5s,"Green Bank Observatory, Green Bank, West Virginia, USA","[38.439595600000004, -79.83442327784643]",ap,False
-419,2016-09-29T15:00:03Z,"Cold Wars, Cruise Ships, and the Northwest Passage",PBZ728jH7j0,"Resolute, Canada","[74.697029, -94.840851]",tymnk,False
-420,2016-09-26T15:00:24Z,ᑖᒻ ᔅᑳᑦ and ᖃᓂᐅᔮᖅᐸᐃᑦ,xW4hI_METac,no location found,null,tymnk,False
-421,2016-09-22T15:00:00Z,Internet to the Arctic: A Greenlandic Relay Station,5G9BHrAgQz0,"Ilulissat, Greenland","[69.2197127, -51.0986385]",tymnk,False
-422,2016-09-19T15:00:05Z,No-One Knows Who Got To The North Pole First,QnM2tVZr7Fs,no location found,null,tymnk,False
-423,2016-09-15T15:00:03Z,The Front Falls Off: Glaciers Don't Go Backwards,PT7KPztnIXw,antarctica,"[-72.8438691, 0.0]",tymnk,False
-424,2016-09-12T15:00:03Z,Listening for Nuclear Tests at the Top of the World,vULUkp7Ttss,"IS18 Infrasound Station, Qaanaaq, Greenland",null,ap,False
-425,2016-09-05T15:00:04Z,Seeing Things: Visual Disturbances We All Experience,WKQT1MXfasM,no location found,null,tymnk,False
-426,2016-09-01T15:00:01Z,The Fake-British Ghost Town In China: Thames Town,KK3FQXObWEs,"Thames Town, Songjiang, Shanghai, China","[31.0359141, 121.19199890280508]",ap,False
-427,2016-08-29T15:00:04Z,Why Mountain Dew Rots Your Teeth More Than Coca-Cola,pt2fSq46Pcw,no location found,null,tymnk,False
-428,2016-08-22T15:00:02Z,The Battery That's Lasted 176 Years,UtQGYz4f3YQ,"Clarendon Laboratory, Oxford, England, United Kingdom","[51.759723699999995, -1.256487872059829]",tymnk,False
-429,2016-08-18T14:59:40Z,The Problem With Renewable Energy (and how we're fixing it),5uz6xOFWi4A,no location found,null,tymnk,False
-431,2016-08-01T15:00:01Z,The Mushroom Cloud Over Britain: RAF Fauld and the Hanbury Crater,Vcx7_1yphJI,"RAF Fauld, Hanbury, Staffordshire, England","[52.8476487, -1.7301222327157917]",tymnk,False
-432,2016-07-25T14:59:47Z,The Fake Vinegar In British Fish and Chip Shops,642x2Y3Zla0,no location found,null,tymnk,False
-435,2016-07-11T15:00:01Z,The Scientifically Inaccurate Dinosaurs That Must Stay That Way,QWItLyDzMyE,"Crystal Palace Park, South London, England, United Kingdom",null,ap,False
-437,2016-07-06T17:08:16Z,"The Bus Replacement Rail Service (yes, that's the right way round)",3WHmETKW72E,"Leadhills and Wanlockhead Railway, Leadhills, Scotland, United Kingdom","[55.407170032717985, -3.7643881437975897]",ap,False
-438,2016-07-04T15:00:01Z,"The Man Who Invented, Then Hated, Shopping Malls",4F7WCutpsJw,no location found,null,tymnk,False
-440,2016-06-27T15:03:10Z,Nobody's Exactly Sure How Much A Kilogram Is Right Now,JKCBeDeVxkg,"National Physical Laboratory, Teddington, England, United Kingdom","[51.423657649999996, -0.3425114092006172]",tymnk,False
-442,2016-06-20T14:59:59Z,The Flower That Smells Like Death,2NGc3-df8sA,"Eden Project, Cornwall, England","[50.36128505, -4.744397255000431]",tymnk,False
-444,2016-06-13T15:00:04Z,Why You Can't Advertise Cancer Cures In Britain,ic_FpRG7Z_k,no location found,null,tymnk,False
-448,2016-05-16T15:00:00Z,"The Strangest Elevator In Italy: the Ascensore Castello d'Albertis-Montegalletto, Genoa",A739p5HkRZ8,"Ascensore Castello d'Albertis-Montegalletto, Genoa, Italy",null,ap,False
-449,2016-05-09T15:00:01Z,"The Most Dangerous Stretch of Water in the World: The Strid at Bolton Abbey, Yorkshire",mCSUmwP02T8,"The Strid at Bolton Abbey, Yorkshire, England, United Kingdom",null,ap,False
-450,2016-05-02T15:00:01Z,The Not-Quite-Robots That Help Fix Fusion Reactors,Lsiq_3-cSHs,"Culham Centre for Fusion Energy, Oxfordshire, England, United Kingdom","[51.6576683, -1.2262126]",ap,False
-451,2016-04-25T14:59:18Z,"Help, My Fusion Reactor's Making A Weird Noise",IrtGp8hv-0Y,"Culham Centre for Fusion Energy, Culham, Oxfordshire, England","[51.6576683, -1.2262126]",tymnk,False
-452,2016-04-14T14:52:16Z,"In Norway, Everyone Can Know How Much You Earn",1bO8zEaSuWg,no location found,null,tymnk,False
-460,2016-03-07T16:00:02Z,Driving Through Russia Without A Visa: The Saatse Boot,iGjPn8V4O9E,"Saatse Boot, Estonia",null,ap,False
-462,2016-02-29T16:16:20Z,Unexploded Bombs off the British Coast: the SS Richard Montgomery,R9u41aeItss,"Thames Estuary, Sheerness, England, UK",null,tymnk,False
-464,2016-02-22T16:10:22Z,Inside A Satellite Clean Room,m5dXWJi4pIA,"Innovative Space Logistics, Netherlands",null,ap,False
-465,2016-02-15T16:00:00Z,"Power, Politics and Pragmatism: The British National Grid",Mm5khEUIBx0,"London Power Tunnels, London, England, United Kingdom",null,tymnk,False
-468,2016-02-08T16:00:02Z,What Counts as the World's Largest Clock?,odX81LsE5RY,no location found,null,tymnk,False
-471,2016-02-03T16:00:21Z,The Second Largest Freezer in Norway,xo6IubbQuCk,"Lillehammer Bobsleigh Track, Lillehammer, Norway",null,ap,False
-472,2016-02-01T16:28:36Z,How To Make Snow,IQ3kQPWlU-o,"Lillehammer, Norway","[61.1333408, 10.426585544131413]",tymnk,False
-475,2016-01-25T16:00:00Z,Why Wuppertal's Suspended Monorail Wasn't The Future Of Travel,F4KZLcvMQWg,"Schwebebahn, Wuppertal, Germany","[51.230051053636146, 7.066343169336576]",ap,False
-477,2016-01-18T16:00:00Z,Calling The Police Doesn't Charge Your Phone Battery,8-evKtoPN-8,"Blackberry headquarters, Slough, England",null,tymnk,False
-479,2016-01-11T16:02:33Z,Crosswalks Don't Always Make You Safer,Ki8BLLnWyJY,no location found,null,tymnk,False
-480,2016-01-04T16:00:01Z,Why Britain Sucks At Product Placement,4SyetdjWMuw,no location found,null,tymnk,False
-483,2015-12-14T16:00:01Z,Automated Weapons and the Battlefield of 2050,rTwg3oWnUgc,"london, england, united kingdom","[51.4893335, -0.14405508452768728]",tymnk,False
-485,2015-12-01T17:01:26Z,"Drones, Deserts and Danger",LrT4urHj61g,"desert, california, united states","[34.4570947, -119.7098811]",tymnk,False
-486,2015-11-27T15:53:46Z,700 Flavours of Soda Pop: Galco's in Los Angeles,bUknYGEbLsg,"Galco's Soda Pop Stop, Highland Park, Los Angeles, California, USA","[34.11857995, -118.19350726182853]",ap,False
-487,2015-11-23T20:35:17Z,How The Rosetta Stone Unlocked Hieroglyphics,yeQ-6eyMQ_o,"British Museum, London, England, United Kingdom","[51.51929365, -0.12801772178494725]",tymnk,False
-488,2015-11-09T16:00:00Z,The Collapsed Dam That Stopped Los Angeles,5erVH-zk7Uk,"St. Francis Dam, Los Angeles, California, United States","[34.5470257, -118.5126734]",tymnk,False
-489,2015-11-02T17:54:08Z,Why I Can't Show You The H******** S***,KUdQ7gxU6Rg,"Griffith Park, Los Angeles, California, USA","[34.13442665, -118.30509152636958]",tymnk,False
-491,2015-10-19T15:00:00Z,The Bielefeld Conspiracy,XvHcZciihJw,"Bielefeld, Germany","[52.0191005, 8.531007]",tymnk,False
-492,2015-10-12T15:00:00Z,The Strange St Pauli Elbtunnel,QXuTz-5N1Aw,"Old Elbe Tunnel, Hamburg, Germany",null,ap,False
-493,2015-10-08T15:00:00Z,Britain's End-of-the-World Bunkers,BTPToO-gfTE,"Kelvedon Hatch, Essex, England, United Kingdom","[51.6660298, 0.2744584]",tymnk,False
-495,2015-09-28T15:00:03Z,Archimedes and a Boat Lift: the Falkirk Wheel,qHO9gARac-w,"The Falkirk Wheel, Falkirk, Scotland, United Kingdom","[56.0018745, -3.8417096]",ap,False
-499,2015-09-14T15:00:01Z,The Man Who Had Himself Taxidermied: Jeremy Bentham,mh1UXi0csqc,"University College London, London, England, United Kingdom","[51.52420305, -0.13300072425929543]",tymnk,False
-501,2015-08-31T15:00:00Z,The secret underground pipeline across Britain,H-I6drGa2pk,"Gloucestershire, England, United Kingdom","[51.7643786, -2.1880661838719386]",tymnk,False
-503,2015-08-24T14:44:41Z,"G-Forces, Gliders, and Graveyard Spirals",kjQLT5CKEAU,"Bicester Gliding Club, Bicester, England, United Kingdom",null,tymnk,False
-505,2015-08-17T15:08:29Z,The Abandoned Village of Imber: How Far Can Emergency Powers Go?,1poq11wp1zU,"Imber, Salisbury Plain, Wiltshire, England",null,tymnk,False
-506,2015-08-10T15:00:01Z,"Hovercraft, Concorde, and the Dreams of the 1970s",eYH1lPm41-0,"Isle of Wight, United Kingdom","[50.6710482, -1.3327111133199459]",tymnk,False
-508,2015-08-03T15:00:00Z,The Weirdest Bridge in Wales: The Newport Transporter Bridge,KxzOQwktMCc,"Newport Transporter Bridge, Newport, Wales, United Kingdom","[51.5705462, -2.9854854]",tymnk,False
-509,2015-07-31T15:00:02Z,The Russian Woodpecker of Chernobyl: How To See Over The Horizon,xbi6eoh63ZQ,"Duga-3, Chernobyl Exclusion Zone, Ukraine",null,ap,False
-511,2015-07-29T15:00:00Z,How to Visit Chernobyl,BhYEkRjUWM8,"Chernobyl, Ukraine","[51.2705477, 30.2195609]",ap,False
-512,2015-07-28T15:00:02Z,Radioactive Bananas in Chernobyl,uV4Kz2ednjs,"Pripyat, Ukraine","[51.85599233219693, 25.432683490321825]",ap,False
-513,2015-07-27T15:00:03Z,Containing the Worst Nuclear Disaster in History: Chernobyl's New Confinement Structure,vK8ykPmtRyg,"Chernobyl Nuclear Power Plant, Pripyat, Ukraine",null,ap,False
-515,2015-07-20T15:00:00Z,The world's largest indoor waterpark,0Sz55gmNUaI,"Tropical Islands Resort, Krausnick, Brandenburg, Germany",null,ap,False
-517,2015-07-13T16:07:20Z,The Giant Cranes and Robots That Keep Civilisation Running,zCfPlxTayqY,"DP World London Gateway, Stanford-le-Hope, Essex, England","[51.5100313, 0.4596153684553054]",tymnk,False
-520,2015-07-03T15:00:03Z,The Islands Where Guns are Required,ch7HwhGynXk,"Svalbard, Norway","[78.7198519, 20.3493328]",ap,False
-521,2015-07-02T15:00:01Z,How To Visit Svalbard,eFJ-ze2-SqU,"Svalbard, Norway","[78.7198519, 20.3493328]",ap,False
-522,2015-07-01T15:00:02Z,The Sundial That Works 24 Hours A Day,oZ2Qms2fMH8,"Svalbard, Norway","[78.7198519, 20.3493328]",ap,False
-524,2015-06-29T15:00:01Z,What's The Doomsday Seed Vault Really For?,pwGcrSuAIuc,"Svalbard Global Seed Vault, Svalbard, Norway","[78.23498945, 15.491110716522169]",ap,False
-525,2015-06-22T15:00:01Z,The Sightlines of London,AGXbiSwcqtM,"The Building Centre, London, England, United Kingdom","[51.51951325, -0.13158134526440263]",tymnk,False
-527,2015-06-15T15:00:01Z,The Toxic Blue Lagoon of Buxton,wVBZLoNffPw,"Harpur Hill, Buxton, Derbyshire, England","[53.245987234754544, -1.9073515708552369]",tymnk,False
-529,2015-06-08T15:00:00Z,"Paternoster Lifts: Dangerous, Obsolete and Quite Fun (including over the top!)",YgJBD1wf-YQ,"University of Sheffield's Arts Tower, Sheffield, England, United Kingdom",null,tymnk,False
-531,2015-06-01T15:00:01Z,The Most Complex Borders in Europe: Why Do We Have Nations?,oE93J33SfHY,"Baarle-Nassau, Baarle-Hertog, Netherlands, Belgium",null,tymnk,False
-534,2015-05-25T15:00:00Z,The Fictional Bridges That Became Real,S9E1wsxOSzM,"Spijkenisse, Netherlands","[51.8464881, 4.3287681]",tymnk,False
-537,2015-05-18T15:00:07Z,How The Netherlands Stopped The Wind,jkdwK_74eEs,"Rozenburg Wind Wall, Caland Canal, Netherlands",null,tymnk,False
-538,2015-05-05T15:00:00Z,"Risk, Immortality, and the Terrifying Pulpit Rock",B5a6wrJpxP4,"Preikestolen, near Stavanger, Norway",null,tymnk,False
-539,2015-04-27T15:39:07Z,"Ships, Mines and Magnetism",LG-X23aVud0,no location found,null,tymnk,False
-541,2015-03-30T14:51:42Z,7 Illegal Things To Do In A British Election,egeMAIXYIvI,no location found,null,tymnk,False
-542,2015-03-23T16:00:00Z,"The 400,000,000-Year Link Between Scotland and Canada",GAKwRou6HUw,no location found,null,tymnk,False
-543,2015-03-16T16:00:05Z,How To Make Something One Atom Thick,t60EfnqZKrQ,"University of Bristol, Bristol, England, United Kingdom","[51.50076785, -2.5503106339491204]",tymnk,False
-545,2015-03-02T16:00:03Z,Turnpikes and Tolls: What if all major roads were private?,QixlLU15CIc,no location found,null,tymnk,False
-546,2015-02-23T16:00:01Z,How to Program a Quantum Computer (sort of),c5Az7Rez3Rk,"Centre for Quantum Photonics, Bristol University, Bristol, England, United Kingdom",null,tymnk,False
-547,2015-02-16T16:00:01Z,The Driverless Cars of Greenwich,pj9-vL5JFqo,"Greenwich Peninsula, London, England, United Kingdom","[51.4979844, 0.0039054]",tymnk,False
-549,2015-02-04T15:11:31Z,How Green Screen Worked Before Computers,msPCQgRPPjI,no location found,null,tymnk,False
-550,2015-01-26T16:00:18Z,How Many Colours Are In A Rainbow?,09mpgUzVc5g,"trafalgar square, london, england, united kingdom","[51.508037, -0.12804941070724718]",tymnk,False
-552,2015-01-19T17:55:30Z,The British Rail Flying Saucer,0-ZeCXYr_Uw,no location found,null,tymnk,False
-554,2015-01-12T16:00:09Z,The Magic Roundabout: Swindon's Terrifying Traffic Circle and Emergent Behaviour,D22BOOGbpFM,"Magic Roundabout, Swindon, England, United Kingdom","[51.56281595, -1.770907711644678]",tymnk,False
-557,2015-01-05T16:00:03Z,Why The Prime Meridian Isn't At 0º,DmvHZ4omB2A,"Royal Observatory, Greenwich, London, England, United Kingdom","[51.47736225, -0.000845593094199643]",tymnk,False
-559,2014-12-29T16:00:09Z,Why Doesn't Britain Have Rabies?,IHv3wSYi9PA,no location found,null,tymnk,False
-560,2014-12-26T20:49:06Z,"Can It Be ""Too Cold To Snow""?",p7I4xpSz6-Y,no location found,null,tymnk,False
-561,2014-12-22T15:19:42Z,"Ley Lines and Avebury Henge, the Better Version of Stonehenge",LGwgT5jho6I,"Avebury Henge, Wiltshire, England, United Kingdom","[51.42860985, -1.8517052547062374]",tymnk,False
-563,2014-12-15T14:32:42Z,"The Hottest Place in Britain, and the BBC Theme Park",ML5TaNlwgeg,"Gravesend Weather Station, Swanscombe Peninsula, Kent, England",null,tymnk,False
-566,2014-12-08T19:00:04Z,The Concrete Pillars On Top Of British Hills: Trig Points,VxBlyZAl5MQ,no location found,null,tymnk,False
-568,2014-11-24T18:44:26Z,"Why ""Four Score and Seven Years Ago""?",OSlGJ9FNHOk,"Gettysburg, Pennsylvania, United States","[39.8308973, -77.231012]",tymnk,False
-569,2014-11-17T18:15:26Z,The Floating Lighthouse in New York: The Lightship Ambrose,NOsFLzpfRpU,"South Street Seaport Museum, New York, New York, USA","[40.706628, -74.003676]",tymnk,False
-570,2014-11-10T17:50:27Z,The Liquid Nitrogen Tanks of New York,juZqGU9iuq0,"Rockefeller Center, New York, New York, USA","[40.75925755, -73.97995686116377]",tymnk,False
-571,2014-11-06T15:07:01Z,The Diner Where You Microwaved Your Own Food,yWjpR365-h4,"Tad's 30 Varieties of Meals, Manhattan, New York, USA",null,tymnk,False
-572,2014-11-03T14:11:24Z,"There's a Bit of England in New York, Literally",ey6JPPGgZl8,"Waterside Plaza, New York, New York, United States","[40.737580550000004, -73.97324218457551]",tymnk,False
-573,2014-10-20T14:00:14Z,What Did Witches Actually Use?,RILkh2S1lvo,"Warner Brothers Studio Tour, no location found",null,tymnk,False
-574,2014-10-13T14:00:11Z,"The Man Who Set Up His Own Toll Road, Without Permission",E-m6vc7lsmE,"Kelston Toll Road, Bath, England",null,tymnk,False
-575,2014-10-06T13:19:29Z,Why Britain Uses Separate Hot and Cold Taps,HfHgUu_8KgA,no location found,null,tymnk,False
-577,2014-09-22T13:28:41Z,How To (Appear To) Snap Someone's Neck (On Stage),wBlAQLvVGJA,no location found,null,tymnk,False
-578,2014-09-15T19:17:53Z,"Scotland is Rising and England is Sinking, Literally",lbXL57-mB-I,"Thames Barrier, London, England, United Kingdom","[51.4968875, 0.0372873]",tymnk,False
-580,2014-08-31T12:05:22Z,Ultrasonically Vaporized Vodka!,x5KH4bUt8X8,"Nottingham Hackspace, Nottingham, England, United Kingdom","[52.9558027, -1.1351002]",tymnk,False
-582,2014-08-24T13:00:06Z,The Ice Bucket Challenge Lowers Your Heart Rate,b_vMclfCoFA,no location found,null,tymnk,False
-583,2014-08-18T21:00:05Z,How To Read Text In Binary,wCQSIub_g7M,no location found,null,tymnk,False
-585,2014-08-04T21:33:46Z,YouTube Doesn't Know Your Password,yoMOAIzBSpY,no location found,null,tymnk,False
-586,2014-07-28T14:00:12Z,Gravity Doesn't Always Point Straight To The Earth's Core,qVVAirwMLns,"JNL Chatham's toboggan run, Chatham, Massachusetts, United States",null,tymnk,False
-587,2014-07-21T13:00:07Z,Giant Underground Trampolines!,hqF1dr5dNgE,no location found,null,tymnk,False
-588,2014-07-16T19:04:09Z,What's The Longest Word In The English Language?,NQrxzgd6ASA,"Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch, Wales, United Kingdom","[53.2218931, -4.2064976]",tymnk,False
-589,2014-07-14T13:00:05Z,Some Places Have Lower Gravity Than Others,cLVWRHuPsas,"Zip World Titan, Blaenau Ffestiniog, Wales, UK",null,tymnk,False
-590,2014-07-07T13:00:07Z,"British Plugs Are Better Than All Other Plugs, And Here's Why",UEfP1OKKz_Q,no location found,null,tymnk,False
-592,2014-06-23T20:19:55Z,Why Do Flag Emoji Count As Two Characters?,sTzp76JXsoY,no location found,null,tymnk,False
-593,2014-06-20T17:10:39Z,The Equation of Time: Clocks Vs Sundials,d9Qnobvx_kM,no location found,null,tymnk,False
-594,2014-06-16T13:00:06Z,"How Do You Make Something Last 1,000 Years?",uhtUYzubRHU,"Trinity Buoy Wharf lighthouse, London, England, United Kingdom",null,tymnk,False
-596,2014-06-09T13:00:07Z,Fail-Safe vs. Fail-Deadly (with Colin Furze),TUKQfMFKfjk,no location found,null,tymnk,False
-597,2014-06-02T13:00:05Z,The Nuclear Reactor In The Middle Of London,_BMlu2wgBJs,"Old Royal Naval College, Greenwich, London, England","[51.48178436564143, -0.006631934180132956]",tymnk,False
-598,2014-05-26T15:06:47Z,The Most Ridiculous Game Of Football In History,W1WGBhTuLpQ,no location found,null,tymnk,False
-599,2014-05-22T14:25:37Z,Angels Are Actually Pretty Terrifying,BNVT7LP0Ouw,no location found,null,tymnk,False
-601,2014-05-12T15:24:07Z,How YouTube Video Stabilization Works,BgAdeuxkUyY,no location found,null,tymnk,False
-605,2014-04-28T13:17:10Z,The Early Steam Train With No Brakes: Stephenson's Rocket,3woUopc1ZS4,"National Railway Museum, York, England, United Kingdom","[53.96049575, -1.0961101776972626]",tymnk,False
-607,2014-04-21T13:00:05Z,"The Three Types of Twilight, and The Days Without Night",FX1slLeJRPg,no location found,null,tymnk,False
-610,2014-04-14T13:00:07Z,The Rise and Fall of the Gasometer,SopJr0yHt-w,no location found,null,tymnk,False
-613,2014-04-07T13:00:48Z,The Level Crossing You Have To Power Yourself,mRQt_PMhBXY,"countryside near Canterbury, England, United Kingdom",null,tymnk,False
-615,2014-03-31T13:40:20Z,"Is ""Paris Syndrome"" A Real Thing?",ByUPFYxy5vw,no location found,null,tymnk,False
-618,2014-03-24T14:16:09Z,Privacy In France: A Lot Of French People Might Be About To Sue Me,VYH87V6EHrk,no location found,null,tymnk,False
-619,2014-03-21T14:00:05Z,Point Zero: Where All Roads Start,GMwnyWP52Ys,"Notre Dame Cathedral, Paris, France","[48.85293705, 2.3500501225000026]",tymnk,False
-621,2014-03-17T14:00:05Z,The 19th Century Channel Tunnel Wasn't Just A Dream,lj-DS8SMxSw,no location found,null,tymnk,False
-622,2014-02-25T14:00:05Z,"British Tanks Are Better Than All Other Tanks, And Here's Why",vWmDHO_0P5Q,"Mandela Way and Pages Walk, Bermondsey, London, England, United Kingdom",null,tymnk,False
-623,2014-02-24T14:00:05Z,The London Railway of the Dead,XwpJ01nguoo,no location found,null,tymnk,False
-624,2014-02-23T13:20:54Z,Britain Has 555 Phone Numbers Too,_LPw1hlMCaA,no location found,null,tymnk,False
-625,2014-02-22T14:00:03Z,"Never Call Someone ""Tired and Emotional"" In England",z49LjJj3VTI,no location found,null,tymnk,False
-626,2014-02-21T14:00:06Z,Origami In Space,PHrWzF2VuAg,no location found,null,tymnk,False
-627,2014-02-20T14:00:05Z,Why Do We Not Have A Cure For The Common Cold Yet?,z_1mi9w-NwE,no location found,null,tymnk,False
-628,2014-02-19T14:00:04Z,How Does A Geyser Work?,rQB5OWyGVWU,"Geysir and Strokkur, Iceland",null,tymnk,False
-630,2014-02-17T14:00:10Z,Let's Talk About Names. In Iceland.,zvIoKEpD-hI,iceland,"[64.9841821, -18.1059013]",tymnk,False
-631,2014-02-15T14:00:04Z,Moss Is Terrible For Emergency Navigation,KzQw00SSOQQ,no location found,null,tymnk,False
-632,2014-02-14T14:00:07Z,The Mississippi River Wants To Move,yg67YXYedwo,no location found,null,tymnk,False
-633,2014-02-13T14:00:06Z,Why Was AllAdvantage.com Popular In Beverly Hills?,RuzoIG9py_c,"Beverly Hills, California, USA","[34.0696501, -118.3963062]",tymnk,False
-634,2014-02-05T14:00:06Z,Disney Could Go Nuclear If They Wanted To,OlJlBIMQy7k,"Walt Disney World, Bay Lake, Florida, USA","[28.364528550000003, -81.56182378884647]",tymnk,False
-635,2014-02-04T14:00:07Z,The SPF Rating On Sunscreen Is Questionable At Best,z45obkskRmw,"florida, united states","[27.7567667, -81.4639835]",tymnk,False
-636,2014-02-02T14:00:04Z,How To Tell If You're Dreaming,XUece-2WmuM,no location found,null,tymnk,False
-637,2014-02-01T14:00:06Z,The Datablast: Experimental Interactive TV From The 1990s,VBs_ABt-hRc,no location found,null,tymnk,False
-638,2014-01-31T14:00:06Z,How To Fall Into A Swimming Pool,IsmjW7-IaSo,no location found,null,tymnk,False
-639,2014-01-30T14:00:05Z,Your GPS Shuts Down If It Goes Too Fast,zPtbzJlcNKc,"Kennedy Space Centre, Florida, USA",null,tymnk,False
-640,2014-01-29T17:53:57Z,The Hard Part About Getting To Orbit Isn't The Height,89VAPZz1Nf0,"Launch Complex 39, Kennedy Space Centre, Florida, United States",null,tymnk,False
-641,2014-01-28T14:00:06Z,How To Throw A Bucket Of Water At Someone,1W3AylLOHx4,no location found,null,tymnk,False
-642,2014-01-27T14:00:06Z,The Image That Can Break Your Brain,Wm8ZoVQ_OJo,"Walt Disney World, Florida, USA","[28.364528550000003, -81.56182378884647]",tymnk,False
-643,2014-01-26T14:00:04Z,British Ice Cream Doesn't Have To Contain Milk,mwDkg3pPfjE,no location found,null,tymnk,False
-644,2014-01-25T14:00:04Z,Einstein Wasn't The First Scientist To Talk About Relativity,w3CO2SyXDZc,no location found,null,tymnk,False
-645,2014-01-24T14:00:06Z,Why Do Reversing Trucks Not Beep Any More?,fa28lIGuxq8,no location found,null,tymnk,False
-646,2014-01-23T14:00:04Z,Why Is London's Cable Car So Damn High?,lyHbCAY3hqM,"London, England, UK","[51.4893335, -0.14405508452768728]",tymnk,False
-647,2014-01-21T14:00:05Z,British Nuclear War from Beyond the Grave: The Letter of Last Resort,Ko51cynAjzY,no location found,null,tymnk,False
-648,2014-01-20T14:00:07Z,Why Wind Farms Don't Always Turn When It's Windy,XS36ijvZOME,no location found,null,tymnk,False
-650,2014-01-18T14:00:04Z,How To (Appear To) Slap Someone Across The Face (On Stage),B29jqZWMLkM,no location found,null,tymnk,False
-651,2014-01-17T14:06:26Z,How To (Appear To) Strangle Someone (On Stage),FGxKQvdLrng,"an alley behind a pub, no location found",null,tymnk,False
-653,2014-01-15T14:00:06Z,Platform 9¾ Is In The Wrong Place,SmOsTHaqFSU,"King's Cross Station, London, England, United Kingdom","[51.5304907, -0.1216553]",tymnk,False
-654,2014-01-14T14:00:06Z,"A Zeppelin, A Cat, and The World's First In-Flight Radio Message",DNUhKkNY6x0,no location found,null,tymnk,False
-655,2014-01-13T14:00:05Z,You Can Gold Plate Your Tongue For About $2,B98O6LlLT4Y,no location found,null,tymnk,False
-656,2014-01-12T14:00:03Z,The Secret Button on Pedestrian Crossings,fRPWlBAgSnw,no location found,null,tymnk,False
-657,2014-01-11T13:38:02Z,The Thames Still Has Some 19th Century Stink In It,AVHHs3YUm00,"River Thames, London, England, United Kingdom","[51.5113794, -0.1173806]",tymnk,False
-660,2014-01-07T14:00:05Z,Why Does Nighttime Smartphone Footage Look All Flickery in Europe?,uzP8FFKpwQ0,Europe,"[51.0, 10.0]",tymnk,False
-661,2014-01-06T14:00:05Z,The Underground Roundabouts of Tromsø,jJWgRghIihQ,"Tromsø, Norway","[69.6516345, 18.9558585]",tymnk,False
-662,2014-01-05T14:00:05Z,The 134-Hour Television Show from the Arctic Circle,oqbsxjmB49Q,"Arctic Circle, Norway","[66.42154135, 14.437673517411127]",tymnk,False
-663,2014-01-04T14:23:03Z,The Secret Pattern That Stops You Copying Bank Notes,tMR25RSOzFo,no location found,null,tymnk,False
-664,2014-01-03T14:10:58Z,How To Make An Orange Peel Flamethrower,nYxFrMNWbtI,no location found,null,tymnk,False
-665,2014-01-02T13:26:58Z,Why Aren't There More Helicopter Crashes In London?,SQ3g5gPKlDM,"london, england, united kingdom","[51.4893335, -0.14405508452768728]",tymnk,False
-666,2014-01-01T13:50:13Z,There Are Special Crossings For Horses In Britain,X5V45wYwrkY,britain,"[54.3151594, -1.9181532111487878]",tymnk,False
+0,2025-03-26T14:30:28Z,Ep 3 - We Raced To Visit The Most European Countries In 6 Days,dsDy5VAw-xo,no location found,null,s13,False
+1,2025-03-19T14:30:31Z,Ep 2 - We Raced To Visit The Most European Countries In 6 Days,lSwkoIQLFLo,no location found,null,s13,False
+2,2025-03-12T14:30:10Z,We Raced To Visit The Most European Countries In 6 Days,EJFAw1VRcsA,no location found,null,s13,False
+4,2025-01-22T15:30:09Z,We Played Hide And Seek Across Japan - Finale,5UAM-ZKBcZs,no location found,null,s12,False
+5,2025-01-15T15:30:22Z,We Played Hide And Seek Across Japan - Ep 6,uGI0tkmyogU,no location found,null,s12,False
+6,2025-01-08T15:30:00Z,We Played Hide And Seek Across Japan - Ep 5,16AbSxpRFJo,no location found,null,s12,False
+7,2025-01-01T16:19:43Z,We Played Hide And Seek Across Japan - Ep 4,TUkra-5kybs,no location found,null,s12,False
+8,2024-12-24T15:30:03Z,We Played Hide And Seek Across Japan - Ep 3,8Xdl5psYVgQ,no location found,null,s12,False
+9,2024-12-18T15:35:14Z,We Played Hide And Seek Across Japan - Ep 2,eRWobpethq4,no location found,null,s12,False
+10,2024-12-11T15:30:12Z,We Played Hide And Seek Across Japan,PHjkSKQSzv4,no location found,null,s12,False
+12,2024-10-02T15:32:50Z,Finale - We Played a 72 Hour Game of Tag Across Europe (2024),CpIHZSRBrgA,no location found,null,s11,False
+13,2024-09-25T14:30:18Z,Ep 5 - We Played a 72 Hour Game of Tag Across Europe (2024),Fd-SP-yoDbU,no location found,null,s11,False
+14,2024-09-18T14:30:22Z,Ep 4 - We Played a 72 Hour Game of Tag Across Europe (2024),VsuuYPwgbg0,no location found,null,s11,False
+15,2024-09-11T14:30:14Z,Ep 3 - We Played a 72 Hour Game of Tag Across Europe (2024),GYVUFfQ3OTk,no location found,null,s11,False
+16,2024-09-04T14:30:12Z,Ep 2 - We Played a 72 Hour Game of Tag Across Europe (2024),QcQqT4yMvro,no location found,null,s11,False
+17,2024-08-28T14:29:00Z,We Played a 72 Hour Game of Tag Across Europe (2024),hsoiHKaqG2s,no location found,null,s11,False
+19,2024-06-26T14:30:13Z,AU$TRALIA: A Travel Game - Finale,Lf62N-s42_o,no location found,null,s10,False
+20,2024-06-19T14:30:19Z,AU$TRALIA: A Travel Game - Ep 5,v4KHDMvFQgg,no location found,null,s10,False
+21,2024-06-12T14:30:04Z,AU$TRALIA: A Travel Game - Ep 4,BPOglXCH0F8,no location found,null,s10,False
+22,2024-06-05T14:30:12Z,AU$TRALIA: A Travel Game - Ep 3,JPj_Kf5jC_0,no location found,null,s10,False
+23,2024-05-29T14:33:15Z,AU$TRALIA: A Travel Game - Ep 2,abwiCon6IjU,australia,"[-24.7761086, 134.755]",s10,False
+24,2024-05-22T14:30:19Z,AU$TRALIA: A Travel Game,rNxi1-UgV2I,no location found,null,s10,False
+26,2024-04-03T14:30:19Z,We Played Hide And Seek Across Switzerland - Finale,X13gVRwnKDA,switzerland,"[46.7985624, 8.2319736]",s9,False
+27,2024-03-27T14:30:01Z,We Played Hide And Seek Across Switzerland - Ep 4,62NKEFWavKA,switzerland,"[46.7985624, 8.2319736]",s9,False
+28,2024-03-20T15:31:36Z,We Played Hide And Seek Across Switzerland - Ep 3,h5kDnrKG6OA,switzerland,"[46.7985624, 8.2319736]",s9,False
+29,2024-03-13T14:30:07Z,We Played Hide And Seek Across Switzerland - Ep 2,CkRXCvWptn4,no location found,null,s9,False
+30,2024-03-06T15:30:06Z,We Played Hide And Seek Across Switzerland,E8UmTJVDnUI,switzerland,"[46.7985624, 8.2319736]",s9,False
+32,2024-01-24T15:30:07Z,Finale - We Raced From USA's Northernmost to Southernmost Town,SqWs-riq6Dc,no location found,null,s8,False
+33,2024-01-17T15:30:10Z,Ep 5 - We Raced From USA's Northernmost to Southernmost Town,UtxqlV0r_iU,no location found,null,s8,False
+34,2024-01-10T15:30:51Z,Ep 4 - We Raced From USA's Northernmost to Southernmost Town,Bvd1ozFzYu4,no location found,null,s8,False
+35,2024-01-03T15:30:02Z,Ep 3 - We Raced From USA's Northernmost to Southernmost Town,9iCx-7xW5T8,no location found,null,s8,False
+36,2023-12-27T15:30:05Z,Ep 2 - We Raced From USA's Northernmost to Southernmost Town,NFPQW7gQ6Ho,no location found,null,s8,False
+37,2023-12-20T15:30:04Z,We Raced From USA's Northernmost to Southernmost Town,Qfb9eVgksms,no location found,null,s8,False
+39,2023-10-18T14:30:30Z,Finale — We Played a 72 Hour Game of Tag Across Europe (Again),vXthU0h0pOQ,no location found,null,s7,False
+40,2023-10-11T14:30:00Z,Ep 5 — We Played a 72 Hour Game of Tag Across Europe (Again),-EZ2KXl1Xcw,no location found,null,s7,False
+41,2023-10-04T14:36:29Z,Ep 4 — We Played a 72 Hour Game of Tag Across Europe (Again),fAq_654T_GM,no location found,null,s7,False
+42,2023-09-27T14:32:41Z,Ep 3 — We Played a 72 Hour Game of Tag Across Europe (Again),jrTIrJmph2A,no location found,null,s7,False
+43,2023-09-20T14:30:08Z,Ep 2 — We Played a 72 Hour Game of Tag Across Europe (Again),PL1FHzZP_nM,no location found,null,s7,False
+44,2023-09-13T14:30:07Z,We Played a 72 Hour Game of Tag Across Europe (Again),IV1dbqcg9bI,no location found,null,s7,False
+45,2023-07-19T15:12:10Z,Ep 7 - Playing a 96 Hr Game Of Capture The Flag Across Japan,cowxr0CqFrw,japan,"[36.5748441, 139.2394179]",s6,False
+46,2023-07-12T14:30:03Z,Ep 6 - Playing a 96 Hr Game Of Capture The Flag Across Japan,7PMpQEdWnYc,japan,"[36.5748441, 139.2394179]",s6,False
+47,2023-07-05T14:48:32Z,Ep 5 - Playing a 96 Hr Game Of Capture The Flag Across Japan,URwX2L0twZs,no location found,null,s6,False
+48,2023-06-28T14:31:05Z,Ep 4 - Playing a 96 Hr Game Of Capture The Flag Across Japan,psV10AE_znY,no location found,null,s6,False
+49,2023-06-21T14:30:03Z,Ep 3 - Playing a 96 Hr Game Of Capture The Flag Across Japan,7S54BYznHi8,japan,"[36.5748441, 139.2394179]",s6,False
+50,2023-06-14T15:06:01Z,Ep 2 - Playing a 96 Hr Game Of Capture The Flag Across Japan,jlF5DOnlosE,japan,"[36.5748441, 139.2394179]",s6,False
+51,2023-06-07T14:30:03Z,We Played A 96 Hour Game Of Capture The Flag Across Japan,8ZM_hPF1hsY,japan,"[36.5748441, 139.2394179]",s6,False
+52,2023-04-26T14:30:02Z,Ep 8 - We Turned New Zealand Into a Real-Life Board Game,35GVK6iOnbY,new zealand,"[-41.5000831, 172.8344077]",s5,False
+53,2023-04-19T14:30:05Z,Ep 7 - We Turned New Zealand Into a Real-Life Board Game,7o7QkGmO-fg,new zealand,"[-41.5000831, 172.8344077]",s5,False
+54,2023-04-12T14:30:15Z,Ep 6 - We Turned New Zealand Into a Real-Life Board Game,nfRlal2bTqI,new zealand,"[-41.5000831, 172.8344077]",s5,False
+55,2023-04-05T14:34:37Z,Ep 5 - We Turned New Zealand Into a Real-Life Board Game,8FMN7zHB5BA,no location found,null,s5,False
+56,2023-03-29T14:31:00Z,Ep 4 - We Turned New Zealand Into a Real-Life Board Game,ZBgUP81d-GA,new zealand,"[-41.5000831, 172.8344077]",s5,False
+57,2023-03-22T15:00:23Z,Ep 3 - We Turned New Zealand Into a Real-Life Board Game,C30lQzcEhx0,new zealand,"[-41.5000831, 172.8344077]",s5,False
+58,2023-03-15T14:31:05Z,Ep 2 - We Turned New Zealand Into a Real-Life Board Game,hfOy7pb0xXk,new zealand,"[-41.5000831, 172.8344077]",s5,False
+59,2023-03-08T15:32:23Z,We Turned New Zealand Into a Real-Life Board Game,LxLgmsmvXOE,new zealand,"[-41.5000831, 172.8344077]",s5,False
+60,2023-01-11T16:43:06Z,We Raced To Visit The Most US States In 100 Hrs - Finale,RnSUaZEwYq4,no location found,null,s4,False
+61,2023-01-04T15:30:12Z,We Raced To Visit The Most US States In 100 Hrs - Day 4,2NPGrKItt3E,no location found,null,s4,False
+62,2022-12-28T15:31:33Z,We Raced To Visit The Most US States In 100 Hrs - Day 3,qXJ0FRHHEZI,no location found,null,s4,False
+63,2022-12-21T15:44:03Z,We Raced To Visit The Most US States In 100 Hrs - Day 2,idiCtICGlCA,no location found,null,s4,False
+64,2022-12-14T15:31:16Z,We Raced To Visit The Most US States In 100 Hours,E0ejkkFT3V0,no location found,null,s4,False
+65,2022-10-26T15:13:29Z,Playing A 72 Hr Game of Tag Across Europe - Finale,g275afit9l0,no location found,null,s3,False
+66,2022-10-19T14:33:12Z,Playing a 72 Hr Game of Tag Across Europe - Ep 6,T_WEYOMDT2I,no location found,null,s3,False
+67,2022-10-12T16:00:33Z,Playing a 72 Hr Game of Tag Across Europe - Ep 5,Dpinb2tunls,no location found,null,s3,False
+68,2022-10-05T16:11:59Z,Playing a 72 Hr Game of Tag Across Europe - Ep 4,LBxeKFuGxJA,no location found,null,s3,False
+69,2022-09-28T14:31:18Z,Playing a 72 Hr Game of Tag Across Europe - Ep 3,i5QIazhw2Ns,no location found,null,s3,False
+70,2022-09-21T15:53:17Z,Playing A 72 Hr Game of Tag Across Europe - Ep 2,K9XZCJCAyOE,no location found,null,s3,False
+71,2022-09-14T15:09:48Z,We Played a 72 Hour Game of Tag Across Europe,q2tJqO6nCSc,no location found,null,s3,False
+72,2022-08-03T19:16:32Z,Day 5 - We Raced To Circumnavigate the Globe in 100 Hours,uXmnxhYQ_Iw,no location found,null,s2,False
+73,2022-07-27T18:00:02Z,Day 4 - We Raced To Circumnavigate the Globe in 100 Hours,20y1H6eGHuY,no location found,null,s2,False
+74,2022-07-20T15:48:25Z,Day 3 - We Raced To Circumnavigate the Globe in 100 Hours,Do9eV2zHtiA,no location found,null,s2,False
+75,2022-07-13T16:14:12Z,Day 2 - We Raced To Circumnavigate The Globe In 100 Hours,tq7KarjTwTA,no location found,null,s2,False
+76,2022-07-06T16:32:58Z,We Raced To Circumnavigate The Globe In 100 Hours,Gta43oOV4Ag,no location found,null,s2,False
+77,2022-06-08T16:18:38Z,Our Flight Got Diverted at the Worst Possible Time - Connect 4 Across America,DSuva0TtdYs,no location found,null,s1,False
+78,2022-06-01T14:59:33Z,"Flying 1,200 Miles to Ruin Our Boss' Plan - Connect 4 Across America",LmjcQ9UoBjc,no location found,null,s1,False
+79,2022-05-25T17:56:43Z,We Played Connect 4 by Travelling to Actual US States,oZSUxdzgA08,no location found,null,s1,False

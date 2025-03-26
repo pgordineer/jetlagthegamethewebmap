@@ -5,7 +5,7 @@ import json
 df = pd.read_csv("./data/data_with_loc.csv", index_col=0)
 
 header = {
-    "User-Agent": "Scott-Map/0.0 (sam.k.baumann@gmail.com)"
+    "User-Agent": "jetlagthegamethewebmap/0.0 (pgordineer@gmail.com)"
 }
 
 API = "https://nominatim.openstreetmap.org/search"

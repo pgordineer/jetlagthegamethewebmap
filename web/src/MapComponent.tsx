@@ -46,7 +46,7 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
 
         gitHubControl.onAdd = () => {
             let ret = document.createElement("div");
-            ret.innerHTML = "<a href=\"https://github.com/sam-baumann/tom-scott-map\"> GitHub </a>"
+            ret.innerHTML = "<a href=\"https://github.com/pgordineer/jetlagthegamethewebmap\"> GitHub </a>"
             return ret
         }
 

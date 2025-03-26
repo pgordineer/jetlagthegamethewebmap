@@ -1,10 +1,10 @@
-# Map of Tom Scott videos
+# Map of JetLag videos
 
 Testing
 
-### [View the map here](https://pgordineer.github.io/tom-scott-map/)
+### [View the map here](https://pgordineer.github.io/jetlagthegamethewebmap)
 
-Interactive map to explore locations documented by creator [Tom Scott](https://www.youtube.com/channel/UCBa659QWEk1AI4Tg--mrJ2A)
+Interactive map to explore locations included in JetLag videos [JetLag the Game](https://www.youtube.com/channel/UCxkM67T_Iele-mRVUiBkRqg)
 
 Notice anything off? Issues and PRs welcome!
 

@@ -35,7 +35,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\pgord\Documents\GitHub\tom-scott-map\venv"
+VIRTUAL_ENV="C:\Users\pgord\Documents\GitHub\jetlagthegamethewebmap\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

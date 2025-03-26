@@ -25,7 +25,7 @@ def validate_video_data(data):
                  )
                 ) or item.get('geocode') is None
             ) and
-            item.get('playlist') in ["ap", "tymnk", "bfs"] and
+            item.get('playlist') in ["s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8", "s9", "s10", "s11", "s12", "s13"] and
             isinstance(item.get('marked'), bool)
         ):
             valid_data.append(item)

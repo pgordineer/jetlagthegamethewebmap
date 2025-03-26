@@ -10,11 +10,21 @@ df = pd.read_csv("./data/3_geocoded.csv", index_col=0)
 #first, remove the description column, not needed for web display
 df = df.drop(columns=["description"])
 
-#pull 3 selected playlists (things you might not know, amazing places, built for science), add a column to describe 
+#pull the selected playlists, add a column to describe 
 playlists = {
-    "bfs": "PL96C35uN7xGKyF2QKy4NF6ybamx4nQswv", #built for science
-    "tymnk": "PL96C35uN7xGI9HGKHsArwxiOejecVyNem", #things you might not know
-    "ap": "PL96C35uN7xGK_y459BdHCtGeftqs5_nff" #amazing places
+    "s1": "PLB7ZcpBcwdC7z1fCZetTI8TPeLlgagF9v", #Connect 4
+    "s2": "PLB7ZcpBcwdC7rGYl6StHarkLlgeZX66oL", #Circumnavigation
+    "s3": "PLB7ZcpBcwdC5B-l2FQNOPJVFpqF0QVxfG", #Tag EUR It
+    "s4": "PLB7ZcpBcwdC7ogXbMvwuBSfj3LHVRCqLc", #Battle 4 America
+    "s5": "PLB7ZcpBcwdC4SeH7qNw05wgU03HlRGiiS", #Race to the End of the World
+    "s6": "PLB7ZcpBcwdC6OjHpxnkSL2RzbmC2moNt1", #Capture the Flag
+    "s7": "PLB7ZcpBcwdC6wkQRczVE4Fz-4kUOIc3d1", #Tag EUR It 2
+    "s8": "PLB7ZcpBcwdC6zyXJyImHgVdrC4Vl8SNG9", #Arctic Escape
+    "s9": "PLB7ZcpBcwdC7gTO_IVdiBv8nVPLKbqNa4", #Hide + Seek: Switzerland
+    "s10": "PLB7ZcpBcwdC4dhXkpNzUVsGFZp72v0UqL", #Au$tralia
+    "s11": "PLB7ZcpBcwdC56V3DHxfFVTMDzera__IFi", #Tag EUR It 3
+    "s12": "PLB7ZcpBcwdC79KvPUh76PhFZ8x7q18hOW", #Hide + Seek: Japan
+    "s13": "PLB7ZcpBcwdC64gYhvs3PyyM_fRKpjq1l0", #Schengen Showdown
 }
 
 
