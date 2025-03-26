@@ -6,6 +6,7 @@ import markerIconUrl from "leaflet/dist/images/marker-icon.png"
 import markerIconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
 import markerShadowUrl from "leaflet/dist/images/marker-shadow.png";
 import { VideoInfo } from './App';
+import androidChrome192x192 from './android-chrome-192x192.png'; // Update the path to your image
 
 // https://willschenk.com/labnotes/2024/leaflet_markers_with_vite_build/
 L.Icon.Default.prototype.options.iconUrl = markerIconUrl;
@@ -41,8 +42,7 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
             return ret
         }
 
-
-        const gitHubControl = new L.Control({position: 'bottomleft'})
+        const gitHubControl = new L.Control({ position: 'bottomleft' })
 
         gitHubControl.onAdd = () => {
             let ret = document.createElement("div");
@@ -50,7 +50,16 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
             return ret
         }
 
-        gitHubControl.addTo(map)
+        const imageControl = new L.Control({ position: 'bottomleft' });
+
+        imageControl.onAdd = () => {
+            let ret = document.createElement("div");
+            ret.innerHTML = `<img src="${androidChrome192x192}" alt="Logo" style="width: 50px; height: 50px;" />`;
+            return ret;
+        }
+
+        imageControl.addTo(map);
+        gitHubControl.addTo(map);
         coordsControl.addTo(map);
 
         return () => {
