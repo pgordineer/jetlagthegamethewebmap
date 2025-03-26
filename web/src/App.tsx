@@ -57,7 +57,7 @@ let App = () => {
                     setPlaylist(changeEvent.target.value)
                 }
                 }>
-                    <option value="">Playlist</option>
+                    <option value="">All Playlists</option>
                     <option value="s1">Connect 4</option>
                     <option value="s2">Circumnavigation</option>
                     <option value="s3">Tag EUR It</option>
