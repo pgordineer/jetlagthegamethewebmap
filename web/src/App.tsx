@@ -20,7 +20,7 @@ interface RawVideoInfo {
     title: string;
     videoId: string;
     location: string;
-    geocode: string; // Raw geocode as a string
+    geocode: string | null; // Allow geocode to be null
     transcript: string; // Raw transcript as a string
     playlist: string;
     marked: boolean;
@@ -30,14 +30,16 @@ interface RawVideoInfo {
 let VideoData = (data as RawVideoInfo[]).filter((item) => {
     let parsedGeocode: [number, number] | null = null;
     try {
-        parsedGeocode = JSON.parse(item.geocode);
+        if (item.geocode) {
+            parsedGeocode = JSON.parse(item.geocode);
+        }
     } catch {
         parsedGeocode = null;
     }
     return parsedGeocode && (parsedGeocode[0] !== 0 || parsedGeocode[1] !== 0);
 }).map((item) => ({
     ...item,
-    geocode: JSON.parse(item.geocode) as [number, number] | null,
+    geocode: item.geocode ? (JSON.parse(item.geocode) as [number, number] | null) : null,
     transcript: JSON.parse(item.transcript),
     playlist: item.playlist as "ap" | "tymnk" | "bfs", // Ensure playlist matches the VideoInfo type
 }));
