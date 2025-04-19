@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import L, { Marker, LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import OverlappingMarkerSpiderfier from 'overlapping-marker-spiderfier-leaflet/src/oms'; // Import directly from the source file
 import markerIconUrl from "leaflet/dist/images/marker-icon.png";
 import markerIconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
 import markerShadowUrl from "leaflet/dist/images/marker-shadow.png";
@@ -13,8 +12,27 @@ L.Icon.Default.prototype.options.iconRetinaUrl = markerIconRetinaUrl;
 L.Icon.Default.prototype.options.shadowUrl = markerShadowUrl;
 L.Icon.Default.imagePath = "";
 
-// Custom hook for initializing the map
-const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, spiderfierRef: React.MutableRefObject<OverlappingMarkerSpiderfier | null>) => {
+// Helper function to resolve overlapping markers
+const resolveOverlaps = (markers: { position: LatLngExpression; marker: Marker }[]) => {
+    const offsetDistance = 0.0001; // Small offset in degrees
+    const seenPositions = new Map<string, number>();
+
+    markers.forEach(({ position, marker }) => {
+        const key = `${position[0].toFixed(4)},${position[1].toFixed(4)}`; // Round to 4 decimal places
+        const count = seenPositions.get(key) || 0;
+
+        if (count > 0) {
+            // Apply an offset based on the count
+            const offsetLat = count * offsetDistance;
+            const offsetLng = count * offsetDistance;
+            marker.setLatLng([position[0] + offsetLat, position[1] + offsetLng]);
+        }
+
+        seenPositions.set(key, count + 1);
+    });
+};
+
+const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>) => {
     useEffect(() => {
         const map = L.map('map').setView([51.1358, 1.3621], 5);
         mapRef.current = map;
@@ -23,12 +41,6 @@ const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, spiderfi
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }).addTo(map);
-
-        const spiderfier = new OverlappingMarkerSpiderfier(map, {
-            keepSpiderfied: true,
-            nearbyDistance: 20,
-        });
-        spiderfierRef.current = spiderfier;
 
         const coordsControl = new L.Control({ position: 'bottomleft' });
         coordsControl.onAdd = (map: L.Map) => {
@@ -58,9 +70,8 @@ const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, spiderfi
 const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[], activeVideo: string, setActiveVideo: (video: string) => void }) => {
     const markersRef = useRef<Map<string, Marker>>(new Map());
     const mapRef = useRef<L.Map>(null);
-    const spiderfierRef = useRef<OverlappingMarkerSpiderfier | null>(null);
 
-    useInitializeMap(mapRef, spiderfierRef);
+    useInitializeMap(mapRef);
 
     useEffect(() => {
         const currentPopup = markersRef.current.get(activeVideo);
@@ -72,6 +83,7 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
 
     useEffect(() => {
         markersRef.current = new Map<string, Marker>();
+        const markers: { position: LatLngExpression; marker: Marker }[] = [];
 
         data.forEach(element => {
             if (element.geocode) {
@@ -82,17 +94,24 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
                         { maxWidth: undefined }
                     );
 
-                spiderfierRef.current?.addMarker(marker);
-
                 marker.on("click", () => {
                     setActiveVideo(element.videoId);
                 });
 
+                markers.push({ position, marker });
                 markersRef.current.set(element.videoId, marker);
                 console.log("Added marker for video:", element.videoId, "at position:", position);
             } else {
                 console.warn("Skipping marker creation for video with invalid geocode:", element.videoId, element.geocode);
             }
+        });
+
+        // Resolve overlapping markers
+        resolveOverlaps(markers);
+
+        // Add markers to the map
+        markers.forEach(({ marker }) => {
+            marker.addTo(mapRef.current!);
         });
     }, [data]);
 
