@@ -10,7 +10,8 @@ import markerShadowUrl from "leaflet/dist/images/marker-shadow.png";
 import { VideoInfo } from './App';
 
 // Import MarkerClusterGroup type
-import 'leaflet.markercluster'; // Ensure this is imported for type definitions
+import "leaflet.markercluster"; // Import the marker cluster library
+import { markerClusterGroup } from "leaflet.markercluster";
 
 // Configure Leaflet marker icons
 L.Icon.Default.prototype.options.iconUrl = markerIconUrl;
@@ -29,7 +30,7 @@ const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, markerCl
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }).addTo(map);
 
-        const markerCluster = L.markerClusterGroup();
+        const markerCluster = markerClusterGroup(); // Use the imported function
         markerClusterRef.current = markerCluster;
         map.addLayer(markerCluster);
 
