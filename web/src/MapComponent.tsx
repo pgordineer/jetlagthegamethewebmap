@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import L, { Marker } from 'leaflet';
+import L, { Marker, LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import markerIconUrl from "leaflet/dist/images/marker-icon.png";
 import markerIconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
@@ -72,8 +72,8 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
 
         data.forEach(element => {
             if (element.geocode && element.geocode.length === 2) {
-                const coords = element.geocode;
-                const marker = L.marker(coords)
+                const position: LatLngExpression = element.geocode as [number, number]; // Ensure type compatibility
+                const marker = L.marker(position)
                     .bindPopup(
                         `<iframe class="video-player" src="https://www.youtube.com/embed/${element.videoId}" allowfullscreen></iframe>`,
                         { maxWidth: undefined }

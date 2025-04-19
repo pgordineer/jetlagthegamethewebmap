@@ -8,25 +8,25 @@ export interface VideoInfo {
     title: string;
     videoId: string;
     location: string;
-    geocode: string; // Updated to string
-    transcript: string; // Added as string
+    geocode: [number, number] | null; // Updated to parsed type
+    transcript: any; // Updated to match parsed type
     playlist: "ap" | "tymnk" | "bfs";
     marked: boolean;
 }
 
 // Parse geocode and filter out invalid entries
-let VideoData = (data as VideoInfo[]).filter((item) => {
+let VideoData = (data as Omit<VideoInfo, "geocode" | "transcript">[]).filter((item) => {
     let parsedGeocode: [number, number] | null = null;
     try {
-        parsedGeocode = JSON.parse(item.geocode);
+        parsedGeocode = JSON.parse(item.geocode as unknown as string);
     } catch {
         parsedGeocode = null;
     }
     return parsedGeocode && (parsedGeocode[0] !== 0 || parsedGeocode[1] !== 0);
 }).map((item) => ({
     ...item,
-    geocode: JSON.parse(item.geocode) as [number, number] | null,
-    transcript: JSON.parse(item.transcript),
+    geocode: JSON.parse(item.geocode as unknown as string) as [number, number] | null,
+    transcript: JSON.parse(item.transcript as unknown as string),
 }));
 
 let App = () => {
