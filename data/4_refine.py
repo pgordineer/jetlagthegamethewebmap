@@ -1,31 +1,46 @@
-import pandas as pd 
+import pandas as pd
 import json
 from dotenv import load_dotenv
 from os import getenv
 import requests
 
 # Define column names explicitly
-column_names = ["title", "description", "videoId", "location", "geocode"]
+column_names = ["title", "description", "videoId", "location", "geocode", "transcript"]
 
 # Load the data with explicit column names and encoding handling
+print("Loading data from './data/3_geocoded.csv'...")
 df = pd.read_csv("./data/3_geocoded.csv", names=column_names, header=0, encoding='utf-8-sig')
 
-# Print raw content of the CSV for debugging purposes
+# Debug: Print raw content of the CSV for verification
 print("Raw Data (First 5 Rows):")
 print(df.head())
 
 # Strip any extra whitespace from column names
 df.columns = df.columns.str.strip()
 
-# Print the column names for debugging
+# Debug: Print the column names for verification
 print("Columns after reading CSV:", df.columns)
 
-# Check if 'title' exists
-if "title" not in df.columns:
-    raise ValueError("ERROR: 'title' column is missing from the input CSV!")
+# Check if required columns exist
+missing_columns = [col for col in ["title", "videoId", "location", "geocode", "transcript"] if col not in df.columns]
+if missing_columns:
+    raise ValueError(f"ERROR: Missing required columns in the input CSV: {missing_columns}")
 
 # Drop description safely if it exists
 df = df.drop(columns=["description"], errors='ignore')
+
+# Debug: Check for missing or empty rows
+print("Checking for missing data...")
+print(df.isnull().sum())
+
+# Drop rows with missing required data
+df = df.dropna(subset=["title", "videoId", "location", "geocode", "transcript"], how="any")
+if df.empty:
+    raise ValueError("ERROR: DataFrame is empty after dropping rows with missing required data.")
+
+# Debug: Print DataFrame after dropping missing data
+print("DataFrame after dropping missing data (First 5 Rows):")
+print(df.head())
 
 # Playlists dictionary
 playlists = {
@@ -76,8 +91,18 @@ for playlist_name, playlist_id in playlists.items():
 # Match playlist info
 df["playlist"] = df["videoId"].map(playlist_matches)
 
+# Debug: Check for unmatched videos
+print("Unmatched videos (no playlist):")
+print(df[df["playlist"].isnull()])
+
 # Remove rows not in selected playlists
 df = df.dropna(subset=["playlist"])
+if df.empty:
+    raise ValueError("ERROR: DataFrame is empty after filtering for playlists.")
+
+# Debug: Print DataFrame after playlist matching
+print("DataFrame after playlist matching (First 5 Rows):")
+print(df.head())
 
 # Ensure geocode formatting
 def get_coords(geojson):
@@ -90,22 +115,36 @@ def get_coords(geojson):
 
 df["geocode"] = df["geocode"].apply(get_coords)
 
+# Debug: Check for invalid geocodes
+print("Rows with invalid geocodes:")
+print(df[df["geocode"].isnull()])
+
 # Add a 'marked' field
 df["marked"] = False
 
-# Forcefully include required columns, including title if available
-required_columns = ["title", "videoId", "location", "geocode", "playlist", "marked"]
+# Forcefully include required columns, including transcript
+required_columns = ["title", "videoId", "location", "geocode", "transcript", "playlist", "marked"]
 
 # Ensure that all required columns exist before exporting
 df = df[[col for col in required_columns if col in df.columns]]
 
-# Save JSON
-df.to_json("./web/src/data/data.json", orient="records")
+# Debug: Check final DataFrame before saving
+print("Final DataFrame (First 5 Rows):")
+print(df.head())
+print("DataFrame Shape:", df.shape)
 
-# Convert geocode to string for CSV output
-df["geocode"] = df["geocode"].apply(json.dumps)
+# Save JSON
+if not df.empty:
+    print("Saving data to './web/src/data/data.json'...")
+    df.to_json("./web/src/data/data.json", orient="records")
+else:
+    print("ERROR: DataFrame is empty. JSON export skipped.")
 
 # Save CSV
-df.to_csv("./data/4_refined.csv", index=False)
+if not df.empty:
+    print("Saving data to './data/4_refined.csv'...")
+    df.to_csv("./data/4_refined.csv", index=False)
+else:
+    print("ERROR: DataFrame is empty. CSV export skipped.")
 
-print("Export completed successfully!")
+print("Refinement process completed successfully.")
