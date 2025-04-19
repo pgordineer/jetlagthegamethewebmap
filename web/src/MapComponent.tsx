@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 import L, { Marker, LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import 'leaflet.markercluster/dist/MarkerCluster.css';
-import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+import '/node_modules/leaflet.markercluster/dist/MarkerCluster.css';
+import '/node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css';
 import 'leaflet.markercluster';
 import markerIconUrl from "leaflet/dist/images/marker-icon.png";
 import markerIconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";

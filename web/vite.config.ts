@@ -8,5 +8,13 @@ export default defineConfig({
             '/api': 'http://localhost:5001'
         }
     },
-    base: '/jetlagthegamethewebmap/'
+    base: '/jetlagthegamethewebmap/',
+    build: {
+        rollupOptions: {
+            external: [
+                'leaflet.markercluster/dist/MarkerCluster.css',
+                'leaflet.markercluster/dist/MarkerCluster.Default.css'
+            ]
+        }
+    }
 });
