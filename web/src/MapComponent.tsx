@@ -49,24 +49,31 @@ const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, layerGro
         layerGroupRef.current = layerGroup;
         layerGroup.addTo(map);
 
-        const coordsControl = new L.Control({ position: 'bottomleft' }); // Pass options object
-        coordsControl.onAdd = (map: L.Map) => {
-            const ret = document.createElement("div");
-            map.on("mousemove", (event) => {
-                ret.innerHTML = `<div class="control">${event.latlng.lat.toFixed(4)}, ${event.latlng.lng.toFixed(4)}</div>`;
-            });
-            return ret;
-        };
+        // Define custom control for displaying coordinates
+        const CoordsControl = L.Control.extend({
+            options: { position: 'bottomleft' },
+            onAdd: (map: L.Map) => {
+                const ret = document.createElement("div");
+                map.on("mousemove", (event) => {
+                    ret.innerHTML = `<div class="control">${event.latlng.lat.toFixed(4)}, ${event.latlng.lng.toFixed(4)}</div>`;
+                });
+                return ret;
+            },
+        });
 
-        const gitHubControl = new L.Control({ position: 'bottomleft' }); // Pass options object
-        gitHubControl.onAdd = () => {
-            const ret = document.createElement("div");
-            ret.innerHTML = "<a href=\"https://github.com/pgordineer/jetlagthegamethewebmap\"> GitHub </a>";
-            return ret;
-        };
+        // Define custom control for GitHub link
+        const GitHubControl = L.Control.extend({
+            options: { position: 'bottomleft' },
+            onAdd: () => {
+                const ret = document.createElement("div");
+                ret.innerHTML = "<a href=\"https://github.com/pgordineer/jetlagthegamethewebmap\"> GitHub </a>";
+                return ret;
+            },
+        });
 
-        gitHubControl.addTo(map);
-        coordsControl.addTo(map);
+        // Add custom controls to the map
+        map.addControl(new CoordsControl());
+        map.addControl(new GitHubControl());
 
         return () => {
             map.remove();
