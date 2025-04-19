@@ -36,13 +36,19 @@ let VideoData = (data as RawVideoInfo[]).filter((item) => {
     } catch {
         parsedGeocode = null;
     }
-    return parsedGeocode && (parsedGeocode[0] !== 0 || parsedGeocode[1] !== 0);
+    if (parsedGeocode && (parsedGeocode[0] !== 0 || parsedGeocode[1] !== 0)) {
+        return true;
+    }
+    console.warn("Invalid geocode or filtered out:", item);
+    return false;
 }).map((item) => ({
     ...item,
     geocode: item.geocode ? (JSON.parse(item.geocode) as [number, number] | null) : null,
     transcript: JSON.parse(item.transcript),
     playlist: item.playlist as "ap" | "tymnk" | "bfs", // Ensure playlist matches the VideoInfo type
 }));
+
+console.log("Parsed VideoData:", VideoData);
 
 let App = () => {
     //active video that is highlighted on the screen
