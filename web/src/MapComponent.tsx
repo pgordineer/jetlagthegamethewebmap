@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import L, { Marker, LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import OverlappingMarkerSpiderfier from 'overlapping-marker-spiderfier-leaflet';
+import OverlappingMarkerSpiderfier from 'overlapping-marker-spiderfier-leaflet/src/oms'; // Import directly from the source file
 import markerIconUrl from "leaflet/dist/images/marker-icon.png";
 import markerIconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
 import markerShadowUrl from "leaflet/dist/images/marker-shadow.png";

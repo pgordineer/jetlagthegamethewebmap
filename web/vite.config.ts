@@ -12,7 +12,8 @@ export default defineConfig({
     build: {
         rollupOptions: {
             external: [
-                'leaflet.markercluster' // Keep only the JavaScript module as external
+                'leaflet.markercluster', // Keep only the JavaScript module as external
+                'overlapping-marker-spiderfier-leaflet/src/oms' // Mark the direct source file as external
             ]
         }
     }
