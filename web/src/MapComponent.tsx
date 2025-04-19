@@ -141,7 +141,7 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
         });
 
         // Draw lines for each playlist
-        Object.entries(playlistLines).forEach(([playlistId, positions]) => {
+        Object.entries(playlistLines).forEach(([_, positions]) => { // Replace 'playlistId' with '_'
             const lineColor = getRandomColor();
             const polyline = L.polyline(positions, { color: lineColor, weight: 3 }).addTo(mapRef.current!);
             layerGroupRef.current?.addLayer(polyline);
