@@ -54,7 +54,7 @@ const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, layerGro
             options: { position: 'bottomleft' },
             onAdd: (map: L.Map) => {
                 const ret = document.createElement("div");
-                map.on("mousemove", (event) => {
+                map.on("mousemove", (event: L.LeafletMouseEvent) => {
                     ret.innerHTML = `<div class="control">${event.latlng.lat.toFixed(4)}, ${event.latlng.lng.toFixed(4)}</div>`;
                 });
                 return ret;
