@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import MapComponent from "./MapComponent";
 import data from "./data/data.json";
 import "./style.css";
+import Select from "react-select"; // Import react-select for better multi-select dropdown
 
 export interface VideoInfo {
     publishedAt?: string; // Made optional
@@ -128,22 +129,16 @@ let App = () => {
                 showLines={showLines} // Pass the state to MapComponent
             ></MapComponent>
             <div id="filter-overlay">
-                <select
-                    name="playlist-select"
-                    multiple
-                    onChange={(changeEvent) => {
-                        const selectedOptions = Array.from(changeEvent.target.selectedOptions).map(
-                            (option) => option.value
-                        );
-                        setSelectedPlaylists(selectedOptions);
+                <Select
+                    isMulti
+                    options={allPlaylists.map(({ id, name }) => ({ value: id, label: name }))}
+                    onChange={(selectedOptions) => {
+                        const selectedValues = selectedOptions.map((option) => option.value);
+                        setSelectedPlaylists(selectedValues);
                     }}
-                >
-                    {allPlaylists.map(({ id, name }) => (
-                        <option value={id} key={id}>
-                            {name}
-                        </option>
-                    ))}
-                </select>
+                    placeholder="Select Playlists"
+                    className="multi-select"
+                />
 
                 <input
                     type="search"
