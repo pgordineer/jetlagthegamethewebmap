@@ -8,7 +8,7 @@ export interface VideoInfo {
     title: string;
     videoId: string;
     location: string;
-    geocode: [number, number] | null; // Updated to parsed type
+    geocode: [number, number] | null; // Ensure geocode is parsed into a coordinate pair
     transcript: any; // Updated to match parsed type
     playlist: "ap" | "tymnk" | "bfs";
     marked: boolean;
@@ -20,7 +20,9 @@ interface RawVideoInfo {
     title: string;
     videoId: string;
     location: string;
-    geocode: string | null; // Allow geocode to be null
+    geocode: {
+        features: { geometry: { coordinates: [number, number] } }[];
+    } | null; // Adjusted for new format
     transcript: string; // Raw transcript as a string
     playlist: string;
     marked: boolean;
@@ -30,8 +32,8 @@ interface RawVideoInfo {
 let VideoData = (data as RawVideoInfo[]).map((item) => {
     let parsedGeocode: [number, number] | null = null;
     try {
-        if (item.geocode) {
-            parsedGeocode = JSON.parse(item.geocode);
+        if (item.geocode?.features?.length) {
+            parsedGeocode = item.geocode.features[0].geometry.coordinates as [number, number];
         }
     } catch {
         parsedGeocode = null;
@@ -39,14 +41,14 @@ let VideoData = (data as RawVideoInfo[]).map((item) => {
 
     return {
         ...item,
-        geocode: parsedGeocode, // Keep null geocode if parsing fails
+        geocode: parsedGeocode, // Extract the first valid coordinate
         transcript: JSON.parse(item.transcript),
         playlist: item.playlist as "ap" | "tymnk" | "bfs", // Ensure playlist matches the VideoInfo type
     };
 }).filter((item) => {
     // Log a warning for invalid geocode but include the item
-    if (!item.geocode || item.geocode[0] === 0 && item.geocode[1] === 0) {
-        console.warn("Invalid or null geocode, item will still be included:", item);
+    if (!item.geocode) {
+        console.warn("Invalid or missing geocode, item will still be included:", item);
     }
     return true; // Include all items
 });

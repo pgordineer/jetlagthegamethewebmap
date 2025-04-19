@@ -1,17 +1,27 @@
 import pandas as pd
+import json
 from openai import OpenAI
 from dotenv import load_dotenv
 
 load_dotenv()
 client = OpenAI()
 
-# Track locations already used
-used_locations = {}
+def truncate_text(text, max_length):
+    """Truncate text to a specified maximum length."""
+    return text[:max_length] + "..." if len(text) > max_length else text
 
-def get_location(row):
-    global used_locations  # Store previous locations across calls
+def get_location(row, additional_data):
+    """Fetch the specific filming location based on the transcript, title, and description."""
+    video_id = row["videoId"]
+    transcript = additional_data.get(video_id, {}).get("transcript", "").strip()
+    if transcript:
+        transcript = truncate_text(transcript, 3000)  # Limit transcript to ~4 minutes of video
+        input_content = f'Transcript: "{transcript}"'
+    else:
+        title = row.get("title", "No title provided")
+        description = row.get("description", "No description provided")
+        input_content = f'Title: "{title}", Description: "{description}"'
 
-    # Attempt completion request
     completion = client.chat.completions.create(
         model="gpt-4o",
         messages=[
@@ -19,40 +29,71 @@ def get_location(row):
                 "role": "system",
                 "content": (
                     "You are a location assignment assistant for a travel competition race game show. "
-                    "Your task is to determine the **specific filming location** based on the title and description provided.\n\n"
-                    "**STRICT RULES (NO EXCEPTIONS):**\n"
-                    "✅ **ALWAYS** provide a specific location—city, landmark, or district. NEVER respond with 'various locations' or 'unclear'.\n"
-                    "✅ **NO EXPLANATIONS OR JUSTIFICATIONS.** The response **must be the location ONLY**, formatted as:\n"
-                    "   **'Landmark (if applicable), City, (State), Country'**\n"
-                    "✅ **NO DUPLICATES.** If the same city appears across episodes, differentiate by naming a district, landmark, or nearby area.\n"
-                    "✅ **NAMED LANDMARKS TAKE PRIORITY.** If a location (e.g., Eiffel Tower) is mentioned in the description, it **MUST** be used.\n"
-                    "✅ **DO NOT say 'it's unclear' or 'inferred'.** Even if uncertain, make an educated guess and output **ONLY** the final location.\n"
-                    "\n"
-                    "**IF YOU CANNOT DETERMINE A LOCATION, YOU MUST STILL GUESS AND OUTPUT A SPECIFIC PLACE.**"
+                    "Your task is to determine the **specific filming location** based on the provided information.\n\n"
+                    "**RULES:**\n"
+                    "1. ALWAYS provide a specific location (e.g., 'Landmark, City, (State), Country').\n"
+                    "2. PRIORITIZE the transcript if available.\n"
+                    "3. Use the title and description only as a fallback.\n"
+                    "4. DO NOT respond with vague or unhelpful statements like 'I cannot determine a location' or 'more details are needed.'\n"
+                    "5. If the transcript or fallback information mentions a landmark, city, or region, use that directly.\n"
+                    "6. If uncertain, make an educated guess based on the context, but guesses must be highly specific.\n"
+                    "7. Your response must ONLY contain the specific location (e.g., 'Eiffel Tower, Paris, France')."
                 )
             },
             {
                 "role": "user",
-                "content": f'title: "{row["title"]}", description: "{row["description"]}"'
+                "content": input_content
             }
         ]
     )
+    return completion.choices[0].message.content.strip()
 
-    location = completion.choices[0].message.content.strip()
+def process_locations(df, additional_data, data_with_loc):
+    """Process locations for videos, skipping already processed ones."""
+    new_data_with_loc = []
+    total_videos = len(df)  # Remove the 10-item limit
+    for idx, (_, row) in enumerate(df.iterrows(), start=1):
+        video_id = row["videoId"]
+        if video_id in data_with_loc and "location" in data_with_loc[video_id]:
+            print(f"[{idx}/{total_videos}] Skipping video ID {video_id}, location already processed.")
+            row["location"] = data_with_loc[video_id]["location"]
+        else:
+            print(f"[{idx}/{total_videos}] Processing location for video ID {video_id}.")
+            row["location"] = get_location(row, additional_data)  # Pass additional_data for transcript
+        new_data_with_loc.append(row.to_dict())
+    print(f"Finished processing {total_videos} videos.")
+    return new_data_with_loc
 
-    # Enforce uniqueness
-    base_location = location.split(",")[1].strip() if "," in location else location
-    if base_location in used_locations:
-        location = f"{location} (Alternative site)"  # Force variation
-    used_locations[base_location] = True
+def main():
+    # Load dataset and additional data
+    with open("./data/data.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    df = pd.DataFrame(data)
+    print(f"Loaded {len(df)} videos from the dataset.")
+    with open("./data/additional_data.json", "r", encoding="utf-8") as file:
+        additional_data = json.load(file)
 
-    return location
+    # Load existing data_with_loc.json to avoid reprocessing
+    try:
+        with open("./data/data_with_loc.json", "r", encoding="utf-8") as file:
+            data_with_loc = {entry["videoId"]: entry for entry in json.load(file)}
+        print("Loaded existing data_with_loc.json to avoid reprocessing.")
+    except FileNotFoundError:
+        data_with_loc = {}
+        print("No existing data_with_loc.json found. Starting fresh.")
 
-# Load dataset
-df = pd.read_csv("./data.csv", index_col=0)
+    # Merge truncated descriptions into the DataFrame
+    df["description"] = df["videoId"].apply(lambda vid: truncate_text(additional_data.get(vid, {}).get("description", "Description not available"), 100))
 
-# Apply function
-df["location"] = df.apply(get_location, axis=1)
+    # Process locations
+    print("Starting location processing...")
+    new_data_with_loc = process_locations(df, additional_data, data_with_loc)
 
-# Save results
-df.to_csv("./data_with_loc.csv")
+    # Save results back to JSON
+    print("Location processing complete. Saving results...")
+    with open("./data/data_with_loc.json", "w", encoding="utf-8") as file:
+        json.dump(new_data_with_loc, file, ensure_ascii=False, indent=4)
+    print("Results saved to data_with_loc.json.")
+
+if __name__ == "__main__":
+    main()

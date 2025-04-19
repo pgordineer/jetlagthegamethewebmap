@@ -71,8 +71,8 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
         markersRef.current = new Map<string, Marker>();
 
         data.forEach(element => {
-            if (element.geocode && element.geocode.length === 2) {
-                const position: LatLngExpression = element.geocode as [number, number]; // Ensure type compatibility
+            if (element.geocode) {
+                const position: LatLngExpression = element.geocode; // Use parsed geocode
                 const marker = L.marker(position)
                     .bindPopup(
                         `<iframe class="video-player" src="https://www.youtube.com/embed/${element.videoId}" allowfullscreen></iframe>`,

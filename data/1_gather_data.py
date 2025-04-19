@@ -86,9 +86,13 @@ def load_cached_data(filepath):
 def save_to_csv(data, filepath):
     print(f"Saving data to {filepath}...")
     try:
-        # Ensure proper CSV format and verify transcripts are included
+        # Ensure proper CSV format with all fields quoted
         with open(filepath, mode="w", newline="", encoding="utf-8") as file:
-            writer = csv.DictWriter(file, fieldnames=["publishedAt", "title", "description", "videoId", "transcript"])
+            writer = csv.DictWriter(
+                file, 
+                fieldnames=["publishedAt", "title", "description", "videoId", "transcript"], 
+                quoting=csv.QUOTE_ALL  # Quote all fields to handle special characters
+            )
             writer.writeheader()
             for row in data:
                 # Ensure transcript field is always present
