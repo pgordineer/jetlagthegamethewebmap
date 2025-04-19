@@ -2,6 +2,7 @@ import pandas as pd
 import requests
 import json
 import re  # Import regex module for removing parenthesis/brackets
+import unicodedata  # Import for normalizing characters
 
 # Load data_with_loc.json
 with open("./data/data_with_loc.json", "r", encoding="utf-8") as file:
@@ -40,71 +41,113 @@ def remove_parenthesis(location):
     """
     return re.sub(r"\s*[\(\[\{].*?[\)\]\}]\s*", " ", location).strip()
 
+def normalize_location(location):
+    """
+    Normalize the location string by removing special characters and simplifying.
+    """
+    # Normalize characters to remove diacritics
+    normalized = unicodedata.normalize('NFKD', location).encode('ASCII', 'ignore').decode('utf-8')
+    # Remove special characters and extra spaces
+    simplified = re.sub(r'[^a-zA-Z0-9,\s]', '', normalized).strip()
+    return simplified
+
 def simplify_location(location, tier=1):
     """
-    Simplify the location string to make it less precise for broader searches.
-    Tier 1: Remove parenthesis and use the last two parts (e.g., city and country).
-    Tier 2: Remove parenthesis and use only the last part (e.g., country).
+    Simplify the location string by normalizing and iteratively removing parts from the beginning.
     """
-    location = remove_parenthesis(location)  # Remove parenthesis/brackets
+    location = normalize_location(location)  # Normalize and simplify the location
     parts = location.split(",")  # Split by commas
-    if tier == 1 and len(parts) > 1:
-        return ",".join(parts[-2:]).strip()  # Use only the last two parts
-    elif tier == 2 and len(parts) > 0:
-        return parts[-1].strip()  # Use only the last part
+
+    # Remove parts iteratively based on the tier
+    if tier <= len(parts):
+        return ",".join(parts[tier - 1:]).strip()
     return location.strip()
 
-def fuzzy_geocode(location, tier=1):
+def fuzzy_geocode(location):
     """
-    Perform a backup fuzzy search for the location using a simplified query.
+    Perform a backup fuzzy search for the location by iteratively simplifying the query.
     """
-    simplified_location = simplify_location(location, tier)
-    print(f"Attempting fuzzy search (Tier {tier}) with simplified location: {simplified_location}")
-    resp = requests.get(API, params={"format": "geojson", "q": simplified_location}, headers=header)
-    if resp.status_code == 200:
-        return resp.json()
-    else:
-        return None
+    for tier in range(1, len(location.split(",")) + 1):
+        simplified_location = simplify_location(location, tier)
+        print(f"Attempting fuzzy search (Tier {tier}) with simplified location: {simplified_location}")
+        resp = requests.get(API, params={"format": "geojson", "q": simplified_location}, headers=header)
+        if resp.status_code == 200:
+            geocode_result = resp.json()
+            if is_valid_geocode(geocode_result):
+                return geocode_result
+    return None
 
 def is_valid_geocode(geocode):
     """
-    Check if the geocode data contains valid features.
+    Check if the geocode data contains valid features or is a valid list.
     """
-    return geocode and geocode.get("features")
+    if isinstance(geocode, list) and len(geocode) > 0:
+        return True
+    return False
 
+def geocode_with_google(location, api_key):
+    """
+    Use Google Geocoding API to fetch geocode data for a given location.
+    """
+    url = "https://maps.googleapis.com/maps/api/geocode/json"
+    params = {
+        "address": location,
+        "key": api_key
+    }
+    resp = requests.get(url, params=params)
+    if resp.status_code == 200:
+        geocode_result = resp.json()
+        if geocode_result.get("status") == "OK":
+            return geocode_result["results"]
+        else:
+            print(f"Google Geocoding API error: {geocode_result.get('status')} - {geocode_result.get('error_message', 'No error message')}.")
+    else:
+        print(f"HTTP error {resp.status_code} when accessing Google Geocoding API.")
+    return None
+
+# Update geocode function to skip re-checking data already stored in the export datasets
 def geocode(row):
     global i
     i += 1
     print(i, end='\r')
+
+    # Skip geocoding if videoId is already in geocoded.json
     if row["videoId"] in geocoded_dict:
-        cached_geocode = geocoded_dict[row["videoId"]]
-        if is_valid_geocode(cached_geocode):  # Ensure cached data has valid features
-            return cached_geocode
-        else:
-            print(f"Invalid cached geocode for {row['videoId']}. Re-fetching...")
-    if row["location"] == "no location found":
-        return None
-    resp = requests.get(API, params={"format": "geojson", "q": row["location"]}, headers=header)
-    if resp.status_code == 200:
-        geocode_result = resp.json()
-        if is_valid_geocode(geocode_result):  # Check if primary search returned valid data
+        print(f"Skipping geocoding for video ID {row['videoId']} as it is already processed.")
+        return geocoded_dict[row["videoId"]]
+
+    # Use Google Geocoding API
+    geocode_result = geocode_with_google(row["location"], api_key)
+    if geocode_result:
+        return geocode_result
+
+    # Perform a backup fuzzy search
+    print(f"Primary geocode failed for {row['location']}. Attempting fuzzy search...")
+    for tier in range(1, len(row["location"].split(",")) + 1):
+        simplified_location = simplify_location(row["location"], tier)
+        print(f"Attempting fuzzy search (Tier {tier}) with simplified location: {simplified_location}")
+        geocode_result = geocode_with_google(simplified_location, api_key)
+        if geocode_result:
             return geocode_result
-        else:
-            # Perform a backup fuzzy search (Tier 1)
-            print(f"Primary geocode failed for {row['location']}. Attempting fuzzy search (Tier 1)...")
-            fuzzy_result = fuzzy_geocode(row["location"], tier=1)
-            if is_valid_geocode(fuzzy_result):
-                return fuzzy_result
-            # Perform a second backup fuzzy search (Tier 2)
-            print(f"Fuzzy search (Tier 1) failed for {row['location']}. Attempting fuzzy search (Tier 2)...")
-            return fuzzy_geocode(row["location"], tier=2)
-    else:
-        return None
+
+    return None
+
+def load_api_key():
+    """
+    Load the API key from a .env file or environment variable.
+    """
+    from dotenv import load_dotenv
+    import os
+    load_dotenv()
+    return os.getenv("GOOGLE_API_KEY")
+
+# Load API key from .env
+api_key = load_api_key()
 
 df["geocode"] = df.apply(geocode, axis=1)
 
 # Save the updated geocoded data back to JSON
-geocoded_json = df.drop(columns=["description"]).to_json(orient="records", indent=4)
+geocoded_json = df.to_json(orient="records", indent=4)
 with open("./data/geocoded.json", "w", encoding="utf-8") as file:
     json.dump(json.loads(geocoded_json), file, ensure_ascii=False, indent=4)
 

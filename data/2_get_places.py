@@ -54,7 +54,14 @@ def process_locations(df, additional_data, data_with_loc):
     total_videos = len(df)  # Remove the 10-item limit
     for idx, (_, row) in enumerate(df.iterrows(), start=1):
         video_id = row["videoId"]
-        if video_id in data_with_loc and "location" in data_with_loc[video_id]:
+
+        # Skip processing if the title is "Private video" or if description/transcript indicates private content
+        if row.get("title") == "Private video" or \
+           row.get("description") == "This video is private." or \
+           additional_data.get(video_id, {}).get("transcript") == "Error fetching transcript":
+            print(f"[{idx}/{total_videos}] Skipping video ID {video_id} due to private content.")
+            row["location"] = "no location found"
+        elif video_id in data_with_loc and "location" in data_with_loc[video_id]:
             print(f"[{idx}/{total_videos}] Skipping video ID {video_id}, location already processed.")
             row["location"] = data_with_loc[video_id]["location"]
         else:
@@ -66,7 +73,7 @@ def process_locations(df, additional_data, data_with_loc):
 
 def main():
     # Load dataset and additional data
-    with open("./data/data.json", "r", encoding="utf-8") as file:
+    with open("./data/combined_data.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     df = pd.DataFrame(data)
     print(f"Loaded {len(df)} videos from the dataset.")

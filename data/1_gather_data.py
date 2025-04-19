@@ -48,7 +48,7 @@ def get_channel_playlists(api_key, channel_id):
     print(f"Playlists fetched successfully: {list(playlists.keys())}")
     return playlists
 
-def fetch_videos_from_playlist(api_key, playlist_id, playlist_name, max_videos=10):
+def fetch_videos_from_playlist(api_key, playlist_id, playlist_name):
     print(f"Fetching videos from playlist: {playlist_name} (ID: {playlist_id})...")
     url = "https://www.googleapis.com/youtube/v3/playlistItems"
     params = {
@@ -60,26 +60,26 @@ def fetch_videos_from_playlist(api_key, playlist_id, playlist_name, max_videos=1
     key_items = ["publishedAt", "title", "description", "videoId"]
     rows = []
 
-    while len(rows) < max_videos:
+    while True:
         resp = requests.get(url, params=params)
         if resp.status_code != 200:
             raise Exception(f"Error fetching videos: {resp.status_code}, {resp.json()}")
         data = resp.json()
 
         for item in data["items"]:
-            if len(rows) >= max_videos:
-                break
             item["snippet"]["videoId"] = item["snippet"]["resourceId"]["videoId"]
             video_data = {x: item["snippet"][x] for x in key_items}
             video_data["playlistId"] = playlist_id
             video_data["playlistName"] = playlist_name  # Add playlist name to each video
             rows.append(video_data)
 
-        if "nextPageToken" in data and len(rows) < max_videos:
+        if "nextPageToken" in data:
             params["pageToken"] = data["nextPageToken"]
         else:
             break
-        print(f"Number of videos gathered: {len(rows)}")
+
+        print(f"Number of videos gathered so far: {len(rows)}")
+
     print(f"Total videos fetched from playlist {playlist_name} (ID: {playlist_id}): {len(rows)}")
     return rows
 
@@ -131,6 +131,16 @@ def save_to_json(data, filepath):
     except Exception as e:
         print(f"Error saving to JSON: {e}")
 
+def save_to_combined_json(data, filepath):
+    """Save combined data to a single JSON file."""
+    print(f"Saving combined data to {filepath}...")
+    try:
+        with open(filepath, "w", encoding="utf-8") as file:
+            json.dump(data, file, ensure_ascii=False, indent=4)
+        print(f"Combined data saved successfully to {filepath}.")
+    except Exception as e:
+        print(f"Error saving combined data: {e}")
+
 def load_additional_data(filepath):
     print(f"Loading additional data (descriptions and transcripts) from {filepath}...")
     if os.path.exists(filepath):
@@ -154,56 +164,87 @@ def save_additional_data(data, filepath):
     except Exception as e:
         print(f"Error saving additional data: {e}")
 
+# Remove duplicate video entries based on videoId
+def remove_duplicates(data):
+    """Remove duplicate entries from the data based on videoId."""
+    seen_video_ids = set()
+    unique_data = []
+    for entry in data:
+        if entry["videoId"] not in seen_video_ids:
+            unique_data.append(entry)
+            seen_video_ids.add(entry["videoId"])
+    return unique_data
+
+# Update main to save combined JSON with handle
+
 def main():
     try:
         print("Starting data gathering process...")
         api_key = load_api_key()
-        handle = "@jetlagthegame"
+        handles = ["@jetlagthegame", "@Beardmeatsfood"]  # List of YouTube channel handles
 
-        # Fetch channel details to get the channel ID
-        channel_api_url = "https://www.googleapis.com/youtube/v3/channels"
-        channel_params = {"key": api_key, "forHandle": handle, "part": "id"}
-        channel_resp = requests.get(channel_api_url, params=channel_params)
-        if channel_resp.status_code != 200:
-            print(f"Error fetching channel ID! Response code: {channel_resp.status_code}, content: {channel_resp.json()}")
-            raise Exception("Failed to retrieve channel ID.")
-        channel_id = channel_resp.json()["items"][0]["id"]
+        combined_data = []  # List to store all data with handles
 
-        # Fetch all playlists for the channel
-        playlists = get_channel_playlists(api_key, channel_id)
+        for handle in handles:
+            print(f"Processing handle: {handle}")
 
-        all_videos = []
-        additional_data = load_additional_data("./data/additional_data.json")  # Load existing additional data
-        max_videos_per_playlist = 10  # Limit videos per playlist for testing
+            # Fetch channel details to get the channel ID
+            channel_api_url = "https://www.googleapis.com/youtube/v3/channels"
+            channel_params = {"key": api_key, "forHandle": handle, "part": "id"}
+            channel_resp = requests.get(channel_api_url, params=channel_params)
+            if channel_resp.status_code != 200:
+                print(f"Error fetching channel ID for {handle}! Response code: {channel_resp.status_code}, content: {channel_resp.json()}")
+                raise Exception("Failed to retrieve channel ID.")
+            channel_id = channel_resp.json()["items"][0]["id"]
 
-        for playlist_name, playlist_id in playlists.items():
-            print(f"Processing playlist: {playlist_name} (ID: {playlist_id})")
-            videos = fetch_videos_from_playlist(api_key, playlist_id, playlist_name, max_videos=max_videos_per_playlist)
+            # Fetch all playlists for the channel
+            playlists = get_channel_playlists(api_key, channel_id)
 
-            for video in videos:
-                video_id = video["videoId"]
-                if video_id not in additional_data:
-                    # Fetch transcript and add description
-                    transcript = fetch_transcript(video_id)
-                    additional_data[video_id] = {
-                        "description": video["description"],
-                        "transcript": transcript
-                    }
-                else:
-                    print(f"Transcript and description already cached for video ID: {video_id}")
+            all_videos = []
+            additional_data = load_additional_data("./data/additional_data.json")  # Load existing additional data
 
-                # Remove description and transcript from the main video data
-                video.pop("description", None)
+            for playlist_name, playlist_id in playlists.items():
+                print(f"Processing playlist: {playlist_name} (ID: {playlist_id})")
+                videos = fetch_videos_from_playlist(api_key, playlist_id, playlist_name)
 
-            all_videos.extend(videos)
+                for video in videos:
+                    video_id = video["videoId"]
 
-        # Save all videos to JSON
-        cache_filepath = "./data/data.json"
-        save_to_json(all_videos, cache_filepath)
+                    # Skip processing if the title is "Private video"
+                    if video["title"] == "Private video":
+                        print(f"Skipping private video with ID: {video_id}")
+                        continue
 
-        # Save additional data (descriptions and transcripts) to JSON
-        additional_data_filepath = "./data/additional_data.json"
-        save_additional_data(additional_data, additional_data_filepath)
+                    if video_id not in additional_data:
+                        # Fetch transcript and add description
+                        transcript = fetch_transcript(video_id)
+                        additional_data[video_id] = {
+                            "description": video["description"],
+                            "transcript": transcript
+                        }
+                    else:
+                        print(f"Transcript and description already cached for video ID: {video_id}")
+
+                    # Remove description and transcript from the main video data
+                    video.pop("description", None)
+
+                    # Add handle to video data
+                    video["handle"] = handle
+
+                all_videos.extend(videos)
+
+            combined_data.extend(all_videos)
+
+            # Save additional data (descriptions and transcripts) to JSON
+            additional_data_filepath = "./data/additional_data.json"
+            save_additional_data(additional_data, additional_data_filepath)
+
+        # Remove duplicates before saving combined data
+        combined_data = remove_duplicates(combined_data)
+
+        # Save combined data to a single JSON file
+        combined_data_filepath = "./data/combined_data.json"
+        save_to_combined_json(combined_data, combined_data_filepath)
 
         print("Data gathering process completed successfully.")
     except Exception as e:
