@@ -13,7 +13,7 @@ L.Icon.Default.prototype.options.shadowUrl = markerShadowUrl;
 L.Icon.Default.imagePath = "";
 
 // Custom hook for initializing the map
-const useInitializeMap = (mapRef, markerLayerRef) => {
+const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, markerLayerRef: React.MutableRefObject<L.LayerGroup | null>) => {
     useEffect(() => {
         const map = L.map('map').setView([51.1358, 1.3621], 5);
         mapRef.current = map;
@@ -27,7 +27,7 @@ const useInitializeMap = (mapRef, markerLayerRef) => {
         markerLayerRef.current = markerLayer;
 
         const coordsControl = new L.Control({ position: 'bottomleft' });
-        coordsControl.onAdd = (map) => {
+        coordsControl.onAdd = (map: L.Map) => {
             const ret = document.createElement("div");
             map.on("mousemove", (event) => {
                 ret.innerHTML = `<div class="control">${event.latlng.lat.toFixed(4)}, ${event.latlng.lng.toFixed(4)}</div>`;
