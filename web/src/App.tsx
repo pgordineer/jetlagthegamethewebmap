@@ -102,7 +102,12 @@ let App = () => {
         }
 
         if (filter !== "") {
-            ret = ret.filter((item) => item.title.toLowerCase().includes(filter.toLowerCase()));
+            const lowerFilter = filter.toLowerCase();
+            ret = ret.filter(
+                (item) =>
+                    item.title.toLowerCase().includes(lowerFilter) ||
+                    item.playlistName?.toLowerCase().includes(lowerFilter) // Filter by playlist name
+            );
         }
 
         return ret;
