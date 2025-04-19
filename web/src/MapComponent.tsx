@@ -9,6 +9,9 @@ import markerIconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
 import markerShadowUrl from "leaflet/dist/images/marker-shadow.png";
 import { VideoInfo } from './App';
 
+// Import MarkerClusterGroup type
+import 'leaflet.markercluster'; // Ensure this is imported for type definitions
+
 // Configure Leaflet marker icons
 L.Icon.Default.prototype.options.iconUrl = markerIconUrl;
 L.Icon.Default.prototype.options.iconRetinaUrl = markerIconRetinaUrl;
