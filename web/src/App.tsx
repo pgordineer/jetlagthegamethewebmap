@@ -57,11 +57,16 @@ let VideoData = (data as RawVideoInfo[]).map((item) => {
         marked: item.marked ?? false, // Default to false if missing
     };
 }).filter((item) => {
+    // Exclude videos with the title "Private video"
+    if (item.title === "Private video") {
+        console.warn("Excluding private video:", item);
+        return false;
+    }
     // Log a warning for invalid geocode but include the item
     if (!item.geocode) {
         console.warn("Invalid or missing geocode, item will still be included:", item);
     }
-    return true; // Include all items
+    return true; // Include all other items
 });
 
 console.log("Parsed VideoData:", VideoData);
