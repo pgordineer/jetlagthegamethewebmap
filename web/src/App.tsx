@@ -141,6 +141,23 @@ let App = () => {
                     }}
                 ></input>
             </div>
+            <div id="items-overlay">
+                {display_data.map((item) => (
+                    <div
+                        className={"sidebar-item" + (item.videoId === activeVideo ? " active-video" : "")}
+                        onClick={() => {
+                            setActiveVideo(item.videoId);
+                        }}
+                        key={item.videoId}
+                    >
+                        Title: {item.title}
+                        <br />
+                        Location: {item.geocode?.[0]?.toPrecision(4)}, {item.geocode?.[1]?.toPrecision(4)}
+                        <br />
+                        Playlist: {item.playlistName}
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

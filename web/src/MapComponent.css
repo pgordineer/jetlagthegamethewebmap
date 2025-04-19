@@ -43,6 +43,33 @@
     font-size: 14px;
 }
 
+#items-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    max-height: 40%;
+    width: 300px;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.sidebar-item {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.sidebar-item.active-video {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 5px;
+}
+
 .custom-marker {
     display: flex;
     justify-content: center;

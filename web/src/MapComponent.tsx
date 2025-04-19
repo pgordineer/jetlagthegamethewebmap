@@ -56,7 +56,14 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
     const layerGroupRef = useRef<LayerGroup | null>(null);
 
     useEffect(() => {
-        const map = L.map('map', { zoomControl: false }).setView([51.1358, 1.3621], 5);
+        const map = L.map('map', {
+            zoomControl: false,
+            maxBounds: [
+                [-90, -180], // Southwest corner
+                [90, 180],   // Northeast corner
+            ],
+            maxBoundsViscosity: 1.0, // Prevent panning outside bounds
+        }).setView([51.1358, 1.3621], 5);
         mapRef.current = map;
 
         // Use a dark-themed tile layer
