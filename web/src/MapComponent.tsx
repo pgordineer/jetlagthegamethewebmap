@@ -54,6 +54,18 @@ const MapComponent = forwardRef(({ data, activeVideo, setActiveVideo }: { data: 
                 mapRef.current.fitBounds(latLngBounds);
             }
         },
+        zoomToMarkers: (markers: VideoInfo[]) => {
+            if (mapRef.current && markers.length > 0) {
+                const bounds = L.latLngBounds(
+                    markers
+                        .filter((item) => item.geocode)
+                        .map((item) => item.geocode as [number, number])
+                );
+                if (bounds.isValid()) {
+                    mapRef.current.fitBounds(bounds, { padding: [50, 50] });
+                }
+            }
+        },
     }));
 
     useEffect(() => {

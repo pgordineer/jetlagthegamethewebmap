@@ -108,21 +108,13 @@ let App = () => {
             );
         }
 
+        // Notify the map to zoom to the filtered markers
+        if (mapRef.current) {
+            mapRef.current.zoomToMarkers(ret);
+        }
+
         return ret;
     }, [playlist, filter]);
-
-    // Zoom to the area of filtered markers
-    useEffect(() => {
-        if (mapRef.current && display_data.length > 0) {
-            const bounds = display_data
-                .filter((item) => item.geocode)
-                .map((item) => item.geocode as [number, number]);
-
-            if (bounds.length > 0) {
-                mapRef.current.fitBounds(bounds); // Adjust map to fit bounds
-            }
-        }
-    }, [display_data]);
 
     return (
         <div>
