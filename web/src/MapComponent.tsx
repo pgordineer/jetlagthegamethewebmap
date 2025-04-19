@@ -1,4 +1,4 @@
-import { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
+import { useEffect, useRef } from 'react';
 import L, { Marker, LatLngExpression, LayerGroup } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import markerIconUrl from "leaflet/dist/images/marker-icon.png";
@@ -81,24 +81,28 @@ const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, layerGro
     }, []);
 };
 
-const MapComponent = forwardRef(({ data, activeVideo, setActiveVideo }: { data: VideoInfo[], activeVideo: string, setActiveVideo: (video: string) => void }, ref) => {
+const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[], activeVideo: string, setActiveVideo: (video: string) => void }) => {
     const markersRef = useRef<Map<string, Marker>>(new Map());
     const mapRef = useRef<L.Map>(null);
     const layerGroupRef = useRef<LayerGroup | null>(null); // Use LayerGroup for marker management
 
-    useInitializeMap(mapRef, layerGroupRef);
+    useEffect(() => {
+        const map = L.map('map').setView([51.1358, 1.3621], 5);
+        mapRef.current = map;
 
-    useImperativeHandle(ref, () => ({
-        fitBounds: (bounds: [number, number][]) => {
-            if (mapRef.current && bounds.length > 0) {
-                const latLngBounds = bounds.reduce(
-                    (acc, [lat, lng]) => acc.extend([lat, lng]),
-                    new L.LatLngBounds()
-                );
-                mapRef.current.fitBounds(latLngBounds);
-            }
-        },
-    }));
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        }).addTo(map);
+
+        const layerGroup = L.layerGroup(); // Create a LayerGroup for markers
+        layerGroupRef.current = layerGroup;
+        layerGroup.addTo(map);
+
+        return () => {
+            map.remove();
+        };
+    }, []);
 
     useEffect(() => {
         const currentPopup = markersRef.current.get(activeVideo);
@@ -146,6 +150,6 @@ const MapComponent = forwardRef(({ data, activeVideo, setActiveVideo }: { data: 
     }, [data]);
 
     return <div id="map"></div>;
-});
+};
 
 export default MapComponent;
