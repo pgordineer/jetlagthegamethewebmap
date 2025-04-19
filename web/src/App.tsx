@@ -4,7 +4,7 @@ import data from "./data/data.json"
 import "./style.css"
 
 export interface VideoInfo {
-    publishedAt: string;
+    publishedAt?: string; // Made optional
     title: string;
     videoId: string;
     location: string;
