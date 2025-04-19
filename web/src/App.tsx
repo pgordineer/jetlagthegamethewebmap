@@ -163,7 +163,7 @@ let App = () => {
                             className={"sidebar-item" + (item.videoId === activeVideo ? " active-video" : "")}
                             onClick={() => {
                                 if (activeVideo === item.videoId) {
-                                    setActiveVideo(""); // Deselect the video if clicked again
+                                    setActiveVideo(""); // Deselect the video and close the popup
                                 } else {
                                     setActiveVideo(item.videoId);
                                 }
