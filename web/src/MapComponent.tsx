@@ -49,7 +49,7 @@ const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, layerGro
         layerGroupRef.current = layerGroup;
         layerGroup.addTo(map);
 
-        const coordsControl = new L.Control({ position: 'bottomleft' });
+        const coordsControl = new L.Control({ position: 'bottomleft' }); // Pass options object
         coordsControl.onAdd = (map: L.Map) => {
             const ret = document.createElement("div");
             map.on("mousemove", (event) => {
@@ -58,7 +58,7 @@ const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, layerGro
             return ret;
         };
 
-        const gitHubControl = new L.Control({ position: 'bottomleft' });
+        const gitHubControl = new L.Control({ position: 'bottomleft' }); // Pass options object
         gitHubControl.onAdd = () => {
             const ret = document.createElement("div");
             ret.innerHTML = "<a href=\"https://github.com/pgordineer/jetlagthegamethewebmap\"> GitHub </a>";
