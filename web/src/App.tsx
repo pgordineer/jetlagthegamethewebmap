@@ -83,6 +83,7 @@ let App = () => {
     const [filter, setFilter] = useState("");
 
     const cur_video = useRef<HTMLElement>(null);
+    const mapRef = useRef<any>(null); // Reference to the MapComponent
 
     // If active video is updated, scroll the video into view on the sidebar
     useEffect(() => {
@@ -110,9 +111,27 @@ let App = () => {
         return ret;
     }, [playlist, filter]);
 
+    // Auto pan and zoom the map to fit the filtered items
+    useEffect(() => {
+        if (mapRef.current && display_data.length > 0) {
+            const bounds = display_data
+                .filter((item) => item.geocode)
+                .map((item) => item.geocode as [number, number]);
+
+            if (bounds.length > 0) {
+                mapRef.current.fitBounds(bounds); // Adjust map to fit bounds
+            }
+        }
+    }, [display_data]);
+
     return (
         <div>
-            <MapComponent data={display_data} activeVideo={activeVideo} setActiveVideo={setActiveVideo}></MapComponent>
+            <MapComponent
+                ref={mapRef}
+                data={display_data}
+                activeVideo={activeVideo}
+                setActiveVideo={setActiveVideo}
+            ></MapComponent>
             <div id="sidebar" className="roboto-sidebar">
                 <div className="sticky-selectors">
                     <select
