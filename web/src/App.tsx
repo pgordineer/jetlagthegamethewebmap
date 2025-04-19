@@ -83,7 +83,6 @@ let App = () => {
     const [filter, setFilter] = useState("");
 
     const cur_video = useRef<HTMLElement>(null);
-    const mapRef = useRef<any>(null); // Reference to the MapComponent
 
     // If active video is updated, scroll the video into view on the sidebar
     useEffect(() => {
@@ -111,20 +110,9 @@ let App = () => {
         return ret;
     }, [playlist, filter]);
 
-    // Focus on the first marker of the filtered data
-    useEffect(() => {
-        if (mapRef.current && display_data.length > 0) {
-            const firstMarker = display_data.find((item) => item.geocode);
-            if (firstMarker?.geocode) {
-                mapRef.current.panToMarker(firstMarker.geocode);
-            }
-        }
-    }, [display_data]);
-
     return (
         <div>
             <MapComponent
-                ref={mapRef}
                 data={display_data}
                 activeVideo={activeVideo}
                 setActiveVideo={setActiveVideo}
