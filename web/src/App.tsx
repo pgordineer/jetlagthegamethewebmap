@@ -11,6 +11,7 @@ export interface VideoInfo {
     geocode: [number, number] | null; // Ensure geocode is parsed into a coordinate pair
     transcript: any; // Updated to match parsed type
     playlist: string; // Updated to string to handle dynamic playlists
+    playlistName?: string; // Added to handle playlist names
     marked: boolean;
 }
 
@@ -25,6 +26,7 @@ interface RawVideoInfo {
     } | null; // Adjusted for new format
     transcript?: string; // Made optional to handle missing data
     playlist?: string; // Made optional to handle missing data
+    playlistName?: string; // Made optional to handle missing data
     marked?: boolean; // Made optional to handle missing data
 }
 
@@ -50,7 +52,8 @@ let VideoData = (data as RawVideoInfo[]).map((item) => {
         location: item.location || "Unknown Location", // Default to "Unknown Location" if missing
         geocode: parsedGeocode, // Extract the first valid coordinate
         transcript: item.transcript ? JSON.parse(item.transcript) : null, // Parse transcript if available
-        playlist: "unknown", // Default to "unknown" if missing
+        playlist: item.playlist || "unknown", // Default to "unknown" if missing
+        playlistName: item.playlistName || "Unknown Playlist", // Default to "Unknown Playlist" if missing
         marked: item.marked ?? false, // Default to false if missing
     };
 }).filter((item) => {
@@ -63,43 +66,13 @@ let VideoData = (data as RawVideoInfo[]).map((item) => {
 
 console.log("Parsed VideoData:", VideoData);
 
-// Map keywords in titles to playlist categories
-const titleToPlaylistMapping: { [key: string]: string } = {
-    "Connect 4": "s1",
-    "Circumnavigate": "s2",
-    "Tag EUR It": "s3",
-    "Battle 4 America": "s4",
-    "Race to the End of the World": "s5",
-    "Capture the Flag": "s6",
-    "Tag EUR It 2": "s7",
-    "Arctic Escape": "s8",
-    "Hide + Seek: Switzerland": "s9",
-    "Au$tralia": "s10",
-    "Tag EUR It 3": "s11",
-    "Hide + Seek: Japan": "s12",
-    "Schengen Showdown": "s13",
-    "New Zealand Into a Real-Life Board Game": "s14",
-    "We Raced To Visit The Most European Countries": "s13", // Schengen Showdown
-    "We Played a 72 Hour Game of Tag Across Europe": "s3", // Tag EUR It
-    "We Played Hide And Seek Across Japan": "s12", // Hide + Seek: Japan
-    "AU$TRALIA: A Travel Game": "s10", // AU$TRALIA
-    "We Played Hide And Seek Across Switzerland": "s9", // Hide + Seek: Switzerland
-    "We Raced From USA's Northernmost to Southernmost Town": "s5", // Race to the End of the World
-    "We Raced To Visit The Most US States In 100 Hrs": "s1", // Connect 4
-    "We Turned New Zealand Into a Real-Life Board Game": "s14", // New Zealand Board Game
-    "We Raced To Circumnavigate The Globe In 100 Hours": "s2", // Circumnavigation
-    "Playing a 96 Hr Game Of Capture The Flag Across Japan": "s6", // Capture the Flag
-    "Playing a 72 Hr Game of Tag Across Europe": "s3" // Tag EUR It
-};
-
-// Reverse mapping for dropdown display
-const playlistToTitleMapping: { [key: string]: string } = Object.entries(titleToPlaylistMapping).reduce(
-    (acc, [title, playlist]) => {
-        acc[playlist] = title;
-        return acc;
-    },
-    {} as { [key: string]: string }
-);
+// Map playlistId to playlistName for dropdown display
+const playlistMapping: { [key: string]: string } = Array.from(
+    new Set(VideoData.map((item) => ({ id: item.playlist, name: item.playlistName })))
+).reduce((acc, { id, name }) => {
+    acc[id] = name;
+    return acc;
+}, {} as { [key: string]: string });
 
 let App = () => {
     // Active video that is highlighted on the screen
@@ -119,22 +92,16 @@ let App = () => {
     // Use a memo here to avoid bad side effects from filtering the data
     const display_data = useMemo(() => {
         // Filter data based on the sidebar selectors
-        let ret: VideoInfo[] = [];
+        let ret: VideoInfo[] = VideoData;
+
         if (playlist !== "") {
-            const mappedTitle = playlistToTitleMapping[playlist];
-            ret = VideoData.filter((item) => {
-                // Match titles flexibly using includes
-                return item.title.toLowerCase().includes(mappedTitle.toLowerCase());
-            });
-        } else {
-            ret = VideoData;
+            ret = ret.filter((item) => item.playlist === playlist);
         }
 
         if (filter !== "") {
-            ret = ret.filter((item) => {
-                return item.title.toLowerCase().includes(filter.toLowerCase());
-            });
+            ret = ret.filter((item) => item.title.toLowerCase().includes(filter.toLowerCase()));
         }
+
         return ret;
     }, [playlist, filter]);
 
@@ -150,9 +117,9 @@ let App = () => {
                         }}
                     >
                         <option value="">All Playlists</option>
-                        {Object.entries(playlistToTitleMapping).map(([playlist, title]) => (
-                            <option value={playlist} key={playlist}>
-                                {title}
+                        {Object.entries(playlistMapping).map(([id, name]) => (
+                            <option value={id} key={id}>
+                                {name}
                             </option>
                         ))}
                     </select>

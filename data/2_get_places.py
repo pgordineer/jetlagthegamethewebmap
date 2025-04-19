@@ -70,6 +70,10 @@ def main():
         data = json.load(file)
     df = pd.DataFrame(data)
     print(f"Loaded {len(df)} videos from the dataset.")
+
+    # Temporary limit to 10 items for testing
+    #df = df.head(10)
+
     with open("./data/additional_data.json", "r", encoding="utf-8") as file:
         additional_data = json.load(file)
 

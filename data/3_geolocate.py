@@ -17,7 +17,7 @@ print(df.head())
 
 # Load existing geocoded data if available
 try:
-    with open("./data/3_geocoded.json", "r", encoding="utf-8") as file:
+    with open("./data/geocoded.json", "r", encoding="utf-8") as file:
         geocoded_data = json.load(file)
     geocoded_dict = {item["videoId"]: item["geocode"] for item in geocoded_data}
     print("Loaded existing geocoded data.")
@@ -51,11 +51,11 @@ df["geocode"] = df.apply(geocode, axis=1)
 
 # Save the updated geocoded data back to JSON
 geocoded_json = df.drop(columns=["description"]).to_json(orient="records", indent=4)
-with open("./data/3_geocoded.json", "w", encoding="utf-8") as file:
+with open("./data/geocoded.json", "w", encoding="utf-8") as file:
     json.dump(json.loads(geocoded_json), file, ensure_ascii=False, indent=4)
 
 # Save a copy to ./web/src/data/data.json
 with open("./web/src/data/data.json", "w", encoding="utf-8") as file:
     json.dump(json.loads(geocoded_json), file, ensure_ascii=False, indent=4)
 
-print("Geocoded data saved to 3_geocoded.json and ./web/src/data/data.json.")
+print("Geocoded data saved to geocoded.json and ./web/src/data/data.json.")
