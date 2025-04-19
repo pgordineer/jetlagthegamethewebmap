@@ -1,6 +1,9 @@
 import { useEffect, useRef } from 'react';
 import L, { Marker, LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import 'leaflet.markercluster/dist/MarkerCluster.css';
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+import 'leaflet.markercluster';
 import markerIconUrl from "leaflet/dist/images/marker-icon.png";
 import markerIconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
 import markerShadowUrl from "leaflet/dist/images/marker-shadow.png";
@@ -13,7 +16,7 @@ L.Icon.Default.prototype.options.shadowUrl = markerShadowUrl;
 L.Icon.Default.imagePath = "";
 
 // Custom hook for initializing the map
-const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, markerLayerRef: React.MutableRefObject<L.LayerGroup | null>) => {
+const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, markerClusterRef: React.MutableRefObject<L.MarkerClusterGroup | null>) => {
     useEffect(() => {
         const map = L.map('map').setView([51.1358, 1.3621], 5);
         mapRef.current = map;
@@ -23,8 +26,9 @@ const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, markerLa
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }).addTo(map);
 
-        const markerLayer = L.layerGroup().addTo(map);
-        markerLayerRef.current = markerLayer;
+        const markerCluster = L.markerClusterGroup();
+        markerClusterRef.current = markerCluster;
+        map.addLayer(markerCluster);
 
         const coordsControl = new L.Control({ position: 'bottomleft' });
         coordsControl.onAdd = (map: L.Map) => {
@@ -54,9 +58,9 @@ const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, markerLa
 const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[], activeVideo: string, setActiveVideo: (video: string) => void }) => {
     const markersRef = useRef<Map<string, Marker>>(new Map());
     const mapRef = useRef<L.Map>(null);
-    const markerLayerRef = useRef<L.LayerGroup>(null);
+    const markerClusterRef = useRef<L.MarkerClusterGroup>(null);
 
-    useInitializeMap(mapRef, markerLayerRef);
+    useInitializeMap(mapRef, markerClusterRef);
 
     useEffect(() => {
         const currentPopup = markersRef.current.get(activeVideo);
@@ -67,7 +71,7 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
     }, [activeVideo]);
 
     useEffect(() => {
-        markerLayerRef.current?.clearLayers();
+        markerClusterRef.current?.clearLayers();
         markersRef.current = new Map<string, Marker>();
 
         data.forEach(element => {
@@ -79,7 +83,7 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
                         { maxWidth: undefined }
                     );
 
-                markerLayerRef.current?.addLayer(marker);
+                markerClusterRef.current?.addLayer(marker);
 
                 marker.on("click", () => {
                     setActiveVideo(element.videoId);
