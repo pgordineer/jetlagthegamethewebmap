@@ -9,6 +9,18 @@
     height: 100%;
 }
 
+#overlay-panel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
 #filter-overlay {
     position: absolute;
     top: 10px;
@@ -62,4 +74,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.custom-control {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
 }

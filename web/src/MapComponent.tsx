@@ -52,15 +52,14 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
                 [85, 180],   // Northeast corner
             ],
             maxBoundsViscosity: 1.0, // Prevent panning outside bounds
-            minZoom: 2, // Prevent zooming out too far
-            maxZoom: 18, // Restrict zoom level to avoid showing multiple world maps
-        }).setView([51.1358, 1.3621], 3);
+        }).setView([51.1358, 1.3621], 3); // Adjusted zoom level
         mapRef.current = map;
 
         // Use a dark-themed tile layer
         L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
             subdomains: 'abcd',
+            maxZoom: 19,
         }).addTo(map);
 
         const layerGroup = L.layerGroup();
@@ -134,7 +133,21 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
         });
     }, [data]);
 
-    return <div id="map"></div>;
+    return (
+        <div id="map-container">
+            <div id="map"></div>
+            <div id="overlay-panel">
+                <h3>Running Totals</h3>
+                <p>Fares: $168.50</p>
+                <p>Surcharge: $6.00</p>
+                <p>MTA Tax: $6.00</p>
+                <p>Tips: $17.25</p>
+                <p>Tolls: $0.00</p>
+                <p>Total: $197.75</p>
+                <p>Passengers: 12</p>
+            </div>
+        </div>
+    );
 };
 
 export default MapComponent;
