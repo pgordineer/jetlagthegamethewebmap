@@ -34,20 +34,9 @@ const resolveOverlaps = (markers: { position: LatLngExpression; marker: Marker }
     });
 };
 
-const getMarkerColor = (season: string): string => {
-    switch (season.toLowerCase()) {
-        case "spring":
-            return "green";
-        case "summer":
-            return "yellow";
-        case "fall":
-        case "autumn":
-            return "orange";
-        case "winter":
-            return "blue";
-        default:
-            return "red";
-    }
+const getRandomColor = (): string => {
+    const colors = ["#FF4500", "#FFA500", "#FFD700", "#FF6347", "#FF8C00"]; // Colors inspired by the image
+    return colors[Math.floor(Math.random() * colors.length)];
 };
 
 const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[], activeVideo: string, setActiveVideo: (video: string) => void }) => {
@@ -59,11 +48,11 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
         const map = L.map('map', {
             zoomControl: false,
             maxBounds: [
-                [-90, -180], // Southwest corner
-                [90, 180],   // Northeast corner
+                [-85, -180], // Southwest corner
+                [85, 180],   // Northeast corner
             ],
             maxBoundsViscosity: 1.0, // Prevent panning outside bounds
-        }).setView([51.1358, 1.3621], 5);
+        }).setView([51.1358, 1.3621], 3); // Adjusted zoom level
         mapRef.current = map;
 
         // Use a dark-themed tile layer
@@ -114,8 +103,7 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
         data.forEach(element => {
             if (element.geocode) {
                 const position: LatLngExpression = element.geocode;
-                const season = element.playlistName || "unknown";
-                const markerColor = getMarkerColor(season);
+                const markerColor = getRandomColor();
 
                 const marker = L.marker(position, {
                     icon: L.divIcon({
