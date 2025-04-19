@@ -12,9 +12,7 @@ export default defineConfig({
     build: {
         rollupOptions: {
             external: [
-                'leaflet.markercluster',
-                'leaflet.markercluster/dist/MarkerCluster.css',
-                'leaflet.markercluster/dist/MarkerCluster.Default.css'
+                'leaflet.markercluster' // Keep only the JavaScript module as external
             ]
         }
     }
