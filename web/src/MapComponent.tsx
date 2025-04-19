@@ -34,6 +34,22 @@ const resolveOverlaps = (markers: { position: LatLngExpression; marker: Marker }
     });
 };
 
+const getMarkerColor = (season: string): string => {
+    switch (season.toLowerCase()) {
+        case "spring":
+            return "green";
+        case "summer":
+            return "yellow";
+        case "fall":
+        case "autumn":
+            return "orange";
+        case "winter":
+            return "blue";
+        default:
+            return "red";
+    }
+};
+
 const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[], activeVideo: string, setActiveVideo: (video: string) => void }) => {
     const markersRef = useRef<Map<string, Marker>>(new Map());
     const mapRef = useRef<L.Map>(null);
@@ -91,10 +107,13 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
         data.forEach(element => {
             if (element.geocode) {
                 const position: LatLngExpression = element.geocode;
+                const season = element.playlistName || "unknown";
+                const markerColor = getMarkerColor(season);
+
                 const marker = L.marker(position, {
                     icon: L.divIcon({
                         className: 'custom-marker',
-                        html: `<div style="background-color: ${element.marked ? 'yellow' : 'red'}; width: 10px; height: 10px; border-radius: 50%;"></div>`,
+                        html: `<div style="background-color: ${markerColor}; width: 10px; height: 10px; border-radius: 50%;"></div>`,
                     }),
                 }).bindPopup(
                     `<iframe class="video-player" src="https://www.youtube.com/embed/${element.videoId}" allowfullscreen></iframe>`,

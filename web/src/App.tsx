@@ -117,54 +117,29 @@ let App = () => {
                 activeVideo={activeVideo}
                 setActiveVideo={setActiveVideo}
             ></MapComponent>
-            <div id="sidebar" className="roboto-sidebar">
-                <div className="sticky-selectors">
-                    <select
-                        name="playlist-select"
-                        onChange={(changeEvent) => {
-                            setPlaylist(changeEvent.target.value);
-                        }}
-                    >
-                        <option value="">All Playlists</option>
-                        {allPlaylists.map(({ id, name }) => (
-                            <option value={id} key={id}>
-                                {name}
-                            </option>
-                        ))}
-                    </select>
+            <div id="filter-overlay">
+                <select
+                    name="playlist-select"
+                    onChange={(changeEvent) => {
+                        setPlaylist(changeEvent.target.value);
+                    }}
+                >
+                    <option value="">All Playlists</option>
+                    {allPlaylists.map(({ id, name }) => (
+                        <option value={id} key={id}>
+                            {name}
+                        </option>
+                    ))}
+                </select>
 
-                    <input
-                        type="search"
-                        placeholder="filter"
-                        name="TextFilter"
-                        onChange={(changeEvent) => {
-                            setFilter(changeEvent.target.value);
-                        }}
-                    ></input>
-                </div>
-
-                {display_data.map((item) => {
-                    return (
-                        <div
-                            className={"sidebar-item" + (item.videoId === activeVideo ? " active-video" : "")}
-                            onClick={() => {
-                                setActiveVideo(item.videoId);
-                            }}
-                            ref={(elem) => {
-                                if (item.videoId === activeVideo) {
-                                    cur_video.current = elem;
-                                }
-                            }}
-                            key={item.videoId}
-                        >
-                            Title: {item.title}
-                            <br />
-                            Location: {item.geocode?.[0]?.toPrecision(4)}, {item.geocode?.[1]?.toPrecision(4)}
-                            <br />
-                            Playlist: {item.playlistName}
-                        </div>
-                    );
-                })}
+                <input
+                    type="search"
+                    placeholder="Filter videos"
+                    name="TextFilter"
+                    onChange={(changeEvent) => {
+                        setFilter(changeEvent.target.value);
+                    }}
+                ></input>
             </div>
         </div>
     );
