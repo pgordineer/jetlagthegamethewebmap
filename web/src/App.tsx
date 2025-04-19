@@ -23,13 +23,13 @@ interface RawVideoInfo {
     geocode: {
         features: { geometry: { coordinates: [number, number] } }[];
     } | null; // Adjusted for new format
-    transcript: string; // Raw transcript as a string
-    playlist: string;
-    marked: boolean;
+    transcript?: string; // Made optional to handle missing data
+    playlist?: string; // Made optional to handle missing data
+    marked?: boolean; // Made optional to handle missing data
 }
 
 // Parse geocode and filter out invalid entries
-let VideoData = (data as RawVideoInfo[]).map((item) => {
+let VideoData = (data as Partial<RawVideoInfo>[]).map((item) => {
     let parsedGeocode: [number, number] | null = null;
     try {
         if (item.geocode?.features?.length) {
@@ -42,8 +42,9 @@ let VideoData = (data as RawVideoInfo[]).map((item) => {
     return {
         ...item,
         geocode: parsedGeocode, // Extract the first valid coordinate
-        transcript: JSON.parse(item.transcript),
-        playlist: item.playlist as "ap" | "tymnk" | "bfs", // Ensure playlist matches the VideoInfo type
+        transcript: item.transcript ? JSON.parse(item.transcript) : null, // Parse transcript if available
+        playlist: (item.playlist || "ap") as "ap" | "tymnk" | "bfs", // Default to "ap" if missing
+        marked: item.marked ?? false, // Default to false if missing
     };
 }).filter((item) => {
     // Log a warning for invalid geocode but include the item
