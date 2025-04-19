@@ -51,7 +51,36 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 96451607,
+                        "osm_type": "relation",
+                        "osm_id": 58274,
+                        "place_rank": 14,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.7287064308,
+                        "addresstype": "city",
+                        "name": "Bruxelles - Brussel",
+                        "display_name": "Bruxelles - Brussel, Brussel-Hoofdstad - Bruxelles-Capitale, Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest, België / Belgique / Belgien"
+                    },
+                    "bbox": [
+                        4.3140021,
+                        50.7964079,
+                        4.4370711,
+                        50.9139045
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            4.351697,
+                            50.8465573
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -764,7 +793,36 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 244540263,
+                        "osm_type": "relation",
+                        "osm_id": 9444296,
+                        "place_rank": 22,
+                        "category": "natural",
+                        "type": "peninsula",
+                        "importance": 0.4984777547,
+                        "addresstype": "peninsula",
+                        "name": "伊豆半島",
+                        "display_name": "伊豆半島, 静岡県, 日本"
+                    },
+                    "bbox": [
+                        138.739074,
+                        34.600842,
+                        139.161231,
+                        35.2339398
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            138.9628946567,
+                            34.917385
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -777,7 +835,64 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 245289099,
+                        "osm_type": "relation",
+                        "osm_id": 3793581,
+                        "place_rank": 8,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.6970823444,
+                        "addresstype": "province",
+                        "name": "静岡県",
+                        "display_name": "静岡県, 日本"
+                    },
+                    "bbox": [
+                        137.474107,
+                        34.3724457,
+                        139.420756,
+                        35.645957
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            138.0955398,
+                            34.9332488
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 247340595,
+                        "osm_type": "relation",
+                        "osm_id": 4674742,
+                        "place_rank": 14,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.6169521047,
+                        "addresstype": "city",
+                        "name": "静岡市",
+                        "display_name": "静岡市, 静岡県, 420-8602, 日本"
+                    },
+                    "bbox": [
+                        138.082959,
+                        34.8019562,
+                        138.6539534,
+                        35.645957
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            138.3831697,
+                            34.9751974
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -874,7 +989,36 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 61602644,
+                        "osm_type": "relation",
+                        "osm_id": 1675607,
+                        "place_rank": 16,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.5261959646,
+                        "addresstype": "municipality",
+                        "name": "Jesenice",
+                        "display_name": "Jesenice, Slovenija"
+                    },
+                    "bbox": [
+                        13.9870754,
+                        46.3986451,
+                        14.1534003,
+                        46.4931917
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            14.0623942,
+                            46.4323705
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -1013,7 +1157,64 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 67305931,
+                        "osm_type": "relation",
+                        "osm_id": 44836,
+                        "place_rank": 16,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.6899234468,
+                        "addresstype": "city",
+                        "name": "Padova",
+                        "display_name": "Padova, Veneto, 35121-35143, Italia"
+                    },
+                    "bbox": [
+                        11.8054118,
+                        45.3395667,
+                        11.976435,
+                        45.4573727
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            11.8734455,
+                            45.4077172
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 67035902,
+                        "osm_type": "relation",
+                        "osm_id": 44217,
+                        "place_rank": 12,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.709428028,
+                        "addresstype": "county",
+                        "name": "Padova",
+                        "display_name": "Padova, Veneto, Italia"
+                    },
+                    "bbox": [
+                        11.3909429,
+                        45.09558,
+                        12.2064075,
+                        45.6872283
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            11.8058486771,
+                            45.391408
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -1474,7 +1675,64 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 65390547,
+                        "osm_type": "relation",
+                        "osm_id": 1682891,
+                        "place_rank": 16,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.648967135,
+                        "addresstype": "town",
+                        "name": "Luzern",
+                        "display_name": "Luzern, Schweiz/Suisse/Svizzera/Svizra"
+                    },
+                    "bbox": [
+                        8.20651,
+                        46.9980063,
+                        8.427975,
+                        47.0835227
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            8.3054682,
+                            47.0505452
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 65320598,
+                        "osm_type": "relation",
+                        "osm_id": 1685677,
+                        "place_rank": 8,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.5936959452,
+                        "addresstype": "state",
+                        "name": "Luzern",
+                        "display_name": "Luzern, Schweiz/Suisse/Svizzera/Svizra"
+                    },
+                    "bbox": [
+                        7.8364131,
+                        46.7749903,
+                        8.5140537,
+                        47.2871939
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            8.1719611,
+                            47.0908207
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -1655,7 +1913,64 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 65390547,
+                        "osm_type": "relation",
+                        "osm_id": 1682891,
+                        "place_rank": 16,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.648967135,
+                        "addresstype": "town",
+                        "name": "Luzern",
+                        "display_name": "Luzern, Schweiz/Suisse/Svizzera/Svizra"
+                    },
+                    "bbox": [
+                        8.20651,
+                        46.9980063,
+                        8.427975,
+                        47.0835227
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            8.3054682,
+                            47.0505452
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 65320598,
+                        "osm_type": "relation",
+                        "osm_id": 1685677,
+                        "place_rank": 8,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.5936959452,
+                        "addresstype": "state",
+                        "name": "Luzern",
+                        "display_name": "Luzern, Schweiz/Suisse/Svizzera/Svizra"
+                    },
+                    "bbox": [
+                        7.8364131,
+                        46.7749903,
+                        8.5140537,
+                        47.2871939
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            8.1719611,
+                            47.0908207
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -1668,7 +1983,64 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 64982901,
+                        "osm_type": "node",
+                        "osm_id": 1287709990,
+                        "place_rank": 30,
+                        "category": "office",
+                        "type": "government",
+                        "importance": 7.85145e-05,
+                        "addresstype": "office",
+                        "name": "Migrationsamt des Kantons Zürich",
+                        "display_name": "Migrationsamt des Kantons Zürich, 45, Berninastrasse, Oerlikon, Kreis 11, Zürich, Bezirk Zürich, Zürich, 8057, Schweiz/Suisse/Svizzera/Svizra"
+                    },
+                    "bbox": [
+                        8.5465366,
+                        47.4035925,
+                        8.5466366,
+                        47.4036925
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            8.5465866,
+                            47.4036425
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 64769432,
+                        "osm_type": "node",
+                        "osm_id": 7648132770,
+                        "place_rank": 30,
+                        "category": "tourism",
+                        "type": "attraction",
+                        "importance": 5.00015e-05,
+                        "addresstype": "tourism",
+                        "name": "Abgelegenster Punkt zu Land des Kantons Zürich",
+                        "display_name": "Abgelegenster Punkt zu Land des Kantons Zürich, Grenzweg, Schöfflisdorf, Bezirk Dielsdorf, Zürich, 8165, Schweiz/Suisse/Svizzera/Svizra"
+                    },
+                    "bbox": [
+                        8.4144067,
+                        47.5171828,
+                        8.4145067,
+                        47.5172828
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            8.4144567,
+                            47.5172328
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -1681,7 +2053,36 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 148440269,
+                        "osm_type": "relation",
+                        "osm_id": 1116270,
+                        "place_rank": 8,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.7631127687,
+                        "addresstype": "state",
+                        "name": "Alaska",
+                        "display_name": "Alaska, United States"
+                    },
+                    "bbox": [
+                        -180.0,
+                        51.0070029,
+                        180.0,
+                        71.5889534
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -149.680909,
+                            64.4459613
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -1890,7 +2291,92 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 293118857,
+                        "osm_type": "relation",
+                        "osm_id": 114690,
+                        "place_rank": 8,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.8065410067,
+                        "addresstype": "state",
+                        "name": "Texas",
+                        "display_name": "Texas, United States"
+                    },
+                    "bbox": [
+                        -106.6458459,
+                        25.83706,
+                        -93.5078217,
+                        36.5004529
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -98.5456116,
+                            31.2638905
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 314620162,
+                        "osm_type": "relation",
+                        "osm_id": 1180492,
+                        "place_rank": 12,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.545642508,
+                        "addresstype": "county",
+                        "name": "Texas County",
+                        "display_name": "Texas County, Missouri, United States"
+                    },
+                    "bbox": [
+                        -92.2527138,
+                        37.0488441,
+                        -91.6466196,
+                        37.6064317
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -91.9808332,
+                            37.3354601
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 304325170,
+                        "osm_type": "relation",
+                        "osm_id": 1820063,
+                        "place_rank": 12,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.5226690681,
+                        "addresstype": "county",
+                        "name": "Texas County",
+                        "display_name": "Texas County, Oklahoma, United States"
+                    },
+                    "bbox": [
+                        -102.0322724,
+                        36.4996022,
+                        -100.9455299,
+                        36.9983989
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -101.4953594,
+                            36.7390314
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -1973,7 +2459,64 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 109574210,
+                        "osm_type": "relation",
+                        "osm_id": 71033,
+                        "place_rank": 16,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.7275493035,
+                        "addresstype": "city",
+                        "name": "Strasbourg",
+                        "display_name": "Strasbourg, Bas-Rhin, Grand Est, France métropolitaine, France"
+                    },
+                    "bbox": [
+                        7.6881371,
+                        48.491861,
+                        7.8360646,
+                        48.6461896
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            7.7507127,
+                            48.584614
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 110788873,
+                        "osm_type": "relation",
+                        "osm_id": 4630050,
+                        "place_rank": 14,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.5079312172,
+                        "addresstype": "municipality",
+                        "name": "Strasbourg",
+                        "display_name": "Strasbourg, Bas-Rhin, Grand Est, France métropolitaine, France"
+                    },
+                    "bbox": [
+                        7.5377795,
+                        48.4339379,
+                        7.8957138,
+                        48.7022939
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            7.688597195,
+                            48.5681009
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -2140,7 +2683,36 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 140487911,
+                        "osm_type": "relation",
+                        "osm_id": 1250150,
+                        "place_rank": 16,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.4536617628,
+                        "addresstype": "village",
+                        "name": "Salzbergen",
+                        "display_name": "Salzbergen, Landkreis Emsland, Niedersachsen, 48499, Deutschland"
+                    },
+                    "bbox": [
+                        7.2576476,
+                        52.2802205,
+                        7.4377181,
+                        52.3507678
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            7.3474905,
+                            52.3227446
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -2419,7 +2991,288 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 246058239,
+                        "osm_type": "node",
+                        "osm_id": 4933582715,
+                        "place_rank": 30,
+                        "category": "office",
+                        "type": "company",
+                        "importance": 0.6215586112,
+                        "addresstype": "office",
+                        "name": "ソニー・ミュージックエンタテインメント",
+                        "display_name": "ソニー・ミュージックエンタテインメント, 5, 六番町, 千代田区, 東京都, 102-8353, 日本"
+                    },
+                    "bbox": [
+                        139.734487,
+                        35.688745,
+                        139.734587,
+                        35.688845
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            139.734537,
+                            35.688795
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 247518333,
+                        "osm_type": "way",
+                        "osm_id": 53652653,
+                        "place_rank": 30,
+                        "category": "office",
+                        "type": "research",
+                        "importance": 0.5856170122,
+                        "addresstype": "office",
+                        "name": "宇宙航空研究開発機構 (JAXA)",
+                        "display_name": "宇宙航空研究開発機構 (JAXA), 野ヶ谷通り, 深大寺東町六丁目, 調布市, 東京都, 182-0012, 日本"
+                    },
+                    "bbox": [
+                        139.5562797,
+                        35.6762675,
+                        139.5602454,
+                        35.6810191
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            139.5583275259,
+                            35.67924925
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 246237231,
+                        "osm_type": "relation",
+                        "osm_id": 4251479,
+                        "place_rank": 30,
+                        "category": "building",
+                        "type": "public",
+                        "importance": 0.5957303205,
+                        "addresstype": "building",
+                        "name": "気象庁",
+                        "display_name": "気象庁, 内堀通り, 大手町一丁目, 大手町, 千代田区, 東京都, 100-0004, 日本"
+                    },
+                    "bbox": [
+                        139.7611192,
+                        35.6894133,
+                        139.7621999,
+                        35.6901855
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            139.7613157645,
+                            35.68980455
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 247071097,
+                        "osm_type": "relation",
+                        "osm_id": 3069611,
+                        "place_rank": 30,
+                        "category": "amenity",
+                        "type": "bank",
+                        "importance": 0.5644816969,
+                        "addresstype": "amenity",
+                        "name": "日本銀行",
+                        "display_name": "日本銀行, 日銀通り, 日本橋室町三丁目, 日本橋室町, 中央区, 東京都, 103-0021, 日本"
+                    },
+                    "bbox": [
+                        139.7706857,
+                        35.6857511,
+                        139.7723638,
+                        35.6873927
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            139.7713633565,
+                            35.6865757
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 246661424,
+                        "osm_type": "node",
+                        "osm_id": 1420788280,
+                        "place_rank": 30,
+                        "category": "office",
+                        "type": "yes",
+                        "importance": 0.5472998678,
+                        "addresstype": "office",
+                        "name": "海上保安庁",
+                        "display_name": "海上保安庁, 六本木通り, 霞が関二丁目, 霞が関, 千代田区, 東京都, 100-0013, 日本"
+                    },
+                    "bbox": [
+                        139.7500978,
+                        35.676139,
+                        139.7501978,
+                        35.676239
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            139.7501478,
+                            35.676189
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 245894840,
+                        "osm_type": "relation",
+                        "osm_id": 4247312,
+                        "place_rank": 30,
+                        "category": "man_made",
+                        "type": "tower",
+                        "importance": 0.5403540156,
+                        "addresstype": "man_made",
+                        "name": "東京タワー",
+                        "display_name": "東京タワー, 東京タワー通り, 芝公園四丁目, 芝公園, 港区, 東京都, 106-0041, 日本"
+                    },
+                    "bbox": [
+                        139.7449463,
+                        35.6581782,
+                        139.7459337,
+                        35.6589495
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            139.745535955,
+                            35.6584491
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 243563319,
+                        "osm_type": "node",
+                        "osm_id": 7020980753,
+                        "place_rank": 30,
+                        "category": "office",
+                        "type": "company",
+                        "importance": 0.5355096509,
+                        "addresstype": "office",
+                        "name": "NBCユニバーサル・エンターテイメントジャパン",
+                        "display_name": "NBCユニバーサル・エンターテイメントジャパン, 1, 桜田通り, 虎ノ門三丁目, 虎ノ門, 港区, 東京都, 105-6216, 日本"
+                    },
+                    "bbox": [
+                        139.7489446,
+                        35.6620047,
+                        139.7490446,
+                        35.6621047
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            139.7489946,
+                            35.6620547
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 246271820,
+                        "osm_type": "way",
+                        "osm_id": 105859416,
+                        "place_rank": 30,
+                        "category": "shop",
+                        "type": "supermarket",
+                        "importance": 8.5935e-05,
+                        "addresstype": "shop",
+                        "name": "ジャパン",
+                        "display_name": "ジャパン, 前野本通り, 前野町四丁目, 前野町, 板橋区, 東京都, 174-0063, 日本"
+                    },
+                    "bbox": [
+                        139.6882548,
+                        35.7719299,
+                        139.6888553,
+                        35.772413
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            139.6885509885,
+                            35.7721606
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 244303575,
+                        "osm_type": "way",
+                        "osm_id": 146701761,
+                        "place_rank": 30,
+                        "category": "building",
+                        "type": "yes",
+                        "importance": 0.495339687,
+                        "addresstype": "building",
+                        "name": "日本学術会議",
+                        "display_name": "日本学術会議, 319, 六本木七丁目, 港区, 東京都, 106-8558, 日本"
+                    },
+                    "bbox": [
+                        139.7249496,
+                        35.6651333,
+                        139.7253679,
+                        35.6654589
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            139.7251570508,
+                            35.6652961
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 247240003,
+                        "osm_type": "way",
+                        "osm_id": 620838246,
+                        "place_rank": 30,
+                        "category": "amenity",
+                        "type": "university",
+                        "importance": 0.4900036524,
+                        "addresstype": "amenity",
+                        "name": "日本女子大学",
+                        "display_name": "日本女子大学, 不忍通り, 目白台三丁目, 目白台, 文京区, 東京都, 171-0032, 日本"
+                    },
+                    "bbox": [
+                        139.7197141,
+                        35.7159346,
+                        139.7213766,
+                        35.7179323
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            139.7205791666,
+                            35.71676885
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -2432,7 +3285,176 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 246593298,
+                        "osm_type": "node",
+                        "osm_id": 4665154791,
+                        "place_rank": 30,
+                        "category": "tourism",
+                        "type": "information",
+                        "importance": 6.12978e-05,
+                        "addresstype": "tourism",
+                        "name": "japan",
+                        "display_name": "japan, 一番街, 幸町, 川越市, 埼玉県, 350-0057, 日本"
+                    },
+                    "bbox": [
+                        139.4829339,
+                        35.9241454,
+                        139.4830339,
+                        35.9242454
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            139.4829839,
+                            35.9241954
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 245033459,
+                        "osm_type": "node",
+                        "osm_id": 8828079676,
+                        "place_rank": 30,
+                        "category": "shop",
+                        "type": "supermarket",
+                        "importance": 6.88937e-05,
+                        "addresstype": "shop",
+                        "name": "JAPAN MEAT",
+                        "display_name": "JAPAN MEAT, さいたま川口線, 円正寺, 南区, さいたま市, 埼玉県, 336-0042, 日本"
+                    },
+                    "bbox": [
+                        139.6943162,
+                        35.8563526,
+                        139.6944162,
+                        35.8564526
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            139.6943662,
+                            35.8564026
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 245403535,
+                        "osm_type": "node",
+                        "osm_id": 12103194143,
+                        "place_rank": 30,
+                        "category": "shop",
+                        "type": "car",
+                        "importance": 6.88937e-05,
+                        "addresstype": "shop",
+                        "name": "KUHL JAPAN",
+                        "display_name": "KUHL JAPAN, 第二産業道路, 中川, 見沼区, さいたま市, 埼玉県, 337-0043, 日本"
+                    },
+                    "bbox": [
+                        139.6576359,
+                        35.9039182,
+                        139.6577359,
+                        35.9040182
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            139.6576859,
+                            35.9039682
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 245312530,
+                        "osm_type": "node",
+                        "osm_id": 6474233885,
+                        "place_rank": 30,
+                        "category": "office",
+                        "type": "ngo",
+                        "importance": 6.88937e-05,
+                        "addresstype": "office",
+                        "name": "International cooperation NGO IV-JAPAN",
+                        "display_name": "International cooperation NGO IV-JAPAN, 三橋(2)歩道橋, 三橋四丁目, 三橋二丁目, 大宮区, さいたま市, 埼玉県, 330-0856, 日本"
+                    },
+                    "bbox": [
+                        139.6008409,
+                        35.8986287,
+                        139.6009409,
+                        35.8987287
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            139.6008909,
+                            35.8986787
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 243629325,
+                        "osm_type": "node",
+                        "osm_id": 8728560138,
+                        "place_rank": 30,
+                        "category": "amenity",
+                        "type": "theatre",
+                        "importance": 6.20943e-05,
+                        "addresstype": "amenity",
+                        "name": "Japan Pavillion",
+                        "display_name": "Japan Pavillion, 東所沢中央通り, 東所沢和田二丁目, 所沢市, 埼玉県, 359-0023, 日本"
+                    },
+                    "bbox": [
+                        139.5079025,
+                        35.7969537,
+                        139.5080025,
+                        35.7970537
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            139.5079525,
+                            35.7970037
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 391821094,
+                        "osm_type": "node",
+                        "osm_id": 12413456301,
+                        "place_rank": 30,
+                        "category": "shop",
+                        "type": "trade",
+                        "importance": 6.20943e-05,
+                        "addresstype": "shop",
+                        "name": "MB Japan 株式会社",
+                        "display_name": "MB Japan 株式会社, 1丁目5-35, 関越自動車道, 馬場四丁目, 新座市, 埼玉県, 352-0023, 日本"
+                    },
+                    "bbox": [
+                        139.566155,
+                        35.776807,
+                        139.566255,
+                        35.776907
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            139.566205,
+                            35.776857
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -3047,7 +4069,120 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 21187424,
+                        "osm_type": "node",
+                        "osm_id": 1762076007,
+                        "place_rank": 19,
+                        "category": "place",
+                        "type": "village",
+                        "importance": 0.324843159,
+                        "addresstype": "village",
+                        "name": "Ōkaihau",
+                        "display_name": "Ōkaihau, Kaikohe-Hokianga Community, Far North District, Northland, 0475, New Zealand / Aotearoa"
+                    },
+                    "bbox": [
+                        173.7513829,
+                        -35.3424555,
+                        173.7913829,
+                        -35.3024555
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            173.7713829,
+                            -35.3224555
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 21208367,
+                        "osm_type": "node",
+                        "osm_id": 7056148375,
+                        "place_rank": 18,
+                        "category": "natural",
+                        "type": "peak",
+                        "importance": 0.1600450011,
+                        "addresstype": "peak",
+                        "name": "Ōkaihau",
+                        "display_name": "Ōkaihau, Kaikohe-Hokianga Community, Far North District, Northland, New Zealand / Aotearoa"
+                    },
+                    "bbox": [
+                        173.2565133,
+                        -35.4013207,
+                        173.2566133,
+                        -35.4012207
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            173.2565633,
+                            -35.4012707
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 21387427,
+                        "osm_type": "way",
+                        "osm_id": 307531056,
+                        "place_rank": 22,
+                        "category": "natural",
+                        "type": "water",
+                        "importance": 0.1067116678,
+                        "addresstype": "water",
+                        "name": "Lake Ōkaihau",
+                        "display_name": "Lake Ōkaihau, Muriwai, Rodney, Auckland, New Zealand / Aotearoa"
+                    },
+                    "bbox": [
+                        174.4372517,
+                        -36.8106034,
+                        174.4416844,
+                        -36.8079586
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            174.4401305757,
+                            -36.8092955
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 21238383,
+                        "osm_type": "way",
+                        "osm_id": 759109559,
+                        "place_rank": 22,
+                        "category": "waterway",
+                        "type": "stream",
+                        "importance": 0.1067116678,
+                        "addresstype": "stream",
+                        "name": "Okaihau Stream",
+                        "display_name": "Okaihau Stream, Upokorau, Bay of Islands-Whangaroa Community, Far North District, Northland, New Zealand / Aotearoa"
+                    },
+                    "bbox": [
+                        173.8324565,
+                        -35.1365759,
+                        173.8361088,
+                        -35.1248586
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            173.8350819514,
+                            -35.1303919427
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -3060,7 +4195,36 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 21346246,
+                        "osm_type": "node",
+                        "osm_id": 71374851,
+                        "place_rank": 16,
+                        "category": "place",
+                        "type": "city",
+                        "importance": 0.5021167303,
+                        "addresstype": "city",
+                        "name": "Whangārei",
+                        "display_name": "Whangārei, Whangārei District, Northland, 0110, New Zealand / Aotearoa"
+                    },
+                    "bbox": [
+                        174.1594202,
+                        -35.8875268,
+                        174.4794202,
+                        -35.5675268
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            174.3194202,
+                            -35.7275268
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -3787,7 +4951,36 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 338272274,
+                        "osm_type": "relation",
+                        "osm_id": 61315,
+                        "place_rank": 8,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.7833858379,
+                        "addresstype": "state",
+                        "name": "Massachusetts",
+                        "display_name": "Massachusetts, United States"
+                    },
+                    "bbox": [
+                        -73.5082102,
+                        41.1888589,
+                        -69.8601042,
+                        42.8867783
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -72.032366,
+                            42.3788774
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -3800,7 +4993,36 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 390742364,
+                        "osm_type": "relation",
+                        "osm_id": 162069,
+                        "place_rank": 8,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.5681560663,
+                        "addresstype": "state",
+                        "name": "District of Columbia",
+                        "display_name": "District of Columbia, United States"
+                    },
+                    "bbox": [
+                        -77.1197949,
+                        38.7916303,
+                        -76.909366,
+                        38.995968
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -76.9880428191,
+                            38.89384735
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -3813,7 +5035,36 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 309451627,
+                        "osm_type": "relation",
+                        "osm_id": 162018,
+                        "place_rank": 8,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.7702840835,
+                        "addresstype": "state",
+                        "name": "Arizona",
+                        "display_name": "Arizona, United States"
+                    },
+                    "bbox": [
+                        -114.8183584,
+                        31.3322135,
+                        -109.045131,
+                        37.0038722
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -111.763275,
+                            34.395342
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -4344,7 +5595,36 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 96451607,
+                        "osm_type": "relation",
+                        "osm_id": 58274,
+                        "place_rank": 14,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.7287064308,
+                        "addresstype": "city",
+                        "name": "Bruxelles - Brussel",
+                        "display_name": "Bruxelles - Brussel, Brussel-Hoofdstad - Bruxelles-Capitale, Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest, België / Belgique / Belgien"
+                    },
+                    "bbox": [
+                        4.3140021,
+                        50.7964079,
+                        4.4370711,
+                        50.9139045
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            4.351697,
+                            50.8465573
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -4357,7 +5637,36 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 111932027,
+                        "osm_type": "relation",
+                        "osm_id": 2793104,
+                        "place_rank": 12,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.737666985,
+                        "addresstype": "city",
+                        "name": "Stuttgart",
+                        "display_name": "Stuttgart, Baden-Württemberg, Deutschland"
+                    },
+                    "bbox": [
+                        9.0386007,
+                        48.6920188,
+                        9.3160228,
+                        48.8663994
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            9.1800132,
+                            48.7784485
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -4454,7 +5763,36 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 304888158,
+                        "osm_type": "relation",
+                        "osm_id": 162115,
+                        "place_rank": 8,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.741870153,
+                        "addresstype": "state",
+                        "name": "Montana",
+                        "display_name": "Montana, United States"
+                    },
+                    "bbox": [
+                        -116.0492317,
+                        44.357915,
+                        -104.039563,
+                        49.0011094
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -109.638757,
+                            47.3752671
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -4551,7 +5889,64 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 144793589,
+                        "osm_type": "relation",
+                        "osm_id": 271110,
+                        "place_rank": 16,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.777788852,
+                        "addresstype": "city",
+                        "name": "Amsterdam",
+                        "display_name": "Amsterdam, Noord-Holland, Nederland"
+                    },
+                    "bbox": [
+                        4.7287776,
+                        52.2781742,
+                        5.0791622,
+                        52.4310638
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            4.8924534,
+                            52.3730796
+                        ]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 144964469,
+                        "osm_type": "relation",
+                        "osm_id": 47811,
+                        "place_rank": 14,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.5110159454,
+                        "addresstype": "municipality",
+                        "name": "Amsterdam",
+                        "display_name": "Amsterdam, Noord-Holland, Nederland"
+                    },
+                    "bbox": [
+                        4.7287776,
+                        52.2779766,
+                        5.1076933,
+                        52.4310638
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            4.8979755056,
+                            52.3745403
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -4606,7 +6001,36 @@
         "geocode": {
             "type": "FeatureCollection",
             "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-            "features": []
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "place_id": 235750681,
+                        "osm_type": "way",
+                        "osm_id": 174037464,
+                        "place_rank": 30,
+                        "category": "aeroway",
+                        "type": "aerodrome",
+                        "importance": 0.5343493437,
+                        "addresstype": "aeroway",
+                        "name": "Singapore Changi Airport (SIN)",
+                        "display_name": "Singapore Changi Airport (SIN), Pan-Island Expressway, Changi Business Park, Southeast, Singapore, 489690, Singapore"
+                    },
+                    "bbox": [
+                        103.9708536,
+                        1.3134571,
+                        104.0193291,
+                        1.3887247
+                    ],
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            103.996055466,
+                            1.352975
+                        ]
+                    }
+                }
+            ]
         }
     }
 ]
