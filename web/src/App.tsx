@@ -2,7 +2,6 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import MapComponent from "./MapComponent";
 import data from "./data/data.json";
 import "./style.css";
-import Select from "react-select"; // Import react-select for better multi-select dropdown
 
 export interface VideoInfo {
     publishedAt?: string; // Made optional
@@ -79,7 +78,7 @@ let App = () => {
     // Active video that is highlighted on the screen
     const [activeVideo, setActiveVideo] = useState("");
     // Selector for playlist (updated in sidebar)
-    const [selectedPlaylists, setSelectedPlaylists] = useState<string[]>([]);
+    const [playlist, setPlaylist] = useState("");
     // Selector for text filter
     const [filter, setFilter] = useState("");
     // State to toggle the visibility of lines
@@ -96,10 +95,11 @@ let App = () => {
 
     // Use a memo here to avoid bad side effects from filtering the data
     const display_data = useMemo(() => {
+        // Filter data based on the sidebar selectors
         let ret: VideoInfo[] = VideoData;
 
-        if (selectedPlaylists.length > 0) {
-            ret = ret.filter((item) => selectedPlaylists.includes(item.playlistId)); // Filter by selected playlists
+        if (playlist !== "") {
+            ret = ret.filter((item) => item.playlistId === playlist); // Filter by playlistId
         }
 
         if (filter !== "") {
@@ -112,7 +112,7 @@ let App = () => {
         }
 
         return ret;
-    }, [selectedPlaylists, filter]);
+    }, [playlist, filter]);
 
     return (
         <div>
@@ -129,16 +129,19 @@ let App = () => {
                 showLines={showLines} // Pass the state to MapComponent
             ></MapComponent>
             <div id="filter-overlay">
-                <Select
-                    isMulti
-                    options={allPlaylists.map(({ id, name }) => ({ value: id, label: name }))}
-                    onChange={(selectedOptions) => {
-                        const selectedValues = selectedOptions.map((option) => option.value);
-                        setSelectedPlaylists(selectedValues);
+                <select
+                    name="playlist-select"
+                    onChange={(changeEvent) => {
+                        setPlaylist(changeEvent.target.value);
                     }}
-                    placeholder="Select Playlists"
-                    className="multi-select"
-                />
+                >
+                    <option value="">All Playlists</option>
+                    {allPlaylists.map(({ id, name }) => (
+                        <option value={id} key={id}>
+                            {name}
+                        </option>
+                    ))}
+                </select>
 
                 <input
                     type="search"
@@ -163,7 +166,7 @@ let App = () => {
                             className={"sidebar-item" + (item.videoId === activeVideo ? " active-video" : "")}
                             onClick={() => {
                                 if (activeVideo === item.videoId) {
-                                    setActiveVideo(""); // Deselect the video and close the popup
+                                    setActiveVideo(""); // Deselect the video if clicked again
                                 } else {
                                     setActiveVideo(item.videoId);
                                 }
