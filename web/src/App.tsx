@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef, useMemo } from "react"
-import MapComponent from "./MapComponent"
-import data from "./data/data.json"
-import "./style.css"
+import { useState, useEffect, useRef, useMemo } from "react";
+import MapComponent from "./MapComponent";
+import data from "./data/data.json";
+import "./style.css";
 
 export interface VideoInfo {
     publishedAt?: string; // Made optional
@@ -10,7 +10,7 @@ export interface VideoInfo {
     location: string;
     geocode: [number, number] | null; // Ensure geocode is parsed into a coordinate pair
     transcript: any; // Updated to match parsed type
-    playlist: "ap" | "tymnk" | "bfs";
+    playlist: string; // Updated to string to handle dynamic playlists
     marked: boolean;
 }
 
@@ -50,7 +50,7 @@ let VideoData = (data as RawVideoInfo[]).map((item) => {
         location: item.location || "Unknown Location", // Default to "Unknown Location" if missing
         geocode: parsedGeocode, // Extract the first valid coordinate
         transcript: item.transcript ? JSON.parse(item.transcript) : null, // Parse transcript if available
-        playlist: (item.playlist || "ap") as "ap" | "tymnk" | "bfs", // Default to "ap" if missing
+        playlist: "unknown", // Default to "unknown" if missing
         marked: item.marked ?? false, // Default to false if missing
     };
 }).filter((item) => {
@@ -63,105 +63,119 @@ let VideoData = (data as RawVideoInfo[]).map((item) => {
 
 console.log("Parsed VideoData:", VideoData);
 
-// Map titles to playlist categoriest categories
+// Map titles to playlist categories
 const titleToPlaylistMapping: { [key: string]: string } = {
     "Connect 4": "s1",
     "Circumnavigation": "s2",
-    "Tag EUR It": "s3",: "s3",
+    "Tag EUR It": "s3",
     "Battle 4 America": "s4",
-    "Race to the End of the World": "s5","s5",
+    "Race to the End of the World": "s5",
     "Capture the Flag": "s6",
     "Tag EUR It 2": "s7",
     "Arctic Escape": "s8",
-    "Hide + Seek: Switzerland": "s9",": "s9",
+    "Hide + Seek: Switzerland": "s9",
     "Au$tralia": "s10",
     "Tag EUR It 3": "s11",
-    "Hide + Seek: Japan": "s12",: "s12",
+    "Hide + Seek: Japan": "s12",
     "Schengen Showdown": "s13",
-};  "New Zealand Into a Real-Life Board Game": "s14"
+    "New Zealand Into a Real-Life Board Game": "s14"
 };
+
 // Reverse mapping for dropdown display
 const playlistToTitleMapping: { [key: string]: string } = Object.entries(titleToPlaylistMapping).reduce(
-    (acc, [title, playlist]) => {key: string]: string } = Object.entries(titleToPlaylistMapping).reduce(
-        acc[playlist] = title;> {
-        return acc;t] = title;
-    },  return acc;
+    (acc, [title, playlist]) => {
+        acc[playlist] = title;
+        return acc;
+    },
     {} as { [key: string]: string }
-);  {} as { [key: string]: string }
 );
+
 let App = () => {
-    //active video that is highlighted on the screen
-    const [activeVideo, setActiveVideo] = useState("")
-    //selector for playlist (updated in sidebar)te("")
-    const [playlist, setPlaylist] = useState("")
-    //selector for text filterst] = useState("")
-    const [filter, setFilter] = useState("")
-    const [filter, setFilter] = useState("")
-    const cur_video = useRef<HTMLElement>(null)
-    const cur_video = useRef<HTMLElement>(null)
-    //if active video is updateed, scroll the video into view on the sidebar
-    useEffect(() => { is updateed, scroll the video into view on the sidebar
-        cur_video.current?.scrollIntoView({ behavior: "smooth", block: "nearest" })
-    }, [activeVideo])rent?.scrollIntoView({ behavior: "smooth", block: "nearest" })
-    }, [activeVideo])
-    //need to use a memo here, otherwise filtering the data creates bad side effects down the line
-    const display_data = useMemo(() => { filtering the data creates bad side effects down the line
+    // Active video that is highlighted on the screen
+    const [activeVideo, setActiveVideo] = useState("");
+    // Selector for playlist (updated in sidebar)
+    const [playlist, setPlaylist] = useState("");
+    // Selector for text filter
+    const [filter, setFilter] = useState("");
+
+    const cur_video = useRef<HTMLElement>(null);
+
+    // If active video is updated, scroll the video into view on the sidebar
+    useEffect(() => {
+        cur_video.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }, [activeVideo]);
+
+    // Use a memo here to avoid bad side effects from filtering the data
+    const display_data = useMemo(() => {
         // Filter data based on the sidebar selectors
-        let ret: VideoInfo[] = [];e sidebar selectors
-        if (playlist !== "") { [];
+        let ret: VideoInfo[] = [];
+        if (playlist !== "") {
             const mappedTitle = playlistToTitleMapping[playlist];
             ret = VideoData.filter((item) => item.title.includes(mappedTitle));
-        } else {= VideoData.filter((item) => item.title.includes(mappedTitle));
+        } else {
             ret = VideoData;
-        }   ret = VideoData;
         }
+
         if (filter !== "") {
             ret = ret.filter((item) => {
                 return item.title.toLowerCase().includes(filter.toLowerCase());
-            }); return item.title.toLowerCase().includes(filter.toLowerCase());
-        }   });
+            });
+        }
         return ret;
     }, [playlist, filter]);
-    }, [playlist, filter])
-    return <div>
-        <MapComponent data={display_data} activeVideo={activeVideo} setActiveVideo={setActiveVideo}></MapComponent>
-        <div id="sidebar" className='roboto-sidebar'>={activeVideo} setActiveVideo={setActiveVideo}></MapComponent>
-            <div className='sticky-selectors'>debar'>
-                <select name='playlist-select' onChange={(changeEvent) => {
-                    setPlaylist(changeEvent.target.value)(changeEvent) => {
-                }}> setPlaylist(changeEvent.target.value)
-                    <option value="">All Playlists</option>
-                    {Object.entries(playlistToTitleMapping).map(([playlist, title]) => (
-                        <option value={playlist} key={playlist}>{title}</option>e]) => (
-                    ))} <option value={playlist} key={playlist}>{title}</option>
-                </select>
-                </select>
-                <input type="search" placeholder="filter" name="TextFilter" onChange={(changeEvent) => {
-                    setFilter(changeEvent.target.value)r" name="TextFilter" onChange={(changeEvent) => {
-                }}></input>er(changeEvent.target.value)
-            </div>></input>
+
+    return (
+        <div>
+            <MapComponent data={display_data} activeVideo={activeVideo} setActiveVideo={setActiveVideo}></MapComponent>
+            <div id="sidebar" className="roboto-sidebar">
+                <div className="sticky-selectors">
+                    <select
+                        name="playlist-select"
+                        onChange={(changeEvent) => {
+                            setPlaylist(changeEvent.target.value);
+                        }}
+                    >
+                        <option value="">All Playlists</option>
+                        {Object.entries(playlistToTitleMapping).map(([playlist, title]) => (
+                            <option value={playlist} key={playlist}>
+                                {title}
+                            </option>
+                        ))}
+                    </select>
+
+                    <input
+                        type="search"
+                        placeholder="filter"
+                        name="TextFilter"
+                        onChange={(changeEvent) => {
+                            setFilter(changeEvent.target.value);
+                        }}
+                    ></input>
+                </div>
+
+                {display_data.map((item) => {
+                    return (
+                        <div
+                            className={"sidebar-item" + (item.videoId === activeVideo ? " active-video" : "")}
+                            onClick={() => {
+                                setActiveVideo(item.videoId);
+                            }}
+                            ref={(elem) => {
+                                if (item.videoId === activeVideo) {
+                                    cur_video.current = elem;
+                                }
+                            }}
+                            key={item.videoId}
+                        >
+                            Title: {item.title}
+                            <br />
+                            Location: {item.geocode?.[0]?.toPrecision(4)}, {item.geocode?.[1]?.toPrecision(4)}
+                        </div>
+                    );
+                })}
             </div>
-            {
-                display_data.map((item) => {
-                    return <div className={"sidebar-item" + (item.videoId == activeVideo ? " active-video" : "")}
-                        onClick={() => {e={"sidebar-item" + (item.videoId == activeVideo ? " active-video" : "")}
-                            setActiveVideo(item.videoId);
-                        }}  setActiveVideo(item.videoId);
-                        ref={(elem) => {
-                            if (item.videoId == activeVideo) {
-                                cur_video.current = elem;eo) {
-                            }   cur_video.current = elem;
-                        }}  }
-                        key={item.videoId}>
-                        Title: {item.title}
-                        <br /> {item.title}
-                        Location: {item.geocode?.[0]?.toPrecision(4)}, {item.geocode?.[1]?.toPrecision(4)}
-                    </div>cation: {item.geocode?.[0]?.toPrecision(4)}, {item.geocode?.[1]?.toPrecision(4)}
-                })  </div>
-            }   })
         </div>
-    </div>div>
-}   </div>
-}
-export default App
-export default App
+    );
+};
+
+export default App;
