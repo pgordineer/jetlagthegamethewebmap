@@ -81,6 +81,8 @@ let App = () => {
     const [playlist, setPlaylist] = useState("");
     // Selector for text filter
     const [filter, setFilter] = useState("");
+    // State to toggle the visibility of lines
+    const [showLines, setShowLines] = useState(true);
 
     const cur_video = useRef<HTMLElement>(null);
 
@@ -116,6 +118,7 @@ let App = () => {
                 data={display_data}
                 activeVideo={activeVideo}
                 setActiveVideo={setActiveVideo}
+                showLines={showLines} // Pass the state to MapComponent
             ></MapComponent>
             <div id="filter-overlay">
                 <select
@@ -140,6 +143,13 @@ let App = () => {
                         setFilter(changeEvent.target.value);
                     }}
                 ></input>
+
+                <button
+                    onClick={() => setShowLines((prev) => !prev)}
+                    style={{ marginTop: "10px", padding: "5px", borderRadius: "3px", cursor: "pointer" }}
+                >
+                    {showLines ? "Hide Lines" : "Show Lines"}
+                </button>
             </div>
             <div id="items-overlay">
                 {display_data.map((item) => (

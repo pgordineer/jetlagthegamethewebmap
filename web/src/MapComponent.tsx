@@ -39,7 +39,17 @@ const getRandomColor = (): string => {
     return colors[Math.floor(Math.random() * colors.length)];
 };
 
-const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[], activeVideo: string, setActiveVideo: (video: string) => void }) => {
+const MapComponent = ({
+    data,
+    activeVideo,
+    setActiveVideo,
+    showLines,
+}: {
+    data: VideoInfo[];
+    activeVideo: string;
+    setActiveVideo: (video: string) => void;
+    showLines: boolean; // New prop to toggle line visibility
+}) => {
     const markersRef = useRef<Map<string, Marker>>(new Map());
     const mapRef = useRef<L.Map>(null);
     const layerGroupRef = useRef<LayerGroup | null>(null);
@@ -140,13 +150,15 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
             layerGroupRef.current?.addLayer(marker);
         });
 
-        // Draw lines for each playlist
-        Object.entries(playlistLines).forEach(([_, positions]) => { // Replace 'playlistId' with '_'
-            const lineColor = getRandomColor();
-            const polyline = L.polyline(positions, { color: lineColor, weight: 3 }).addTo(mapRef.current!);
-            layerGroupRef.current?.addLayer(polyline);
-        });
-    }, [data]);
+        // Draw lines for each playlist if showLines is true
+        if (showLines) {
+            Object.entries(playlistLines).forEach(([_, positions]) => {
+                const lineColor = getRandomColor();
+                const polyline = L.polyline(positions, { color: lineColor, weight: 3 }).addTo(mapRef.current!);
+                layerGroupRef.current?.addLayer(polyline);
+            });
+        }
+    }, [data, showLines]);
 
     return (
         <div id="map-container">
