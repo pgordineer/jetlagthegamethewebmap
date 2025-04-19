@@ -67,10 +67,10 @@ let VideoData = (data as RawVideoInfo[]).map((item) => {
 console.log("Parsed VideoData:", VideoData);
 
 // Map playlistId to playlistName for dropdown display
-const playlistMapping: { [key: string]: string } = Array.from(
-    new Set(VideoData.map((item) => ({ id: item.playlist, name: item.playlistName })))
-).reduce((acc, { id, name }) => {
-    acc[id] = name;
+const playlistMapping: { [key: string]: string } = VideoData.reduce((acc, item) => {
+    if (item.playlist && item.playlistName) {
+        acc[item.playlist] = item.playlistName;
+    }
     return acc;
 }, {} as { [key: string]: string });
 
@@ -151,6 +151,8 @@ let App = () => {
                             Title: {item.title}
                             <br />
                             Location: {item.geocode?.[0]?.toPrecision(4)}, {item.geocode?.[1]?.toPrecision(4)}
+                            <br />
+                            Playlist: {item.playlistName}
                         </div>
                     );
                 })}
