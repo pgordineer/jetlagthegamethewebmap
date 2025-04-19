@@ -78,11 +78,13 @@ let App = () => {
     // Active video that is highlighted on the screen
     const [activeVideo, setActiveVideo] = useState("");
     // Selector for playlist (updated in sidebar)
-    const [playlist, setPlaylist] = useState("");
+    const [selectedPlaylists, setSelectedPlaylists] = useState<string[]>([]);
     // Selector for text filter
     const [filter, setFilter] = useState("");
     // State to toggle the visibility of lines
     const [showLines, setShowLines] = useState(true);
+    // State to toggle the visibility of the items overlay
+    const [showItemsOverlay, setShowItemsOverlay] = useState(true);
 
     const cur_video = useRef<HTMLElement>(null);
 
@@ -93,11 +95,10 @@ let App = () => {
 
     // Use a memo here to avoid bad side effects from filtering the data
     const display_data = useMemo(() => {
-        // Filter data based on the sidebar selectors
         let ret: VideoInfo[] = VideoData;
 
-        if (playlist !== "") {
-            ret = ret.filter((item) => item.playlistId === playlist); // Filter by playlistId
+        if (selectedPlaylists.length > 0) {
+            ret = ret.filter((item) => selectedPlaylists.includes(item.playlistId)); // Filter by selected playlists
         }
 
         if (filter !== "") {
@@ -110,24 +111,33 @@ let App = () => {
         }
 
         return ret;
-    }, [playlist, filter]);
+    }, [selectedPlaylists, filter]);
 
     return (
         <div>
             <MapComponent
                 data={display_data}
                 activeVideo={activeVideo}
-                setActiveVideo={setActiveVideo}
+                setActiveVideo={(videoId) => {
+                    if (activeVideo === videoId) {
+                        setActiveVideo(""); // Deselect the video if clicked again
+                    } else {
+                        setActiveVideo(videoId);
+                    }
+                }}
                 showLines={showLines} // Pass the state to MapComponent
             ></MapComponent>
             <div id="filter-overlay">
                 <select
                     name="playlist-select"
+                    multiple
                     onChange={(changeEvent) => {
-                        setPlaylist(changeEvent.target.value);
+                        const selectedOptions = Array.from(changeEvent.target.selectedOptions).map(
+                            (option) => option.value
+                        );
+                        setSelectedPlaylists(selectedOptions);
                     }}
                 >
-                    <option value="">All Playlists</option>
                     {allPlaylists.map(({ id, name }) => (
                         <option value={id} key={id}>
                             {name}
@@ -151,23 +161,35 @@ let App = () => {
                     {showLines ? "Hide Lines" : "Show Lines"}
                 </button>
             </div>
-            <div id="items-overlay">
-                {display_data.map((item) => (
-                    <div
-                        className={"sidebar-item" + (item.videoId === activeVideo ? " active-video" : "")}
-                        onClick={() => {
-                            setActiveVideo(item.videoId);
-                        }}
-                        key={item.videoId}
-                    >
-                        Title: {item.title}
-                        <br />
-                        Location: {item.geocode?.[0]?.toPrecision(4)}, {item.geocode?.[1]?.toPrecision(4)}
-                        <br />
-                        Playlist: {item.playlistName}
-                    </div>
-                ))}
-            </div>
+            {showItemsOverlay && (
+                <div id="items-overlay">
+                    {display_data.map((item) => (
+                        <div
+                            className={"sidebar-item" + (item.videoId === activeVideo ? " active-video" : "")}
+                            onClick={() => {
+                                if (activeVideo === item.videoId) {
+                                    setActiveVideo(""); // Deselect the video if clicked again
+                                } else {
+                                    setActiveVideo(item.videoId);
+                                }
+                            }}
+                            key={item.videoId}
+                        >
+                            Title: {item.title}
+                            <br />
+                            Location: {item.geocode?.[0]?.toPrecision(4)}, {item.geocode?.[1]?.toPrecision(4)}
+                            <br />
+                            Playlist: {item.playlistName}
+                        </div>
+                    ))}
+                </div>
+            )}
+            <button
+                onClick={() => setShowItemsOverlay((prev) => !prev)}
+                style={{ position: "absolute", bottom: "10px", left: "10px", padding: "5px", borderRadius: "3px", cursor: "pointer", zIndex: 1000 }}
+            >
+                {showItemsOverlay ? "Hide List" : "Show List"}
+            </button>
         </div>
     );
 };
