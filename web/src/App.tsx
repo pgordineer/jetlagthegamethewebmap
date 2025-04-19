@@ -63,6 +63,13 @@ let VideoData = (data as RawVideoInfo[]).map((item) => {
 
 console.log("Parsed VideoData:", VideoData);
 
+const playlistMapping: { [key: string]: "ap" | "tymnk" | "bfs" } = {
+    "s1": "ap",
+    "s2": "tymnk",
+    "s3": "bfs",
+    // Add other mappings as needed
+};
+
 let App = () => {
     //active video that is highlighted on the screen
     const [activeVideo, setActiveVideo] = useState("")
@@ -80,18 +87,19 @@ let App = () => {
 
     //need to use a memo here, otherwise filtering the data creates bad side effects down the line
     const display_data = useMemo(() => {
-        //filter data based on the sidebar selectors
-        let ret: VideoInfo[] = []
-        if (playlist != "") {
-            ret = VideoData.filter((item) => { return item.playlist === playlist })
+        // Filter data based on the sidebar selectors
+        let ret: VideoInfo[] = [];
+        if (playlist !== "") {
+            const mappedPlaylist = playlistMapping[playlist];
+            ret = VideoData.filter((item) => item.playlist === mappedPlaylist);
         } else {
-            ret = VideoData
+            ret = VideoData;
         }
 
-        if (filter != "") {
+        if (filter !== "") {
             ret = ret.filter((item) => {
-                return item.title.toLowerCase().includes(filter.toLowerCase())
-            })
+                return item.title.toLowerCase().includes(filter.toLowerCase());
+            });
         }
         return ret;
     }, [playlist, filter])

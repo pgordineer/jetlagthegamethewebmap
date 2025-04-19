@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import L, { Marker, LatLngExpression } from 'leaflet';
+import L, { Marker, LatLngExpression, LayerGroup } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import markerIconUrl from "leaflet/dist/images/marker-icon.png";
 import markerIconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
@@ -35,7 +35,7 @@ const resolveOverlaps = (markers: { position: LatLngExpression; marker: Marker }
     });
 };
 
-const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>) => {
+const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, layerGroupRef: React.MutableRefObject<LayerGroup | null>) => {
     useEffect(() => {
         const map = L.map('map').setView([51.1358, 1.3621], 5);
         mapRef.current = map;
@@ -44,6 +44,10 @@ const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>) => {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }).addTo(map);
+
+        const layerGroup = L.layerGroup(); // Create a LayerGroup for markers
+        layerGroupRef.current = layerGroup;
+        layerGroup.addTo(map);
 
         const coordsControl = new L.Control({ position: 'bottomleft' });
         coordsControl.onAdd = (map: L.Map) => {
@@ -73,8 +77,9 @@ const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>) => {
 const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[], activeVideo: string, setActiveVideo: (video: string) => void }) => {
     const markersRef = useRef<Map<string, Marker>>(new Map());
     const mapRef = useRef<L.Map>(null);
+    const layerGroupRef = useRef<LayerGroup | null>(null); // Use LayerGroup for marker management
 
-    useInitializeMap(mapRef);
+    useInitializeMap(mapRef, layerGroupRef);
 
     useEffect(() => {
         const currentPopup = markersRef.current.get(activeVideo);
@@ -86,6 +91,10 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
 
     useEffect(() => {
         markersRef.current = new Map<string, Marker>();
+
+        // Clear existing markers from the LayerGroup
+        layerGroupRef.current?.clearLayers();
+
         const markers: { position: LatLngExpression; marker: Marker }[] = [];
 
         data.forEach(element => {
@@ -103,7 +112,6 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
 
                 markers.push({ position, marker });
                 markersRef.current.set(element.videoId, marker);
-                console.log("Added marker for video:", element.videoId, "at position:", position);
             } else {
                 console.warn("Skipping marker creation for video with invalid geocode:", element.videoId, element.geocode);
             }
@@ -112,9 +120,9 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
         // Resolve overlapping markers
         resolveOverlaps(markers);
 
-        // Add markers to the map
+        // Add markers to the LayerGroup
         markers.forEach(({ marker }) => {
-            marker.addTo(mapRef.current!);
+            layerGroupRef.current?.addLayer(marker);
         });
     }, [data]);
 
