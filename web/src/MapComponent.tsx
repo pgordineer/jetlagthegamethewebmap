@@ -45,25 +45,9 @@ const MapComponent = forwardRef(({ data, activeVideo, setActiveVideo }: { data: 
     const layerGroupRef = useRef<LayerGroup | null>(null);
 
     useImperativeHandle(ref, () => ({
-        fitBounds: (bounds: [number, number][]) => {
-            if (mapRef.current && bounds.length > 0) {
-                const latLngBounds = bounds.reduce(
-                    (acc, [lat, lng]) => acc.extend([lat, lng]),
-                    new L.LatLngBounds()
-                );
-                mapRef.current.fitBounds(latLngBounds);
-            }
-        },
-        zoomToMarkers: (markers: VideoInfo[]) => {
-            if (mapRef.current && markers.length > 0) {
-                const bounds = L.latLngBounds(
-                    markers
-                        .filter((item) => item.geocode)
-                        .map((item) => item.geocode as [number, number])
-                );
-                if (bounds.isValid()) {
-                    mapRef.current.fitBounds(bounds, { padding: [50, 50] });
-                }
+        panToMarker: (geocode: [number, number]) => {
+            if (mapRef.current) {
+                mapRef.current.setView(geocode, 8); // Pan to the marker with a fixed zoom level
             }
         },
     }));

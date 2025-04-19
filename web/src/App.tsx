@@ -108,13 +108,18 @@ let App = () => {
             );
         }
 
-        // Notify the map to zoom to the filtered markers
-        if (mapRef.current) {
-            mapRef.current.zoomToMarkers(ret);
-        }
-
         return ret;
     }, [playlist, filter]);
+
+    // Focus on the first marker of the filtered data
+    useEffect(() => {
+        if (mapRef.current && display_data.length > 0) {
+            const firstMarker = display_data.find((item) => item.geocode);
+            if (firstMarker?.geocode) {
+                mapRef.current.panToMarker(firstMarker.geocode);
+            }
+        }
+    }, [display_data]);
 
     return (
         <div>
