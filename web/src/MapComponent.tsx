@@ -35,52 +35,6 @@ const resolveOverlaps = (markers: { position: LatLngExpression; marker: Marker }
     });
 };
 
-const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, layerGroupRef: React.MutableRefObject<LayerGroup | null>) => {
-    useEffect(() => {
-        const map = L.map('map').setView([51.1358, 1.3621], 5);
-        mapRef.current = map;
-
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        }).addTo(map);
-
-        const layerGroup = L.layerGroup(); // Create a LayerGroup for markers
-        layerGroupRef.current = layerGroup;
-        layerGroup.addTo(map);
-
-        // Define custom control for displaying coordinates
-        const CoordsControl = L.Control.extend({
-            options: { position: 'bottomleft' },
-            onAdd: (map: L.Map) => {
-                const ret = document.createElement("div");
-                map.on("mousemove", (event: L.LeafletMouseEvent) => {
-                    ret.innerHTML = `<div class="control">${event.latlng.lat.toFixed(4)}, ${event.latlng.lng.toFixed(4)}</div>`;
-                });
-                return ret;
-            },
-        });
-
-        // Define custom control for GitHub link
-        const GitHubControl = L.Control.extend({
-            options: { position: 'bottomleft' },
-            onAdd: () => {
-                const ret = document.createElement("div");
-                ret.innerHTML = "<a href=\"https://github.com/pgordineer/jetlagthegamethewebmap\"> GitHub </a>";
-                return ret;
-            },
-        });
-
-        // Add custom controls to the map
-        map.addControl(new CoordsControl());
-        map.addControl(new GitHubControl());
-
-        return () => {
-            map.remove();
-        };
-    }, []);
-};
-
 const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[], activeVideo: string, setActiveVideo: (video: string) => void }) => {
     const markersRef = useRef<Map<string, Marker>>(new Map());
     const mapRef = useRef<L.Map>(null);
@@ -98,6 +52,30 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
         const layerGroup = L.layerGroup(); // Create a LayerGroup for markers
         layerGroupRef.current = layerGroup;
         layerGroup.addTo(map);
+
+        // Add custom controls
+        const CoordsControl = L.Control.extend({
+            options: { position: 'bottomleft' },
+            onAdd: (map: L.Map) => {
+                const ret = document.createElement("div");
+                map.on("mousemove", (event: L.LeafletMouseEvent) => {
+                    ret.innerHTML = `<div class="control">${event.latlng.lat.toFixed(4)}, ${event.latlng.lng.toFixed(4)}</div>`;
+                });
+                return ret;
+            },
+        });
+
+        const GitHubControl = L.Control.extend({
+            options: { position: 'bottomleft' },
+            onAdd: () => {
+                const ret = document.createElement("div");
+                ret.innerHTML = "<a href=\"https://github.com/pgordineer/jetlagthegamethewebmap\"> GitHub </a>";
+                return ret;
+            },
+        });
+
+        map.addControl(new CoordsControl());
+        map.addControl(new GitHubControl());
 
         return () => {
             map.remove();
