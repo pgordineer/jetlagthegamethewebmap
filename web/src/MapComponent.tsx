@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import markerIconUrl from "leaflet/dist/images/marker-icon.png";
 import markerIconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
 import markerShadowUrl from "leaflet/dist/images/marker-shadow.png";
+import './MapComponent.css'; // Add a CSS file for custom styles
 import { VideoInfo } from './App';
 
 // Configure Leaflet marker icons
@@ -18,13 +19,11 @@ const resolveOverlaps = (markers: { position: LatLngExpression; marker: Marker }
     const seenPositions = new Map<string, number>();
 
     markers.forEach(({ position, marker }) => {
-        // Ensure position is treated as an array of [latitude, longitude]
         if (Array.isArray(position)) {
-            const key = `${position[0].toFixed(4)},${position[1].toFixed(4)}`; // Round to 4 decimal places
+            const key = `${position[0].toFixed(4)},${position[1].toFixed(4)}`;
             const count = seenPositions.get(key) || 0;
 
             if (count > 0) {
-                // Apply an offset based on the count
                 const offsetLat = count * offsetDistance;
                 const offsetLng = count * offsetDistance;
                 marker.setLatLng([position[0] + offsetLat, position[1] + offsetLng]);
@@ -38,43 +37,34 @@ const resolveOverlaps = (markers: { position: LatLngExpression; marker: Marker }
 const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[], activeVideo: string, setActiveVideo: (video: string) => void }) => {
     const markersRef = useRef<Map<string, Marker>>(new Map());
     const mapRef = useRef<L.Map>(null);
-    const layerGroupRef = useRef<LayerGroup | null>(null); // Use LayerGroup for marker management
+    const layerGroupRef = useRef<LayerGroup | null>(null);
 
     useEffect(() => {
-        const map = L.map('map').setView([51.1358, 1.3621], 5);
+        const map = L.map('map', { zoomControl: false }).setView([51.1358, 1.3621], 5);
         mapRef.current = map;
 
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        // Use a dark-themed tile layer
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+            subdomains: 'abcd',
             maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }).addTo(map);
 
-        const layerGroup = L.layerGroup(); // Create a LayerGroup for markers
+        const layerGroup = L.layerGroup();
         layerGroupRef.current = layerGroup;
         layerGroup.addTo(map);
 
         // Add custom controls
-        const CoordsControl = L.Control.extend({
-            options: { position: 'bottomleft' },
-            onAdd: (map: L.Map) => {
-                const ret = document.createElement("div");
-                map.on("mousemove", (event: L.LeafletMouseEvent) => {
-                    ret.innerHTML = `<div class="control">${event.latlng.lat.toFixed(4)}, ${event.latlng.lng.toFixed(4)}</div>`;
-                });
-                return ret;
-            },
-        });
-
         const GitHubControl = L.Control.extend({
             options: { position: 'bottomleft' },
             onAdd: () => {
                 const ret = document.createElement("div");
                 ret.innerHTML = "<a href=\"https://github.com/pgordineer/jetlagthegamethewebmap\"> GitHub </a>";
+                ret.className = "custom-control";
                 return ret;
             },
         });
 
-        map.addControl(new CoordsControl());
         map.addControl(new GitHubControl());
 
         return () => {
@@ -100,12 +90,16 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
 
         data.forEach(element => {
             if (element.geocode) {
-                const position: LatLngExpression = element.geocode; // Use parsed geocode
-                const marker = L.marker(position)
-                    .bindPopup(
-                        `<iframe class="video-player" src="https://www.youtube.com/embed/${element.videoId}" allowfullscreen></iframe>`,
-                        { maxWidth: undefined }
-                    );
+                const position: LatLngExpression = element.geocode;
+                const marker = L.marker(position, {
+                    icon: L.divIcon({
+                        className: 'custom-marker',
+                        html: `<div style="background-color: ${element.marked ? 'yellow' : 'red'}; width: 10px; height: 10px; border-radius: 50%;"></div>`,
+                    }),
+                }).bindPopup(
+                    `<iframe class="video-player" src="https://www.youtube.com/embed/${element.videoId}" allowfullscreen></iframe>`,
+                    { maxWidth: undefined }
+                );
 
                 marker.on("click", () => {
                     setActiveVideo(element.videoId);
@@ -118,16 +112,28 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
             }
         });
 
-        // Resolve overlapping markers
         resolveOverlaps(markers);
 
-        // Add markers to the LayerGroup
         markers.forEach(({ marker }) => {
             layerGroupRef.current?.addLayer(marker);
         });
     }, [data]);
 
-    return <div id="map"></div>;
+    return (
+        <div id="map-container">
+            <div id="map"></div>
+            <div id="overlay-panel">
+                <h3>Running Totals</h3>
+                <p>Fares: $168.50</p>
+                <p>Surcharge: $6.00</p>
+                <p>MTA Tax: $6.00</p>
+                <p>Tips: $17.25</p>
+                <p>Tolls: $0.00</p>
+                <p>Total: $197.75</p>
+                <p>Passengers: 12</p>
+            </div>
+        </div>
+    );
 };
 
 export default MapComponent;
