@@ -27,7 +27,7 @@ interface RawVideoInfo {
 }
 
 // Parse geocode and filter out invalid entries
-let VideoData = (data as RawVideoInfo[]).filter((item) => {
+let VideoData = (data as RawVideoInfo[]).map((item) => {
     let parsedGeocode: [number, number] | null = null;
     try {
         if (item.geocode) {
@@ -36,17 +36,20 @@ let VideoData = (data as RawVideoInfo[]).filter((item) => {
     } catch {
         parsedGeocode = null;
     }
-    if (parsedGeocode && (parsedGeocode[0] !== 0 || parsedGeocode[1] !== 0)) {
-        return true;
+
+    return {
+        ...item,
+        geocode: parsedGeocode, // Keep null geocode if parsing fails
+        transcript: JSON.parse(item.transcript),
+        playlist: item.playlist as "ap" | "tymnk" | "bfs", // Ensure playlist matches the VideoInfo type
+    };
+}).filter((item) => {
+    // Log a warning for invalid geocode but include the item
+    if (!item.geocode || item.geocode[0] === 0 && item.geocode[1] === 0) {
+        console.warn("Invalid or null geocode, item will still be included:", item);
     }
-    console.warn("Invalid geocode or filtered out:", item);
-    return false;
-}).map((item) => ({
-    ...item,
-    geocode: item.geocode ? (JSON.parse(item.geocode) as [number, number] | null) : null,
-    transcript: JSON.parse(item.transcript),
-    playlist: item.playlist as "ap" | "tymnk" | "bfs", // Ensure playlist matches the VideoInfo type
-}));
+    return true; // Include all items
+});
 
 console.log("Parsed VideoData:", VideoData);
 

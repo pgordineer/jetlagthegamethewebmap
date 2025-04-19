@@ -88,7 +88,7 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
                 markersRef.current.set(element.videoId, marker);
                 console.log("Added marker for video:", element.videoId, "at position:", position);
             } else {
-                console.warn("Invalid geocode for video:", element.videoId, element.geocode);
+                console.warn("Skipping marker creation for video with invalid geocode:", element.videoId, element.geocode);
             }
         });
     }, [data]);
