@@ -95,10 +95,11 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
     useEffect(() => {
         markersRef.current = new Map<string, Marker>();
 
-        // Clear existing markers from the LayerGroup
+        // Clear existing markers and lines from the LayerGroup
         layerGroupRef.current?.clearLayers();
 
         const markers: { position: LatLngExpression; marker: Marker }[] = [];
+        const playlistLines: { [key: string]: LatLngExpression[] } = {};
 
         data.forEach(element => {
             if (element.geocode) {
@@ -121,6 +122,12 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
 
                 markers.push({ position, marker });
                 markersRef.current.set(element.videoId, marker);
+
+                // Add position to the playlist line
+                if (!playlistLines[element.playlistId]) {
+                    playlistLines[element.playlistId] = [];
+                }
+                playlistLines[element.playlistId].push(position);
             } else {
                 console.warn("Skipping marker creation for video with invalid geocode:", element.videoId, element.geocode);
             }
@@ -128,8 +135,16 @@ const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[]
 
         resolveOverlaps(markers);
 
+        // Add markers to the LayerGroup
         markers.forEach(({ marker }) => {
             layerGroupRef.current?.addLayer(marker);
+        });
+
+        // Draw lines for each playlist
+        Object.entries(playlistLines).forEach(([playlistId, positions]) => {
+            const lineColor = getRandomColor();
+            const polyline = L.polyline(positions, { color: lineColor, weight: 3 }).addTo(mapRef.current!);
+            layerGroupRef.current?.addLayer(polyline);
         });
     }, [data]);
 
