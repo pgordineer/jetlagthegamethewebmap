@@ -11,7 +11,7 @@ import { VideoInfo } from './App';
 
 // Import MarkerClusterGroup type
 import "leaflet.markercluster"; // Import the marker cluster library
-import { markerClusterGroup } from "leaflet.markercluster";
+import { markerClusterGroup, MarkerClusterGroup } from "leaflet.markercluster"; // Explicitly import MarkerClusterGroup
 
 // Configure Leaflet marker icons
 L.Icon.Default.prototype.options.iconUrl = markerIconUrl;
@@ -20,7 +20,7 @@ L.Icon.Default.prototype.options.shadowUrl = markerShadowUrl;
 L.Icon.Default.imagePath = "";
 
 // Custom hook for initializing the map
-const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, markerClusterRef: React.MutableRefObject<L.MarkerClusterGroup | null>) => {
+const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, markerClusterRef: React.MutableRefObject<MarkerClusterGroup | null>) => {
     useEffect(() => {
         const map = L.map('map').setView([51.1358, 1.3621], 5);
         mapRef.current = map;
@@ -62,7 +62,7 @@ const useInitializeMap = (mapRef: React.MutableRefObject<L.Map | null>, markerCl
 const MapComponent = ({ data, activeVideo, setActiveVideo }: { data: VideoInfo[], activeVideo: string, setActiveVideo: (video: string) => void }) => {
     const markersRef = useRef<Map<string, Marker>>(new Map());
     const mapRef = useRef<L.Map>(null);
-    const markerClusterRef = useRef<L.MarkerClusterGroup>(null);
+    const markerClusterRef = useRef<MarkerClusterGroup>(null); // Use MarkerClusterGroup type
 
     useInitializeMap(mapRef, markerClusterRef);
 
