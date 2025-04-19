@@ -21,7 +21,7 @@ interface RawVideoInfo {
     videoId: string;
     location: string;
     geocode: {
-        features: { geometry: { coordinates: [number, number] } }[];
+        features: { geometry: { coordinates: number[] } }[];
     } | null; // Adjusted for new format
     transcript?: string; // Made optional to handle missing data
     playlist?: string; // Made optional to handle missing data
@@ -29,18 +29,24 @@ interface RawVideoInfo {
 }
 
 // Parse geocode and filter out invalid entries
-let VideoData = (data as Partial<RawVideoInfo>[]).map((item) => {
+let VideoData = (data as RawVideoInfo[]).map((item) => {
     let parsedGeocode: [number, number] | null = null;
     try {
         if (item.geocode?.features?.length) {
-            parsedGeocode = item.geocode.features[0].geometry.coordinates as [number, number];
+            const coordinates = item.geocode.features[0].geometry.coordinates;
+            if (coordinates.length === 2) {
+                parsedGeocode = [coordinates[0], coordinates[1]] as [number, number];
+            }
         }
     } catch {
         parsedGeocode = null;
     }
 
     return {
-        ...item,
+        publishedAt: item.publishedAt || "", // Default to an empty string if missing
+        title: item.title || "Untitled", // Default to "Untitled" if missing
+        videoId: item.videoId || "unknown", // Default to "unknown" if missing
+        location: item.location || "Unknown Location", // Default to "Unknown Location" if missing
         geocode: parsedGeocode, // Extract the first valid coordinate
         transcript: item.transcript ? JSON.parse(item.transcript) : null, // Parse transcript if available
         playlist: (item.playlist || "ap") as "ap" | "tymnk" | "bfs", // Default to "ap" if missing
