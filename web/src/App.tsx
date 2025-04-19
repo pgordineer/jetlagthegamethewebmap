@@ -14,19 +14,32 @@ export interface VideoInfo {
     marked: boolean;
 }
 
+// Define the type of the raw data from the JSON file
+interface RawVideoInfo {
+    publishedAt?: string;
+    title: string;
+    videoId: string;
+    location: string;
+    geocode: string; // Raw geocode as a string
+    transcript: string; // Raw transcript as a string
+    playlist: string;
+    marked: boolean;
+}
+
 // Parse geocode and filter out invalid entries
-let VideoData = (data as Omit<VideoInfo, "geocode" | "transcript">[]).filter((item) => {
+let VideoData = (data as RawVideoInfo[]).filter((item) => {
     let parsedGeocode: [number, number] | null = null;
     try {
-        parsedGeocode = JSON.parse(item.geocode as unknown as string);
+        parsedGeocode = JSON.parse(item.geocode);
     } catch {
         parsedGeocode = null;
     }
     return parsedGeocode && (parsedGeocode[0] !== 0 || parsedGeocode[1] !== 0);
 }).map((item) => ({
     ...item,
-    geocode: JSON.parse(item.geocode as unknown as string) as [number, number] | null,
-    transcript: JSON.parse(item.transcript as unknown as string),
+    geocode: JSON.parse(item.geocode) as [number, number] | null,
+    transcript: JSON.parse(item.transcript),
+    playlist: item.playlist as "ap" | "tymnk" | "bfs", // Ensure playlist matches the VideoInfo type
 }));
 
 let App = () => {
