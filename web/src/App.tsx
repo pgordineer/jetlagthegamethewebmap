@@ -63,10 +63,10 @@ let VideoData = (data as RawVideoInfo[]).map((item) => {
 
 console.log("Parsed VideoData:", VideoData);
 
-// Map titles to playlist categories
+// Map keywords in titles to playlist categories
 const titleToPlaylistMapping: { [key: string]: string } = {
     "Connect 4": "s1",
-    "Circumnavigation": "s2",
+    "Circumnavigate": "s2",
     "Tag EUR It": "s3",
     "Battle 4 America": "s4",
     "Race to the End of the World": "s5",
@@ -78,7 +78,18 @@ const titleToPlaylistMapping: { [key: string]: string } = {
     "Tag EUR It 3": "s11",
     "Hide + Seek: Japan": "s12",
     "Schengen Showdown": "s13",
-    "New Zealand Into a Real-Life Board Game": "s14"
+    "New Zealand Into a Real-Life Board Game": "s14",
+    "We Raced To Visit The Most European Countries": "s13", // Schengen Showdown
+    "We Played a 72 Hour Game of Tag Across Europe": "s3", // Tag EUR It
+    "We Played Hide And Seek Across Japan": "s12", // Hide + Seek: Japan
+    "AU$TRALIA: A Travel Game": "s10", // AU$TRALIA
+    "We Played Hide And Seek Across Switzerland": "s9", // Hide + Seek: Switzerland
+    "We Raced From USA's Northernmost to Southernmost Town": "s5", // Race to the End of the World
+    "We Raced To Visit The Most US States In 100 Hrs": "s1", // Connect 4
+    "We Turned New Zealand Into a Real-Life Board Game": "s14", // New Zealand Board Game
+    "We Raced To Circumnavigate The Globe In 100 Hours": "s2", // Circumnavigation
+    "Playing a 96 Hr Game Of Capture The Flag Across Japan": "s6", // Capture the Flag
+    "Playing a 72 Hr Game of Tag Across Europe": "s3" // Tag EUR It
 };
 
 // Reverse mapping for dropdown display
@@ -111,7 +122,10 @@ let App = () => {
         let ret: VideoInfo[] = [];
         if (playlist !== "") {
             const mappedTitle = playlistToTitleMapping[playlist];
-            ret = VideoData.filter((item) => item.title.includes(mappedTitle));
+            ret = VideoData.filter((item) => {
+                // Match titles flexibly using includes
+                return item.title.toLowerCase().includes(mappedTitle.toLowerCase());
+            });
         } else {
             ret = VideoData;
         }
