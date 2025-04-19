@@ -34,8 +34,9 @@ let VideoData = (data as RawVideoInfo[]).map((item) => {
     try {
         if (item.geocode?.features?.length) {
             const coordinates = item.geocode.features[0].geometry.coordinates;
-            if (coordinates.length === 2) {
-                parsedGeocode = [coordinates[0], coordinates[1]] as [number, number];
+            // Ensure coordinates are valid and have exactly two elements
+            if (coordinates.length === 2 && typeof coordinates[0] === "number" && typeof coordinates[1] === "number") {
+                parsedGeocode = [coordinates[1], coordinates[0]] as [number, number]; // Swap to [latitude, longitude]
             }
         }
     } catch {
