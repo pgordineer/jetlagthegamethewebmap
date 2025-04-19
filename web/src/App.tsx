@@ -34,11 +34,11 @@ interface RawVideoInfo {
 let VideoData = (data as RawVideoInfo[]).map((item) => {
     let parsedGeocode: [number, number] | null = null;
     try {
-        if (item.geocode?.features?.length) {
-            const coordinates = item.geocode.features[0].geometry.coordinates;
-            // Ensure coordinates are valid and have exactly two elements
-            if (coordinates.length === 2 && typeof coordinates[0] === "number" && typeof coordinates[1] === "number") {
-                parsedGeocode = [coordinates[1], coordinates[0]] as [number, number]; // Swap to [latitude, longitude]
+        if (Array.isArray(item.geocode) && item.geocode.length > 0) {
+            const location = item.geocode[0]?.geometry?.location;
+            // Ensure location contains valid latitude and longitude
+            if (location && typeof location.lat === "number" && typeof location.lng === "number") {
+                parsedGeocode = [location.lat, location.lng] as [number, number];
             }
         }
     } catch {
