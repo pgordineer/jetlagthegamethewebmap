@@ -18,17 +18,20 @@ const resolveOverlaps = (markers: { position: LatLngExpression; marker: Marker }
     const seenPositions = new Map<string, number>();
 
     markers.forEach(({ position, marker }) => {
-        const key = `${position[0].toFixed(4)},${position[1].toFixed(4)}`; // Round to 4 decimal places
-        const count = seenPositions.get(key) || 0;
+        // Ensure position is treated as an array of [latitude, longitude]
+        if (Array.isArray(position)) {
+            const key = `${position[0].toFixed(4)},${position[1].toFixed(4)}`; // Round to 4 decimal places
+            const count = seenPositions.get(key) || 0;
 
-        if (count > 0) {
-            // Apply an offset based on the count
-            const offsetLat = count * offsetDistance;
-            const offsetLng = count * offsetDistance;
-            marker.setLatLng([position[0] + offsetLat, position[1] + offsetLng]);
+            if (count > 0) {
+                // Apply an offset based on the count
+                const offsetLat = count * offsetDistance;
+                const offsetLng = count * offsetDistance;
+                marker.setLatLng([position[0] + offsetLat, position[1] + offsetLng]);
+            }
+
+            seenPositions.set(key, count + 1);
         }
-
-        seenPositions.set(key, count + 1);
     });
 };
 
