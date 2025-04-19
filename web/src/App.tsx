@@ -8,12 +8,26 @@ export interface VideoInfo {
     title: string;
     videoId: string;
     location: string;
-    geocode: [] | [number, number] | null;
+    geocode: string; // Updated to string
+    transcript: string; // Added as string
     playlist: "ap" | "tymnk" | "bfs";
     marked: boolean;
 }
 
-let VideoData = (data as VideoInfo[]).filter((item) => { return item.geocode?.[0] != 0 || item.geocode?.[1] != 0 })
+// Parse geocode and filter out invalid entries
+let VideoData = (data as VideoInfo[]).filter((item) => {
+    let parsedGeocode: [number, number] | null = null;
+    try {
+        parsedGeocode = JSON.parse(item.geocode);
+    } catch {
+        parsedGeocode = null;
+    }
+    return parsedGeocode && (parsedGeocode[0] !== 0 || parsedGeocode[1] !== 0);
+}).map((item) => ({
+    ...item,
+    geocode: JSON.parse(item.geocode) as [number, number] | null,
+    transcript: JSON.parse(item.transcript),
+}));
 
 let App = () => {
     //active video that is highlighted on the screen
