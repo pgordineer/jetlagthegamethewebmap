@@ -66,16 +66,13 @@ let VideoData = (data as RawVideoInfo[]).map((item) => {
 
 console.log("Parsed VideoData:", VideoData);
 
-// Map playlistId to playlistName for dropdown display
-const playlistMapping: { [key: string]: string } = VideoData.reduce((acc, item) => {
-    if (item.playlist) {
-        acc[item.playlist] = item.playlistName || item.playlist; // Use playlist ID if name is missing
-    }
-    return acc;
-}, {} as { [key: string]: string });
-
-// Ensure all unique playlists are included
-const allPlaylists = Object.entries(playlistMapping);
+// Extract all unique playlists from VideoData
+const allPlaylists = Array.from(
+    new Set(VideoData.map((item) => item.playlist))
+).map((playlistId) => {
+    const playlistName = VideoData.find((item) => item.playlist === playlistId)?.playlistName || playlistId;
+    return { id: playlistId, name: playlistName };
+});
 
 let App = () => {
     // Active video that is highlighted on the screen
@@ -125,7 +122,7 @@ let App = () => {
                         }}
                     >
                         <option value="">All Playlists</option>
-                        {allPlaylists.map(([id, name]) => (
+                        {allPlaylists.map(({ id, name }) => (
                             <option value={id} key={id}>
                                 {name}
                             </option>
