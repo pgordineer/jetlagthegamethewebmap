@@ -99,6 +99,11 @@ const MapComponent = ({
         if (currentPopup) {
             currentPopup.openPopup();
             mapRef.current?.panTo(currentPopup.getLatLng());
+        } else {
+            // Close all popups if no active video is selected
+            markersRef.current.forEach((marker) => {
+                marker.closePopup();
+            });
         }
     }, [activeVideo]);
 
