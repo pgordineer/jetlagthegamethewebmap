@@ -10,7 +10,7 @@ export interface VideoInfo {
     location: string;
     geocode: [number, number] | null; // Ensure geocode is parsed into a coordinate pair
     transcript: any; // Updated to match parsed type
-    playlist: string; // Updated to string to handle dynamic playlists
+    playlistId: string; // Updated to use playlistId
     playlistName?: string; // Added to handle playlist names
     marked: boolean;
 }
@@ -25,7 +25,7 @@ interface RawVideoInfo {
         features: { geometry: { coordinates: number[] } }[];
     } | null; // Adjusted for new format
     transcript?: string; // Made optional to handle missing data
-    playlist?: string; // Made optional to handle missing data
+    playlistId?: string; // Updated to use playlistId
     playlistName?: string; // Made optional to handle missing data
     marked?: boolean; // Made optional to handle missing data
 }
@@ -52,7 +52,7 @@ let VideoData = (data as RawVideoInfo[]).map((item) => {
         location: item.location || "Unknown Location", // Default to "Unknown Location" if missing
         geocode: parsedGeocode, // Extract the first valid coordinate
         transcript: item.transcript ? JSON.parse(item.transcript) : null, // Parse transcript if available
-        playlist: item.playlist || "unknown", // Default to "unknown" if missing
+        playlistId: item.playlistId || "unknown", // Default to "unknown" if missing
         playlistName: item.playlistName || "Unknown Playlist", // Default to "Unknown Playlist" if missing
         marked: item.marked ?? false, // Default to false if missing
     };
@@ -68,9 +68,9 @@ console.log("Parsed VideoData:", VideoData);
 
 // Extract all unique playlists from VideoData
 const allPlaylists = Array.from(
-    new Set(VideoData.map((item) => item.playlist))
+    new Set(VideoData.map((item) => item.playlistId))
 ).map((playlistId) => {
-    const playlistName = VideoData.find((item) => item.playlist === playlistId)?.playlistName || playlistId;
+    const playlistName = VideoData.find((item) => item.playlistId === playlistId)?.playlistName || playlistId;
     return { id: playlistId, name: playlistName };
 });
 
@@ -95,7 +95,7 @@ let App = () => {
         let ret: VideoInfo[] = VideoData;
 
         if (playlist !== "") {
-            ret = ret.filter((item) => item.playlist === playlist);
+            ret = ret.filter((item) => item.playlistId === playlist); // Filter by playlistId
         }
 
         if (filter !== "") {
