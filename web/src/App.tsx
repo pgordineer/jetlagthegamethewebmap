@@ -79,15 +79,20 @@ const allPlaylists = Array.from(
     return { id: playlistId, name: playlistName };
 });
 
+// Extract all unique handles from VideoData
+const allHandles = Array.from(new Set(VideoData.map((item) => item.handle || "Unknown Handle")));
+
 let App = () => {
     // Active video that is highlighted on the screen
     const [activeVideo, setActiveVideo] = useState("");
     // Selector for playlist (updated in sidebar)
     const [playlist, setPlaylist] = useState("");
+    // Selector for handle (new dropdown)
+    const [handle, setHandle] = useState("");
     // Selector for text filter
     const [filter, setFilter] = useState("");
     // State to toggle the visibility of lines
-    const [showLines, setShowLines] = useState(true);
+    const [showLines, setShowLines] = useState(false); // Default to false
     // State to toggle the visibility of the items overlay
     const [showItemsOverlay, setShowItemsOverlay] = useState(true);
 
@@ -107,6 +112,10 @@ let App = () => {
             ret = ret.filter((item) => item.playlistId === playlist); // Filter by playlistId
         }
 
+        if (handle !== "") {
+            ret = ret.filter((item) => item.handle === handle); // Filter by handle
+        }
+
         if (filter !== "") {
             const lowerFilter = filter.toLowerCase();
             ret = ret.filter(
@@ -117,7 +126,7 @@ let App = () => {
         }
 
         return ret;
-    }, [playlist, filter]);
+    }, [playlist, handle, filter]);
 
     return (
         <div>
@@ -144,6 +153,20 @@ let App = () => {
                     {allPlaylists.map(({ id, name }) => (
                         <option value={id} key={id}>
                             {name}
+                        </option>
+                    ))}
+                </select>
+
+                <select
+                    name="handle-select"
+                    onChange={(changeEvent) => {
+                        setHandle(changeEvent.target.value);
+                    }}
+                >
+                    <option value="">All Handles</option>
+                    {allHandles.map((handle) => (
+                        <option value={handle} key={handle}>
+                            {handle}
                         </option>
                     ))}
                 </select>
