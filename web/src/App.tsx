@@ -88,10 +88,10 @@ const allHandles = Array.from(new Set(VideoData.map((item) => item.handle || "Un
 let App = () => {
     // Active video that is highlighted on the screen
     const [activeVideo, setActiveVideo] = useState("");
-    // Selector for playlist (updated in sidebar)
-    const [playlist, setPlaylist] = useState("");
     // Selector for handle (new dropdown)
     const [handle, setHandle] = useState("");
+    // Selector for playlist (updated to depend on handle)
+    const [playlist, setPlaylist] = useState("");
     // Selector for text filter
     const [filter, setFilter] = useState("");
     // State to toggle the visibility of lines
@@ -106,17 +106,27 @@ let App = () => {
         cur_video.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }, [activeVideo]);
 
+    // Filter playlists based on the selected handle
+    const filteredPlaylists = useMemo(() => {
+        if (handle === "") {
+            return allPlaylists; // Show all playlists if no handle is selected
+        }
+        return allPlaylists.filter((playlist) =>
+            VideoData.some((item) => item.handle === handle && item.playlistId === playlist.id)
+        );
+    }, [handle]);
+
     // Use a memo here to avoid bad side effects from filtering the data
     const display_data = useMemo(() => {
         // Filter data based on the sidebar selectors
         let ret: VideoInfo[] = VideoData;
 
-        if (playlist !== "") {
-            ret = ret.filter((item) => item.playlistId === playlist); // Filter by playlistId
-        }
-
         if (handle !== "") {
             ret = ret.filter((item) => item.handle === handle); // Filter by handle
+        }
+
+        if (playlist !== "") {
+            ret = ret.filter((item) => item.playlistId === playlist); // Filter by playlistId
         }
 
         if (filter !== "") {
@@ -129,7 +139,7 @@ let App = () => {
         }
 
         return ret;
-    }, [playlist, handle, filter]);
+    }, [handle, playlist, filter]);
 
     return (
         <div>
@@ -147,29 +157,31 @@ let App = () => {
             ></MapComponent>
             <div id="filter-overlay">
                 <select
-                    name="playlist-select"
+                    name="handle-select"
                     onChange={(changeEvent) => {
-                        setPlaylist(changeEvent.target.value);
+                        setHandle(changeEvent.target.value);
+                        setPlaylist(""); // Reset playlist when handle changes
                     }}
                 >
-                    <option value="">All Playlists</option>
-                    {allPlaylists.map(({ id, name }) => (
-                        <option value={id} key={id}>
-                            {name}
+                    <option value="">All Channels</option>
+                    {allHandles.map((handle) => (
+                        <option value={handle} key={handle}>
+                            {handle}
                         </option>
                     ))}
                 </select>
 
                 <select
-                    name="handle-select"
+                    name="playlist-select"
+                    value={playlist}
                     onChange={(changeEvent) => {
-                        setHandle(changeEvent.target.value);
+                        setPlaylist(changeEvent.target.value);
                     }}
                 >
-                    <option value="">All Handles</option>
-                    {allHandles.map((handle) => (
-                        <option value={handle} key={handle}>
-                            {handle}
+                    <option value="">All Playlists</option>
+                    {filteredPlaylists.map(({ id, name }) => (
+                        <option value={id} key={id}>
+                            {name}
                         </option>
                     ))}
                 </select>
