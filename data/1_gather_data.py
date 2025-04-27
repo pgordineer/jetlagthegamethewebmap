@@ -181,7 +181,7 @@ def main():
     try:
         print("Starting data gathering process...")
         api_key = load_api_key()
-        handles = ["@jetlagthegame", "@Beardmeatsfood", "@KaraandNate"]  # List of YouTube channel handles
+        handles = ["@jetlagthegame", "@Beardmeatsfood", "@KaraandNate", "@TomScottGo"]  # List of YouTube channel handles
 
         combined_data = []  # List to store all data with handles
 
