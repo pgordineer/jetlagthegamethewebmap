@@ -162,9 +162,9 @@ const MapComponent = ({
                     // Prevent map click from firing
                     e.originalEvent.stopPropagation();
                     if (activeVideo && activeVideo.videoId === element.videoId) {
-                        setActiveVideo(""); // Deselect if already selected
-                        // Also trigger map click to ensure all clear-selection logic runs
-                        mapRef.current?.fire("click");
+                        // Deselect after the current event loop to ensure React state updates after Leaflet event handling
+                        setTimeout(() => setActiveVideo(""), 0);
+                        marker.closePopup();
                     } else {
                         setActiveVideo(element.videoId);
                     }
