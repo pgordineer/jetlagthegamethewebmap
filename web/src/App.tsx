@@ -98,6 +98,8 @@ let App = () => {
     const [showLines, setShowLines] = useState(false); // Default to false
     // State to toggle the visibility of the items overlay
     const [showItemsOverlay, setShowItemsOverlay] = useState(true);
+    // State to manage feedback form visibility
+    const [showFeedback, setShowFeedback] = useState(false);
 
     const cur_video = useRef<HTMLDivElement>(null);
 
@@ -105,6 +107,20 @@ let App = () => {
     useEffect(() => {
         cur_video.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }, [activeVideo]);
+
+    // Hide feedback form when clicking on the map background
+    useEffect(() => {
+        if (!showFeedback) return;
+        const handler = (e: MouseEvent) => {
+            // Only close if clicking on the map background (not the form or its children)
+            const feedbackForm = document.getElementById("feedback-popout");
+            if (feedbackForm && !feedbackForm.contains(e.target as Node)) {
+                setShowFeedback(false);
+            }
+        };
+        document.addEventListener("mousedown", handler);
+        return () => document.removeEventListener("mousedown", handler);
+    }, [showFeedback]);
 
     // Filter playlists based on the selected handle
     const filteredPlaylists = useMemo(() => {
@@ -201,7 +217,60 @@ let App = () => {
                 >
                     {showLines ? "Hide Lines" : "Show Lines"}
                 </button>
+                <button
+                    onClick={() => setShowFeedback(true)}
+                    style={{ marginTop: "10px", marginLeft: "10px", padding: "5px", borderRadius: "3px", cursor: "pointer" }}
+                >
+                    Feedback
+                </button>
             </div>
+            {showFeedback && (
+                <div
+                    id="feedback-popout"
+                    style={{
+                        position: "fixed",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        background: "#222",
+                        color: "#fff",
+                        padding: "20px",
+                        borderRadius: "8px",
+                        boxShadow: "0 2px 16px rgba(0,0,0,0.4)",
+                        zIndex: 2000,
+                        minWidth: "300px"
+                    }}
+                >
+                    <form
+                        action="https://formspree.io/f/movdoolb"
+                        method="POST"
+                        onSubmit={() => setShowFeedback(false)}
+                        style={{ display: "flex", flexDirection: "column", gap: "10px" }}
+                    >
+                        <label htmlFor="suggestion" style={{ color: "#fff" }}>Suggest a feature or update:</label>
+                        <input
+                            type="text"
+                            name="suggestion"
+                            id="suggestion"
+                            required
+                            style={{ padding: "5px", borderRadius: "3px", border: "1px solid #ccc", color: "#000" }}
+                        />
+                        <button
+                            type="submit"
+                            style={{ padding: "5px", borderRadius: "3px", cursor: "pointer" }}
+                        >
+                            Submit Idea
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => setShowFeedback(false)}
+                            style={{ padding: "5px", borderRadius: "3px", cursor: "pointer", background: "#444", color: "#fff" }}
+                        >
+                            Cancel
+                        </button>
+                    </form>
+                </div>
+            )}
             {showItemsOverlay && (
                 <div id="items-overlay">
                     {display_data.map((item) => (
