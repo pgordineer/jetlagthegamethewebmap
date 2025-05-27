@@ -159,7 +159,11 @@ const MapComponent = ({
                 );
 
                 marker.on("click", () => {
-                    setActiveVideo(element.videoId);
+                    if (activeVideo && activeVideo.videoId === element.videoId) {
+                        setActiveVideo(""); // Deselect if already selected
+                    } else {
+                        setActiveVideo(element.videoId);
+                    }
                 });
 
                 markers.push({ position, marker });
@@ -191,6 +195,23 @@ const MapComponent = ({
             });
         }
     }, [data, showLines]);
+
+    useEffect(() => {
+        const map = mapRef.current;
+        if (!map) return;
+
+        // Handler to clear selection when clicking on the map background
+        const handleMapClick = (e: L.LeafletMouseEvent) => {
+            // Only clear if not clicking a marker (markers stop propagation)
+            setActiveVideo("");
+        };
+
+        map.on("click", handleMapClick);
+
+        return () => {
+            map.off("click", handleMapClick);
+        };
+    }, [setActiveVideo]);
 
     return (
         <div id="map-container">
