@@ -158,9 +158,13 @@ const MapComponent = ({
                     { maxWidth: undefined }
                 );
 
-                marker.on("click", () => {
+                marker.on("click", (e: L.LeafletMouseEvent) => {
+                    // Prevent map click from firing
+                    e.originalEvent.stopPropagation();
                     if (activeVideo && activeVideo.videoId === element.videoId) {
                         setActiveVideo(""); // Deselect if already selected
+                        // Also trigger map click to ensure all clear-selection logic runs
+                        mapRef.current?.fire("click");
                     } else {
                         setActiveVideo(element.videoId);
                     }
