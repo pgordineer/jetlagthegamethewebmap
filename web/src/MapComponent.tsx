@@ -46,7 +46,7 @@ const MapComponent = ({
     showLines,
 }: {
     data: VideoInfo[];
-    activeVideo: string;
+    activeVideo: VideoInfo | null;
     setActiveVideo: (video: string) => void;
     showLines: boolean; // New prop to toggle line visibility
 }) => {
@@ -95,15 +95,42 @@ const MapComponent = ({
     }, []);
 
     useEffect(() => {
-        const currentPopup = markersRef.current.get(activeVideo);
-        if (currentPopup) {
-            currentPopup.openPopup();
-            mapRef.current?.panTo(currentPopup.getLatLng());
-        } else {
-            // Close all popups if no active video is selected
-            markersRef.current.forEach((marker) => {
-                marker.closePopup();
-            });
+        // Close all popups first
+        markersRef.current.forEach((marker) => {
+            marker.closePopup();
+        });
+
+        if (activeVideo) {
+            if (activeVideo.geocode && markersRef.current.has(activeVideo.videoId)) {
+                const marker = markersRef.current.get(activeVideo.videoId)!;
+                marker.openPopup();
+                mapRef.current?.panTo(marker.getLatLng());
+            } else {
+                // No geocode: show popup at map center
+                const map = mapRef.current;
+                if (map) {
+                    const center = map.getCenter();
+                    const tempMarker = L.marker(center, {
+                        icon: L.divIcon({
+                            className: 'custom-marker',
+                            html: `<div style="background-color: #888; width: 10px; height: 10px; border-radius: 50%;"></div>`,
+                        }),
+                        interactive: false
+                    }).addTo(map);
+
+                    const popup = L.popup({ maxWidth: undefined, autoClose: true, closeOnClick: true })
+                        .setLatLng(center)
+                        .setContent(
+                            `<iframe class="video-player" src="https://www.youtube.com/embed/${activeVideo.videoId}" allowfullscreen></iframe>`
+                        )
+                        .openOn(map);
+
+                    // Remove the temp marker and popup when popup closes
+                    popup.on('remove', () => {
+                        map.removeLayer(tempMarker);
+                    });
+                }
+            }
         }
     }, [activeVideo]);
 

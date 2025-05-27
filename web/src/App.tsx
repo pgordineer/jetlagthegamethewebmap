@@ -145,7 +145,7 @@ let App = () => {
         <div>
             <MapComponent
                 data={display_data}
-                activeVideo={activeVideo}
+                activeVideo={display_data.find((item) => item.videoId === activeVideo) || null}
                 setActiveVideo={(videoId) => {
                     if (activeVideo === videoId) {
                         setActiveVideo(""); // Deselect the video if clicked again
@@ -218,7 +218,9 @@ let App = () => {
                         >
                             Title: {item.title}
                             <br />
-                            Location: {item.geocode?.[0]?.toPrecision(4)}, {item.geocode?.[1]?.toPrecision(4)}
+                            Location: {item.location}
+                            <br />
+                            Coords: {item.geocode?.[0]?.toPrecision(4)}, {item.geocode?.[1]?.toPrecision(4)}
                             <br />
                             Playlist: {item.playlistName}
                         </div>
@@ -227,7 +229,15 @@ let App = () => {
             )}
             <button
                 onClick={() => setShowItemsOverlay((prev) => !prev)}
-                style={{ position: "absolute", bottom: "10px", left: "10px", padding: "5px", borderRadius: "3px", cursor: "pointer", zIndex: 1000 }}
+                style={{
+                    position: "absolute",
+                    bottom: "50px", // Move up so it doesn't overlap the GitHub link
+                    left: "10px",
+                    padding: "5px",
+                    borderRadius: "3px",
+                    cursor: "pointer",
+                    zIndex: 1000
+                }}
             >
                 {showItemsOverlay ? "Hide List" : "Show List"}
             </button>
