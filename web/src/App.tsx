@@ -206,6 +206,7 @@ let App = () => {
                 <div id="items-overlay">
                     {display_data.map((item) => (
                         <div
+                            ref={item.videoId === activeVideo ? cur_video : undefined}
                             className={"sidebar-item" + (item.videoId === activeVideo ? " active-video" : "")}
                             onClick={() => {
                                 if (activeVideo === item.videoId) {
