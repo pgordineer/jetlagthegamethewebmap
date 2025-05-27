@@ -100,6 +100,7 @@ let App = () => {
     const [showItemsOverlay, setShowItemsOverlay] = useState(true);
     // State to manage feedback form visibility
     const [showFeedback, setShowFeedback] = useState(false);
+    const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
 
     const cur_video = useRef<HTMLDivElement>(null);
 
@@ -112,10 +113,10 @@ let App = () => {
     useEffect(() => {
         if (!showFeedback) return;
         const handler = (e: MouseEvent) => {
-            // Only close if clicking on the map background (not the form or its children)
             const feedbackForm = document.getElementById("feedback-popout");
             if (feedbackForm && !feedbackForm.contains(e.target as Node)) {
                 setShowFeedback(false);
+                setFeedbackSubmitted(false);
             }
         };
         document.addEventListener("mousedown", handler);
@@ -218,7 +219,10 @@ let App = () => {
                     {showLines ? "Hide Lines" : "Show Lines"}
                 </button>
                 <button
-                    onClick={() => setShowFeedback(true)}
+                    onClick={() => {
+                        setShowFeedback(true);
+                        setFeedbackSubmitted(false);
+                    }}
                     style={{ marginTop: "10px", marginLeft: "10px", padding: "5px", borderRadius: "3px", cursor: "pointer" }}
                 >
                     Feedback
@@ -241,34 +245,64 @@ let App = () => {
                         minWidth: "300px"
                     }}
                 >
-                    <form
-                        action="https://formspree.io/f/movdoolb"
-                        method="POST"
-                        onSubmit={() => setShowFeedback(false)}
-                        style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-                    >
-                        <label htmlFor="suggestion" style={{ color: "#fff" }}>Suggest a feature or update:</label>
-                        <input
-                            type="text"
-                            name="suggestion"
-                            id="suggestion"
-                            required
-                            style={{ padding: "5px", borderRadius: "3px", border: "1px solid #ccc", color: "#000" }}
-                        />
-                        <button
-                            type="submit"
-                            style={{ padding: "5px", borderRadius: "3px", cursor: "pointer" }}
+                    {!feedbackSubmitted ? (
+                        <form
+                            action="https://formspree.io/f/movdoolb"
+                            method="POST"
+                            onSubmit={e => {
+                                e.preventDefault();
+                                const form = e.target as HTMLFormElement;
+                                const data = new FormData(form);
+                                fetch(form.action, {
+                                    method: "POST",
+                                    body: data,
+                                    headers: { Accept: "application/json" }
+                                }).then((response) => {
+                                    if (response.ok) {
+                                        setFeedbackSubmitted(true);
+                                    } else {
+                                        alert("There was an error submitting your feedback.");
+                                    }
+                                }).catch(() => {
+                                    alert("There was an error submitting your feedback.");
+                                });
+                            }}
+                            style={{ display: "flex", flexDirection: "column", gap: "10px" }}
                         >
-                            Submit Idea
-                        </button>
-                        <button
-                            type="button"
-                            onClick={() => setShowFeedback(false)}
-                            style={{ padding: "5px", borderRadius: "3px", cursor: "pointer", background: "#444", color: "#fff" }}
-                        >
-                            Cancel
-                        </button>
-                    </form>
+                            <label htmlFor="suggestion" style={{ color: "#fff" }}>Suggest a feature or update:</label>
+                            <input
+                                type="text"
+                                name="suggestion"
+                                id="suggestion"
+                                required
+                                style={{ padding: "5px", borderRadius: "3px", border: "1px solid #ccc", color: "#000" }}
+                            />
+                            <button
+                                type="submit"
+                                style={{ padding: "5px", borderRadius: "3px", cursor: "pointer" }}
+                            >
+                                Submit Idea
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => { setShowFeedback(false); setFeedbackSubmitted(false); }}
+                                style={{ padding: "5px", borderRadius: "3px", cursor: "pointer", background: "#444", color: "#fff" }}
+                            >
+                                Cancel
+                            </button>
+                        </form>
+                    ) : (
+                        <div style={{ display: "flex", flexDirection: "column", gap: "10px", alignItems: "center" }}>
+                            <div>Feedback Submitted</div>
+                            <button
+                                type="button"
+                                onClick={() => { setShowFeedback(false); setFeedbackSubmitted(false); }}
+                                style={{ padding: "5px", borderRadius: "3px", cursor: "pointer", background: "#444", color: "#fff" }}
+                            >
+                                Close
+                            </button>
+                        </div>
+                    )}
                 </div>
             )}
             {showItemsOverlay && (
