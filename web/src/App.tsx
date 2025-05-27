@@ -99,7 +99,7 @@ let App = () => {
     // State to toggle the visibility of the items overlay
     const [showItemsOverlay, setShowItemsOverlay] = useState(true);
 
-    const cur_video = useRef<HTMLElement>(null);
+    const cur_video = useRef<HTMLDivElement>(null);
 
     // If active video is updated, scroll the video into view on the sidebar
     useEffect(() => {
