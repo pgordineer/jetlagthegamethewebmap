@@ -201,8 +201,7 @@ const MapComponent = ({
         if (!map) return;
 
         // Handler to clear selection when clicking on the map background
-        const handleMapClick = (e: L.LeafletMouseEvent) => {
-            // Only clear if not clicking a marker (markers stop propagation)
+        const handleMapClick = () => {
             setActiveVideo("");
         };
 
